@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         body: ["Manrope", "system-ui", "sans-serif"],
-        brand: ["Orbitron", "Manrope", "sans-serif"],
+        brand: ["Plus Jakarta Sans", "Manrope", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -60,6 +60,7 @@ export default {
           violet: "hsl(var(--brand-violet))",
           blue: "hsl(var(--brand-blue))",
           cyan: "hsl(var(--brand-cyan))",
+          warm: "hsl(var(--warm-accent))",
         },
         success: "hsl(var(--success))",
         warning: "hsl(var(--warning))",
