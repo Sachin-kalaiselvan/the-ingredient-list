@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        body: ["Manrope", "system-ui", "sans-serif"],
+        brand: ["Orbitron", "Manrope", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +51,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        surface: {
+          DEFAULT: "hsl(var(--surface))",
+          elevated: "hsl(var(--surface-elevated))",
+          soft: "hsl(var(--surface-soft))",
+        },
+        brand: {
+          violet: "hsl(var(--brand-violet))",
+          blue: "hsl(var(--brand-blue))",
+          cyan: "hsl(var(--brand-cyan))",
+        },
+        success: "hsl(var(--success))",
+        warning: "hsl(var(--warning))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -80,10 +96,25 @@ export default {
             height: "0",
           },
         },
+        "float-panel": {
+          "0%, 100%": { transform: "translate3d(0, 0, 0)" },
+          "50%": { transform: "translate3d(0, -10px, 0)" },
+        },
+        "shine-sweep": {
+          "0%": { transform: "translateX(-120%) skewX(-16deg)" },
+          "100%": { transform: "translateX(220%) skewX(-16deg)" },
+        },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(18px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float-panel": "float-panel 6s ease-in-out infinite",
+        "shine-sweep": "shine-sweep 3.8s ease-in-out infinite",
+        "fade-up": "fade-up 0.75s ease-out both",
       },
     },
   },
