@@ -127,9 +127,9 @@ const Index = () => {
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
               <img src={threxaLogo} alt="Threxa Beyond Limits logo" className="mb-8 h-auto w-72 object-contain" />
-              <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-primary">One workspace</p>
-              <h2 className="mt-4 text-4xl font-extrabold leading-tight text-foreground lg:text-5xl">Professional control without the enterprise clutter.</h2>
-              <p className="mt-5 text-lg leading-8 text-muted-foreground">A realistic, boardroom-ready interface for the teams that sell, deliver, and retain customers every week.</p>
+              <p className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary">One thoughtful workspace</p>
+              <h2 className="mt-4 text-4xl font-extrabold leading-tight text-foreground lg:text-5xl">Software that feels like it was made by people, for people.</h2>
+              <p className="mt-5 text-lg leading-8 text-muted-foreground">A professional SaaS experience with warm visuals, clear decisions, and just enough structure to help teams do their best work.</p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {features.map((feature) => (
@@ -153,8 +153,8 @@ const Index = () => {
             <img src={brandBoard} alt="Threxa brand system with logo, colors, and professional mockups" className="rounded-[1.25rem] object-cover" />
           </div>
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-brand-violet">Brand system</p>
-            <h2 className="mt-4 text-4xl font-extrabold leading-tight lg:text-5xl">Same Threxa identity, refined into a credible SaaS experience.</h2>
+            <p className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary">Brand with warmth</p>
+            <h2 className="mt-4 text-4xl font-extrabold leading-tight lg:text-5xl">Same Threxa identity, now softened into something customers can trust.</h2>
             <div className="mt-8 space-y-4">
               {activity.map((item) => (
                 <div key={item} className="flex items-start gap-4 rounded-2xl border border-primary/18 bg-surface-soft/70 p-4 backdrop-blur-xl">
@@ -170,8 +170,8 @@ const Index = () => {
       <section id="pricing" className="px-6 py-20 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-primary">Scale-ready</p>
-            <h2 className="mt-4 text-4xl font-extrabold leading-tight lg:text-5xl">Launch with the tools your team already expects.</h2>
+            <p className="text-sm font-extrabold uppercase tracking-[0.14em] text-primary">Made to grow</p>
+            <h2 className="mt-4 text-4xl font-extrabold leading-tight lg:text-5xl">Everything feels organized, but never cold.</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
             {[{ icon: Users2, text: "Client portals" }, { icon: Globe2, text: "Global dashboards" }, { icon: Zap, text: "Smart automations" }].map((item) => (
