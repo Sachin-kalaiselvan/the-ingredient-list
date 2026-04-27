@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,35 +10,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 36 43% 97%;
+    --foreground: 232 28% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 232 28% 12%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 263 86% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 38 52% 92%;
+    --secondary-foreground: 232 28% 12%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 36 36% 90%;
+    --muted-foreground: 230 12% 43%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 233 93% 61%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 34 24% 84%;
+    --input: 34 24% 84%;
+    --ring: 260 91% 61%;
 
-    --radius: 0.5rem;
+    --surface: 38 60% 96%;
+    --surface-elevated: 0 0% 100%;
+    --surface-soft: 36 43% 91%;
+    --brand-violet: 265 92% 63%;
+    --brand-blue: 230 92% 58%;
+    --brand-cyan: 206 88% 57%;
+    --warm-accent: 29 86% 62%;
+    --success: 152 62% 45%;
+    --warning: 38 94% 56%;
+    --gradient-brand: linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-violet)) 66%, hsl(var(--warm-accent)));
+    --gradient-hero: radial-gradient(circle at 18% 12%, hsl(var(--brand-violet) / 0.16), transparent 32%), radial-gradient(circle at 86% 10%, hsl(var(--warm-accent) / 0.2), transparent 30%), linear-gradient(135deg, hsl(39 54% 96%) 0%, hsl(31 42% 92%) 52%, hsl(226 44% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(38 58% 98% / 0.82));
+    --shadow-glow: 0 24px 70px -36px hsl(var(--brand-violet) / 0.5);
+    --shadow-soft: 0 22px 58px -36px hsl(232 28% 12% / 0.32);
+
+    --radius: 0.875rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +117,49 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: theme('fontFamily.body');
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient-brand {
+    background: var(--gradient-brand);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .font-brand {
+    font-family: theme('fontFamily.brand');
+  }
+
+  .threxa-grid {
+    background-image: linear-gradient(hsl(var(--primary) / 0.12) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.12) 1px, transparent 1px);
+    background-size: 44px 44px;
   }
 }
