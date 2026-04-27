@@ -3,11 +3,11 @@ import {
   BarChart3,
   CheckCircle2,
   ChevronRight,
-  Gauge,
+  HeartHandshake,
   Globe2,
   LockKeyhole,
   Play,
-  Sparkles,
+  SmilePlus,
   Users2,
   Workflow,
   Zap,
@@ -15,26 +15,27 @@ import {
 
 import analyticsPhoto from "@/assets/business-analytics.jpg";
 import brandBoard from "@/assets/threxa-brand-board.png";
+import teamPhoto from "@/assets/team-collaboration.jpg";
 import threxaIcon from "@/assets/threxa-icon.png";
 import threxaLogo from "@/assets/threxa-logo.png";
 import { Button } from "@/components/ui/button";
 
 const metrics = [
-  { value: "42%", label: "faster client reporting" },
-  { value: "18k", label: "workflows automated" },
-  { value: "99.9%", label: "enterprise uptime" },
+  { value: "42%", label: "more time with customers" },
+  { value: "18k", label: "thoughtful workflows shipped" },
+  { value: "99.9%", label: "reliable workdays" },
 ];
 
 const features = [
-  { icon: Workflow, title: "Process intelligence", copy: "Map approvals, tasks, files, and client handoffs in one operational layer." },
-  { icon: BarChart3, title: "Live revenue view", copy: "Track pipeline, expansion, delivery risk, and team output without spreadsheet drift." },
-  { icon: LockKeyhole, title: "Secure workspace", copy: "Role-aware controls, audit trails, and encrypted document hubs for serious teams." },
+  { icon: Workflow, title: "Gentle workflows", copy: "Bring approvals, tasks, files, and client handoffs together without making work feel heavy." },
+  { icon: BarChart3, title: "Clear progress", copy: "See customer health, team focus, and revenue momentum in language everyone understands." },
+  { icon: LockKeyhole, title: "Trusted by design", copy: "Give every teammate the right access with secure spaces that still feel welcoming." },
 ];
 
 const activity = [
-  "Northstar renewal moved to legal review",
-  "Q2 expansion forecast updated by Atlas team",
-  "Risk score dropped after SLA recovery",
+  "Maya sent a warmer onboarding plan to Northstar",
+  "Atlas team celebrated a renewal milestone together",
+  "Customer handoff is ready with notes, owners, and next steps",
 ];
 
 const Index = () => {
