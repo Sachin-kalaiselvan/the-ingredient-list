@@ -41,32 +41,32 @@ const activity = [
 const Index = () => {
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
-      <section className="relative bg-gradient-hero text-secondary-foreground">
-        <div className="absolute inset-0 threxa-grid opacity-30" aria-hidden="true" />
+      <section className="relative bg-gradient-hero text-foreground">
+        <div className="absolute inset-0 threxa-grid opacity-20" aria-hidden="true" />
         <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
           <a href="#top" className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
             <img src={threxaIcon} alt="Threxa icon" className="h-10 w-14 object-contain" />
-            <span className="font-brand text-lg font-bold tracking-[0.34em]">THREXA</span>
+            <span className="font-brand text-lg font-extrabold tracking-[0.18em]">THREXA</span>
           </a>
-          <nav className="hidden items-center gap-8 text-sm font-semibold text-secondary-foreground/72 md:flex">
-            <a href="#platform" className="transition-colors hover:text-secondary-foreground">Platform</a>
-            <a href="#proof" className="transition-colors hover:text-secondary-foreground">Proof</a>
-            <a href="#pricing" className="transition-colors hover:text-secondary-foreground">Plans</a>
+          <nav className="hidden items-center gap-8 text-sm font-semibold text-muted-foreground md:flex">
+            <a href="#platform" className="transition-colors hover:text-foreground">Platform</a>
+            <a href="#proof" className="transition-colors hover:text-foreground">Proof</a>
+            <a href="#pricing" className="transition-colors hover:text-foreground">Plans</a>
           </nav>
           <Button variant="glass" size="sm" className="hidden rounded-full md:inline-flex">Book demo</Button>
         </header>
 
         <div id="top" className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 pb-16 pt-10 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:pb-24 lg:pt-16">
           <div className="max-w-3xl animate-fade-up">
-            <div className="mb-8 flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-surface-elevated/70 px-4 py-2 text-sm font-semibold text-secondary-foreground/82 shadow-glow backdrop-blur-xl">
-              <Sparkles className="h-4 w-4 text-brand-violet" />
-              Beyond limits for modern revenue teams
+            <div className="mb-8 flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-card/85 px-4 py-2 text-sm font-semibold text-muted-foreground shadow-soft backdrop-blur-xl">
+              <SmilePlus className="h-4 w-4 text-primary" />
+              Built with care for growing SaaS teams
             </div>
-            <h1 className="text-balance text-5xl font-extrabold leading-[1.02] tracking-normal text-secondary-foreground sm:text-6xl lg:text-7xl">
-              The command center for high-performing SaaS operations.
+            <h1 className="text-balance text-5xl font-extrabold leading-[1.04] tracking-normal text-foreground sm:text-6xl lg:text-7xl">
+              A calmer way to run your SaaS business.
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-secondary-foreground/72">
-              Threxa brings client work, analytics, approvals, and team execution into a polished operating system built for scale.
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-muted-foreground">
+              Threxa helps teams care for customers, share progress, and keep momentum without losing the human side of work.
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <Button variant="brand" size="lg" className="rounded-full px-7">
@@ -79,8 +79,8 @@ const Index = () => {
             <div className="mt-10 grid max-w-2xl grid-cols-3 gap-4">
               {metrics.map((metric) => (
                 <div key={metric.label} className="border-l border-primary/28 pl-4">
-                  <p className="font-brand text-2xl font-bold text-secondary-foreground">{metric.value}</p>
-                  <p className="mt-1 text-xs font-semibold uppercase leading-5 tracking-[0.12em] text-secondary-foreground/55">{metric.label}</p>
+                  <p className="font-brand text-2xl font-extrabold text-foreground">{metric.value}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase leading-5 tracking-[0.08em] text-muted-foreground">{metric.label}</p>
                 </div>
               ))}
             </div>
