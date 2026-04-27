@@ -87,17 +87,17 @@ const Index = () => {
           </div>
 
           <div className="relative animate-fade-up [animation-delay:160ms]">
-            <div className="group relative overflow-hidden rounded-[1.75rem] border border-primary/25 bg-surface-elevated/74 p-3 shadow-glow backdrop-blur-xl transition-transform duration-500 hover:-translate-y-2 motion-reduce:hover:translate-y-0">
-              <img src={analyticsPhoto} alt="Business analytics dashboard in a professional office" className="h-[520px] w-full rounded-[1.35rem] object-cover" />
-              <div className="absolute inset-3 rounded-[1.35rem] bg-gradient-to-t from-surface via-surface/28 to-transparent" aria-hidden="true" />
-              <div className="absolute bottom-8 left-8 right-8 rounded-2xl border border-primary/20 bg-card/92 p-5 text-card-foreground shadow-soft backdrop-blur-xl">
+            <div className="group relative overflow-hidden rounded-[1.75rem] border border-primary/15 bg-card/76 p-3 shadow-soft backdrop-blur-xl transition-transform duration-500 hover:-translate-y-2 motion-reduce:hover:translate-y-0">
+              <img src={teamPhoto} alt="SaaS team collaborating in a warm modern office" className="h-[520px] w-full rounded-[1.35rem] object-cover" />
+              <div className="absolute inset-3 rounded-[1.35rem] bg-gradient-to-t from-foreground/45 via-foreground/8 to-transparent" aria-hidden="true" />
+              <div className="absolute bottom-8 left-8 right-8 rounded-2xl border border-primary/15 bg-card/94 p-5 text-card-foreground shadow-soft backdrop-blur-xl">
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <p className="text-sm font-bold text-muted-foreground">Operational health</p>
+                    <p className="text-sm font-bold text-muted-foreground">Customer care score</p>
                     <p className="mt-1 text-3xl font-extrabold">94.8%</p>
                   </div>
                   <div className="rounded-full bg-gradient-brand p-3 text-primary-foreground shadow-glow">
-                    <Gauge className="h-6 w-6" />
+                    <HeartHandshake className="h-6 w-6" />
                   </div>
                 </div>
                 <div className="mt-5 grid grid-cols-3 gap-2">
@@ -109,12 +109,12 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute -right-5 top-12 hidden w-56 animate-float-panel rounded-2xl border border-primary/20 bg-card/95 p-4 shadow-soft backdrop-blur-xl lg:block">
+            <div className="absolute -right-5 top-12 hidden w-56 animate-float-panel rounded-2xl border border-primary/15 bg-card/95 p-4 shadow-soft backdrop-blur-xl lg:block">
               <div className="flex items-center gap-3">
                 <div className="rounded-xl bg-gradient-brand p-2 text-primary-foreground"><Zap className="h-4 w-4" /></div>
                 <div>
-                  <p className="text-sm font-extrabold">Automation live</p>
-                  <p className="text-xs text-muted-foreground">12 tasks routed</p>
+                  <p className="text-sm font-extrabold">Follow-up ready</p>
+                  <p className="text-xs text-muted-foreground">12 customers helped</p>
                 </div>
               </div>
             </div>
