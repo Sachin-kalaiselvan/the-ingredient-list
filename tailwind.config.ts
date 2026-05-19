@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ["Manrope", "system-ui", "sans-serif"],
-        brand: ["Plus Jakarta Sans", "Manrope", "sans-serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
+        brand: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
