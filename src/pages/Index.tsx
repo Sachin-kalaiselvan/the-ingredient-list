@@ -291,10 +291,10 @@ const Index = () => {
       <section id="studio" className="relative bg-gradient-warm px-6 py-32 lg:px-10">
         <div className="absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-brand opacity-15 blur-[140px]" aria-hidden="true" />
         <div className="relative mx-auto max-w-4xl text-center">
-          <div className="relative mx-auto mb-10 flex h-28 w-28 items-center justify-center">
+          <div className="relative mx-auto mb-10 flex h-32 w-32 items-center justify-center">
             <div className="ring-glow absolute inset-0 rounded-full" />
-            <div className="relative flex h-24 w-24 items-center justify-center rounded-full border border-border bg-card shadow-card">
-              <img src={tilLogo} alt="" className="h-14 w-auto object-contain" />
+            <div className="relative flex h-28 w-28 items-center justify-center rounded-full border border-border bg-card shadow-card">
+              <img src={tilLogo} alt="" className="h-24 w-24 rounded-full object-contain p-1.5" />
             </div>
           </div>
           <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-6xl">
