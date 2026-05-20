@@ -101,8 +101,15 @@ const Index = () => {
         <div className="absolute left-1/2 top-[-14rem] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-gradient-brand opacity-15 blur-[140px]" aria-hidden="true" />
 
         <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
-          <a href="#top" className="flex items-center gap-3">
-            <img src={tilLogo} alt="The Ingredient List" className="h-16 w-auto object-contain md:h-20" />
+          <a href="#top" className="group flex items-center gap-3">
+            <img
+              src={tilLogo}
+              alt="The Ingredient List"
+              className="h-14 w-14 rounded-full object-contain ring-1 ring-border bg-card/70 p-1 shadow-card backdrop-blur-md transition-transform duration-500 group-hover:rotate-3 md:h-16 md:w-16"
+            />
+            <span className="hidden font-brand text-base font-extrabold tracking-tight sm:inline">
+              The Ingredient List
+            </span>
           </a>
           <nav className="hidden items-center gap-10 text-sm font-medium text-muted-foreground md:flex">
             <a href="#work" className="transition-colors hover:text-foreground">Work</a>
@@ -284,10 +291,10 @@ const Index = () => {
       <section id="studio" className="relative bg-gradient-warm px-6 py-32 lg:px-10">
         <div className="absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-brand opacity-15 blur-[140px]" aria-hidden="true" />
         <div className="relative mx-auto max-w-4xl text-center">
-          <div className="relative mx-auto mb-10 flex h-28 w-28 items-center justify-center">
+          <div className="relative mx-auto mb-10 flex h-32 w-32 items-center justify-center">
             <div className="ring-glow absolute inset-0 rounded-full" />
-            <div className="relative flex h-24 w-24 items-center justify-center rounded-full border border-border bg-card shadow-card">
-              <img src={tilLogo} alt="" className="h-14 w-auto object-contain" />
+            <div className="relative flex h-28 w-28 items-center justify-center rounded-full border border-border bg-card shadow-card">
+              <img src={tilLogo} alt="" className="h-24 w-24 rounded-full object-contain p-1.5" />
             </div>
           </div>
           <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-6xl">
@@ -310,7 +317,8 @@ const Index = () => {
       <footer className="border-t border-border bg-background px-6 py-10 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-sm text-muted-foreground md:flex-row">
           <div className="flex items-center gap-3">
-            <img src={tilLogo} alt="The Ingredient List" className="h-12 w-auto object-contain" />
+            <img src={tilLogo} alt="The Ingredient List" className="h-10 w-10 rounded-full object-contain ring-1 ring-border bg-card p-1" />
+            <span className="font-brand text-sm font-extrabold tracking-tight text-foreground">The Ingredient List</span>
           </div>
           <p>© {new Date().getFullYear()} The Ingredient List. Crafted in-house.</p>
         </div>
