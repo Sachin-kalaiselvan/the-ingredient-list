@@ -317,7 +317,8 @@ const Index = () => {
       <footer className="border-t border-border bg-background px-6 py-10 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-sm text-muted-foreground md:flex-row">
           <div className="flex items-center gap-3">
-            <img src={tilLogo} alt="The Ingredient List" className="h-12 w-auto object-contain" />
+            <img src={tilLogo} alt="The Ingredient List" className="h-10 w-10 rounded-full object-contain ring-1 ring-border bg-card p-1" />
+            <span className="font-brand text-sm font-extrabold tracking-tight text-foreground">The Ingredient List</span>
           </div>
           <p>© {new Date().getFullYear()} The Ingredient List. Crafted in-house.</p>
         </div>
