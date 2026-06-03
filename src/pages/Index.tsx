@@ -11,7 +11,7 @@ import {
   Users,
   Globe,
   Star,
-  Package,
+  Check,
   Mail,
   Phone,
   Calendar,
@@ -21,7 +21,6 @@ import tilLogo from "@/assets/til-logo.png";
 import projectJkp from "@/assets/project-jkpadmalaya.png";
 import projectSierra from "@/assets/project-sierra.png";
 import projectThrexa from "@/assets/project-threxa.png";
-import projectSmart from "@/assets/project-smartpackaging.png";
 import { Button } from "@/components/ui/button";
 
 const projects = [
