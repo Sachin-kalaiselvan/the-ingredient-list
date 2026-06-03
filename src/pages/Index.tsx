@@ -133,12 +133,6 @@ const pricing = [
   },
 ];
 
-const stats = [
-  { value: "30+", label: "Brands shaped" },
-  { value: "8 yrs", label: "Crafting digital" },
-  { value: "100%", label: "In-house build" },
-];
-
 const EMAIL = "theingredientlist.co@gmail.com";
 const WHATSAPP = "+91 74839 92418";
 const CAL = "https://cal.com/threxa/design-audit";
@@ -199,17 +193,17 @@ const Index = () => {
                   <div className={`relative ${reversed ? "lg:order-2" : ""}`}>
                     <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-brand opacity-10 blur-3xl transition-opacity duration-500 group-hover:opacity-25" aria-hidden="true" />
 
-                    
+                    <a
                       href={p.href}
                       target="_blank"
                       rel="noreferrer"
                       className="relative block overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-transform duration-700 ease-out hover:-translate-y-1"
                     >
                       <div className="browser-chrome flex items-center gap-2 px-4 py-3">
-                        <span className="h-2.5 w-2.5 rounded-full bg-[hsl(0_75%_65%)]" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-[hsl(40_85%_60%)]" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-[hsl(140_50%_55%)]" />
-                        <div className="ml-3 flex-1 truncate rounded-md bg-card/70 px-3 py-1 text-left text-[11px] font-medium text-muted-foreground">
+                        <span className="h-2.5 w-2.5 rounded-full bg-red-500" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-yellow-500" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
+                        <div className="ml-3 flex-1 truncate rounded-md bg-card/70 px-3 py-1 text-left text-xs font-medium text-muted-foreground">
                           {p.url}
                         </div>
                       </div>
@@ -217,7 +211,7 @@ const Index = () => {
                         <img
                           src={p.image}
                           alt={`${p.name} website preview`}
-                          className="aspect-[16/10] w-full object-cover object-top transition-transform duration-[1.2s] ease-out group-hover:scale-[1.04]"
+                          className="aspect-video w-full object-cover object-top transition-transform duration-1000 ease-out group-hover:scale-105"
                           loading="lazy"
                         />
                       </div>
@@ -241,7 +235,7 @@ const Index = () => {
                     </div>
                   </div>
 
-                  <div className={`${reversed ? "lg:order-1" : ""}`}>
+                  <div className={reversed ? "lg:order-1" : ""}>
                     <div className="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em]">
                       <span className="text-primary">{p.tag}</span>
                       <span className="h-px w-8 bg-border" />
@@ -249,7 +243,7 @@ const Index = () => {
                     </div>
                     <h3 className="font-brand text-4xl font-extrabold leading-tight lg:text-5xl">{p.name}</h3>
                     <p className="mt-5 max-w-lg text-base leading-7 text-muted-foreground">{p.description}</p>
-                    
+                    <a
                       href={p.href}
                       target="_blank"
                       rel="noreferrer"
@@ -381,7 +375,7 @@ const Index = () => {
 
       {/* CONTACT */}
       <section id="contact" className="relative bg-background px-6 py-32 lg:px-10">
-        <div className="absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-brand opacity-10 blur-[140px]" aria-hidden="true" />
+        <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-brand opacity-10 blur-3xl" aria-hidden="true" />
         <div className="relative mx-auto max-w-4xl text-center">
           <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-6xl">
             Have something <span className="text-gradient-brand">worth building</span>?
@@ -391,7 +385,7 @@ const Index = () => {
           </p>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            
+            <a
               href={`mailto:${EMAIL}`}
               className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow"
             >
@@ -399,7 +393,7 @@ const Index = () => {
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Email</span>
               <span className="break-all font-medium">{EMAIL}</span>
             </a>
-            
+            <a
               href="https://wa.me/917483992418"
               target="_blank"
               rel="noreferrer"
@@ -409,7 +403,7 @@ const Index = () => {
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">WhatsApp</span>
               <span className="font-medium">{WHATSAPP}</span>
             </a>
-            
+            <a
               href={CAL}
               target="_blank"
               rel="noreferrer"
