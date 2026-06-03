@@ -15,15 +15,29 @@ import {
   Mail,
   Phone,
   Calendar,
+  PackageCheck,
 } from "lucide-react";
 
 import tilLogo from "@/assets/til-logo.png";
 import projectJkp from "@/assets/project-jkpadmalaya.png";
 import projectSierra from "@/assets/project-sierra.png";
 import projectThrexa from "@/assets/project-threxa.png";
+import projectSmartPackaging from "@/assets/project-smartpackaging.png";
 import { Button } from "@/components/ui/button";
 
 const projects = [
+  {
+    name: "Smart Packaging Solutions",
+    tag: "Manufacturing · B2B",
+    year: "2026",
+    description:
+      "Bengaluru's trusted packaging partner since 2012 — a conversion-tuned site for corrugated cartons and printed mono boxes that moves RFQs from enquiry to order.",
+    image: projectSmartPackaging,
+    url: "smartpackagingsolutions.in",
+    href: "https://www.smartpackagingsolutions.in/",
+    stat: { icon: PackageCheck, label: "Boxes / year", value: "2M+" },
+    chip: { icon: Star, label: "500+ brands served" },
+  },
   {
     name: "JKP Padmalaya",
     tag: "Hospitality · Heritage",
