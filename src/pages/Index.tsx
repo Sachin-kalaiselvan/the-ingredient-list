@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero";
 import { useEffect, useRef } from "react";
 import {
   ArrowRight,
@@ -167,64 +168,8 @@ const Index = () => {
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
-      {/* HERO */}
-      <section className="relative bg-gradient-hero">
-        <div className="absolute inset-0 til-grid opacity-70" aria-hidden="true" />
-        <div className="absolute left-1/2 top-[-14rem] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-gradient-brand opacity-15 blur-[140px]" aria-hidden="true" />
-
-        <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-7 lg:px-10 lg:py-9">
-          <a href="#top" aria-label="The Ingredient List — home" className="group -my-2 flex items-center">
-            <img
-              src={tilLogo}
-              alt="The Ingredient List"
-              className="h-16 w-auto object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.02] sm:h-20 md:h-24 lg:h-28"
-              style={{ marginTop: "-2px" }}
-            />
-          </a>
-          <nav className="hidden items-center gap-10 text-sm font-medium text-muted-foreground md:flex">
-            <a href="#work" className="transition-colors hover:text-foreground">Work</a>
-            <a href="#services" className="transition-colors hover:text-foreground">Services</a>
-            <a href="#pricing" className="transition-colors hover:text-foreground">Pricing</a>
-            <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
-          </nav>
-          <Button asChild variant="glass" size="sm" className="hidden rounded-full md:inline-flex">
-            <a href={`mailto:${EMAIL}`}>Start a project</a>
-          </Button>
-        </header>
-
-        <div id="top" className="relative z-10 mx-auto max-w-7xl px-6 pb-28 pt-16 text-center lg:px-10 lg:pt-24">
-          <div className="mx-auto mb-8 flex w-fit items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2 text-xs font-medium tracking-wide text-muted-foreground shadow-card backdrop-blur-xl">
-            <Sparkles className="h-3.5 w-3.5 text-primary" />
-            A design + engineering studio
-          </div>
-
-          <h1 className="mx-auto max-w-5xl text-balance font-brand text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-            We build digital products{" "}
-            <span className="text-gradient-brand">worth listing</span> as your best work.
-          </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
-            A small studio shaping brands, products and stories for ambitious founders — from heritage hospitality to aerospace and commerce infrastructure.
-          </p>
-
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button asChild variant="brand" size="lg" className="rounded-full px-7">
-              <a href="#work">See our work <ArrowRight className="h-4 w-4" /></a>
-            </Button>
-            <Button asChild variant="glass" size="lg" className="rounded-full px-7">
-              <a href={CAL} target="_blank" rel="noreferrer"><Play className="h-4 w-4" /> Book a 15-min call</a>
-            </Button>
-          </div>
-
-          <div className="mx-auto mt-20 grid max-w-2xl grid-cols-3 gap-6">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <p className="font-brand text-3xl font-extrabold text-gradient-brand">{s.value}</p>
-                <p className="mt-2 text-xs uppercase tracking-[0.14em] text-muted-foreground">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* NEW HERO SECTION */}
+      <Hero />
 
       {/* WORK */}
       <section id="work" className="relative bg-gradient-warm px-6 py-28 lg:px-10">
@@ -254,7 +199,7 @@ const Index = () => {
                   <div className={`relative ${reversed ? "lg:order-2" : ""}`}>
                     <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-brand opacity-10 blur-3xl transition-opacity duration-500 group-hover:opacity-25" aria-hidden="true" />
 
-                    <a
+                    
                       href={p.href}
                       target="_blank"
                       rel="noreferrer"
@@ -304,7 +249,7 @@ const Index = () => {
                     </div>
                     <h3 className="font-brand text-4xl font-extrabold leading-tight lg:text-5xl">{p.name}</h3>
                     <p className="mt-5 max-w-lg text-base leading-7 text-muted-foreground">{p.description}</p>
-                    <a
+                    
                       href={p.href}
                       target="_blank"
                       rel="noreferrer"
@@ -446,7 +391,7 @@ const Index = () => {
           </p>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            <a
+            
               href={`mailto:${EMAIL}`}
               className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow"
             >
@@ -454,7 +399,7 @@ const Index = () => {
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Email</span>
               <span className="break-all font-medium">{EMAIL}</span>
             </a>
-            <a
+            
               href="https://wa.me/917483992418"
               target="_blank"
               rel="noreferrer"
@@ -464,7 +409,7 @@ const Index = () => {
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">WhatsApp</span>
               <span className="font-medium">{WHATSAPP}</span>
             </a>
-            <a
+            
               href={CAL}
               target="_blank"
               rel="noreferrer"
