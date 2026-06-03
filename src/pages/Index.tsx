@@ -172,12 +172,13 @@ const Index = () => {
         <div className="absolute inset-0 til-grid opacity-70" aria-hidden="true" />
         <div className="absolute left-1/2 top-[-14rem] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-gradient-brand opacity-15 blur-[140px]" aria-hidden="true" />
 
-        <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
-          <a href="#top" className="group flex items-center">
+        <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-7 lg:px-10 lg:py-9">
+          <a href="#top" aria-label="The Ingredient List — home" className="group -my-2 flex items-center">
             <img
               src={tilLogo}
               alt="The Ingredient List"
-              className="h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] md:h-16"
+              className="h-16 w-auto object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.02] sm:h-20 md:h-24 lg:h-28"
+              style={{ marginTop: "-2px" }}
             />
           </a>
           <nav className="hidden items-center gap-10 text-sm font-medium text-muted-foreground md:flex">
@@ -479,7 +480,7 @@ const Index = () => {
 
       <footer className="border-t border-border bg-background px-6 py-12 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-sm text-muted-foreground md:flex-row">
-          <img src={tilLogo} alt="The Ingredient List" className="h-12 w-auto object-contain md:h-14" />
+          <img src={tilLogo} alt="The Ingredient List" className="h-16 w-auto object-contain mix-blend-multiply md:h-20" />
           <p>© {new Date().getFullYear()} The Ingredient List. Crafted in-house.</p>
         </div>
       </footer>
