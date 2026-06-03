@@ -15,15 +15,29 @@ import {
   Mail,
   Phone,
   Calendar,
+  PackageCheck,
 } from "lucide-react";
 
 import tilLogo from "@/assets/til-logo.png";
 import projectJkp from "@/assets/project-jkpadmalaya.png";
 import projectSierra from "@/assets/project-sierra.png";
 import projectThrexa from "@/assets/project-threxa.png";
+import projectSmartPackaging from "@/assets/project-smartpackaging.png";
 import { Button } from "@/components/ui/button";
 
 const projects = [
+  {
+    name: "Smart Packaging Solutions",
+    tag: "Manufacturing · B2B",
+    year: "2026",
+    description:
+      "Bengaluru's trusted packaging partner since 2012 — a conversion-tuned site for corrugated cartons and printed mono boxes that moves RFQs from enquiry to order.",
+    image: projectSmartPackaging,
+    url: "smartpackagingsolutions.in",
+    href: "https://www.smartpackagingsolutions.in/",
+    stat: { icon: PackageCheck, label: "Boxes / year", value: "2M+" },
+    chip: { icon: Star, label: "500+ brands served" },
+  },
   {
     name: "JKP Padmalaya",
     tag: "Hospitality · Heritage",
@@ -31,8 +45,8 @@ const projects = [
     description:
       "A cinematic farmstay experience tucked into Kerala's spice country — editorial typography, immersive imagery, and a booking flow that feels like a deep breath.",
     image: projectJkp,
-    url: "jkpadmalaya.lovable.app",
-    href: "https://jkpadmalaya.lovable.app",
+    url: "jkpadmalaya.com",
+    href: "https://jkpadmalaya.com",
     stat: { icon: Users, label: "Bookings", value: "+212%" },
     chip: { icon: Star, label: "4.9 guest score" },
   },
@@ -66,6 +80,34 @@ const services = [
   { icon: Palette, title: "Brand & Identity", copy: "Logos, type systems, and visual languages that hold their own at every scale." },
   { icon: Layers, title: "Product Design", copy: "Web and product surfaces that feel inevitable — quiet, considered, alive." },
   { icon: Code2, title: "Engineering", copy: "Fast, accessible, conversion-tuned builds. Shipped without drama." },
+];
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Discovery",
+    description: "Understand business goals, challenges, audience, and opportunities.",
+  },
+  {
+    number: "02",
+    title: "Strategy",
+    description: "Define project scope, user journey, content structure, and technical requirements.",
+  },
+  {
+    number: "03",
+    title: "Design",
+    description: "Craft a modern, conversion-focused user experience and visual identity.",
+  },
+  {
+    number: "04",
+    title: "Build",
+    description: "Develop the website, automation systems, integrations, and performance optimizations.",
+  },
+  {
+    number: "05",
+    title: "Launch & Support",
+    description: "Deploy, test, monitor, and provide ongoing improvements.",
+  },
 ];
 
 const integrations = [
@@ -158,17 +200,19 @@ const Index = () => {
         <div className="absolute inset-0 til-grid opacity-70" aria-hidden="true" />
         <div className="absolute left-1/2 top-[-14rem] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-gradient-brand opacity-15 blur-[140px]" aria-hidden="true" />
 
-        <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
-          <a href="#top" className="group flex items-center">
+        <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-7 lg:px-10 lg:py-9">
+          <a href="#top" aria-label="The Ingredient List — home" className="group -my-2 flex items-center">
             <img
               src={tilLogo}
               alt="The Ingredient List"
-              className="h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] md:h-16"
+              className="h-16 w-auto object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.02] sm:h-20 md:h-24 lg:h-28"
+              style={{ marginTop: "-2px" }}
             />
           </a>
           <nav className="hidden items-center gap-10 text-sm font-medium text-muted-foreground md:flex">
             <a href="#work" className="transition-colors hover:text-foreground">Work</a>
             <a href="#services" className="transition-colors hover:text-foreground">Services</a>
+            <a href="#process" className="transition-colors hover:text-foreground">Process</a>
             <a href="#pricing" className="transition-colors hover:text-foreground">Pricing</a>
             <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
           </nav>
@@ -180,23 +224,23 @@ const Index = () => {
         <div id="top" className="relative z-10 mx-auto max-w-7xl px-6 pb-28 pt-16 text-center lg:px-10 lg:pt-24">
           <div className="mx-auto mb-8 flex w-fit items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2 text-xs font-medium tracking-wide text-muted-foreground shadow-card backdrop-blur-xl">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
-            A design + engineering studio
+            Websites • AI Systems • Automation
           </div>
 
           <h1 className="mx-auto max-w-5xl text-balance font-brand text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-            We build digital products{" "}
-            <span className="text-gradient-brand">worth listing</span> as your best work.
+            Websites and AI systems{" "}
+            <span className="text-gradient-brand">built to help businesses grow</span>.
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
-            A small studio shaping brands, products and stories for ambitious founders — from heritage hospitality to aerospace and commerce infrastructure.
+            We help businesses launch high-performing websites, automate repetitive work, and create digital experiences that drive measurable growth.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button asChild variant="brand" size="lg" className="rounded-full px-7">
-              <a href="#work">See our work <ArrowRight className="h-4 w-4" /></a>
+              <a href={CAL} target="_blank" rel="noreferrer">Book a Free Strategy Call <ArrowRight className="h-4 w-4" /></a>
             </Button>
             <Button asChild variant="glass" size="lg" className="rounded-full px-7">
-              <a href={CAL} target="_blank" rel="noreferrer"><Play className="h-4 w-4" /> Book a 15-min call</a>
+              <a href="#work"><Play className="h-4 w-4" /> View Our Work</a>
             </Button>
           </div>
 
@@ -246,10 +290,10 @@ const Index = () => {
                       className="relative block overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-transform duration-700 ease-out hover:-translate-y-1"
                     >
                       <div className="browser-chrome flex items-center gap-2 px-4 py-3">
-                        <span className="h-2.5 w-2.5 rounded-full bg-[hsl(0_75%_65%)]" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-[hsl(40_85%_60%)]" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-[hsl(140_50%_55%)]" />
-                        <div className="ml-3 flex-1 truncate rounded-md bg-card/70 px-3 py-1 text-left text-[11px] font-medium text-muted-foreground">
+                        <span className="h-2.5 w-2.5 rounded-full bg-red-500" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-yellow-500" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
+                        <div className="ml-3 flex-1 truncate rounded-md bg-card/70 px-3 py-1 text-left text-xs font-medium text-muted-foreground">
                           {p.url}
                         </div>
                       </div>
@@ -257,7 +301,7 @@ const Index = () => {
                         <img
                           src={p.image}
                           alt={`${p.name} website preview`}
-                          className="aspect-[16/10] w-full object-cover object-top transition-transform duration-[1.2s] ease-out group-hover:scale-[1.04]"
+                          className="aspect-video w-full object-cover object-top transition-transform duration-1000 ease-out group-hover:scale-105"
                           loading="lazy"
                         />
                       </div>
@@ -281,7 +325,7 @@ const Index = () => {
                     </div>
                   </div>
 
-                  <div className={`${reversed ? "lg:order-1" : ""}`}>
+                  <div className={reversed ? "lg:order-1" : ""}>
                     <div className="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em]">
                       <span className="text-primary">{p.tag}</span>
                       <span className="h-px w-8 bg-border" />
@@ -364,18 +408,101 @@ const Index = () => {
         </div>
       </section>
 
-      {/* PRICING */}
-      <section id="pricing" className="relative border-t border-border bg-gradient-warm px-6 py-28 lg:px-10">
+      {/* PROCESS */}
+      <section id="process" className="relative border-t border-border bg-gradient-warm px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="mx-auto mb-16 max-w-2xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Transparent pricing</p>
-            <h2 className="mt-4 font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
-              Honest scope. <span className="text-gradient-brand">Fixed price.</span>
+          {/* Section Header */}
+          <div className="mb-20 text-center">
+            <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
+              How We <span className="text-gradient-brand">Work</span>
             </h2>
-            <p className="mt-5 text-muted-foreground">
-              No surprise invoices. Pick the engagement that fits — we'll quote the exact number before kickoff.
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+              A simple, transparent process from idea to launch.
             </p>
           </div>
+
+          {/* Desktop Timeline */}
+          <div className="hidden lg:block">
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-0 right-0 top-20 h-1 bg-gradient-to-r from-primary/20 via-primary/50 to-primary/20" aria-hidden="true" />
+
+              {/* Steps */}
+              <div className="relative grid grid-cols-5 gap-6">
+                {processSteps.map((step, index) => (
+                  <div key={step.number} className="flex flex-col items-center">
+                    {/* Step number circle */}
+                    <div className="relative z-10 mb-12 flex h-20 w-20 items-center justify-center rounded-full border-2 border-primary/30 bg-card shadow-card transition-all duration-300 hover:border-primary/60 hover:shadow-glow">
+                      <span className="font-brand text-2xl font-extrabold text-gradient-brand">{step.number}</span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="text-center">
+                      <h3 className="font-brand text-xl font-extrabold text-foreground">{step.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Timeline */}
+          <div className="lg:hidden">
+            <div className="relative space-y-8 pl-8">
+              {/* Timeline line */}
+              <div className="absolute left-3.5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20" aria-hidden="true" />
+
+              {/* Steps */}
+              {processSteps.map((step) => (
+                <div key={step.number} className="relative">
+                  {/* Step number circle */}
+                  <div className="absolute -left-7 top-0 flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary/40 bg-card shadow-card">
+                    <span className="font-brand text-sm font-extrabold text-gradient-brand">{step.number}</span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="rounded-2xl border border-border bg-card/50 p-6 backdrop-blur-sm">
+                    <h3 className="font-brand text-lg font-extrabold text-foreground">{step.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Closing Statement */}
+          <div className="mt-20 rounded-2xl border border-border bg-gradient-card p-8 text-center shadow-card lg:p-12">
+            <p className="text-lg leading-8 text-foreground">
+              <span className="font-semibold">Every project is handled directly by the founder</span> to ensure quality, speed, and clear communication throughout the process.
+            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-12 flex justify-center">
+            <Button
+              asChild
+              variant="brand"
+              size="lg"
+              className="rounded-full px-8"
+            >
+              <a href={CAL} target="_blank" rel="noreferrer">
+                Start Your Project
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="relative border-t border-border bg-background px-6 py-28 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto mb-16 max-w-2xl text-center" />
 
           <div className="grid gap-6 lg:grid-cols-3">
             {pricing.map((tier, i) => (
@@ -429,7 +556,7 @@ const Index = () => {
 
       {/* CONTACT */}
       <section id="contact" className="relative bg-background px-6 py-32 lg:px-10">
-        <div className="absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-brand opacity-10 blur-[140px]" aria-hidden="true" />
+        <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-brand opacity-10 blur-3xl" aria-hidden="true" />
         <div className="relative mx-auto max-w-4xl text-center">
           <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-6xl">
             Have something <span className="text-gradient-brand">worth building</span>?
@@ -473,7 +600,7 @@ const Index = () => {
 
       <footer className="border-t border-border bg-background px-6 py-12 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-sm text-muted-foreground md:flex-row">
-          <img src={tilLogo} alt="The Ingredient List" className="h-12 w-auto object-contain md:h-14" />
+          <img src={tilLogo} alt="The Ingredient List" className="h-16 w-auto object-contain mix-blend-multiply md:h-20" />
           <p>© {new Date().getFullYear()} The Ingredient List. Crafted in-house.</p>
         </div>
       </footer>
