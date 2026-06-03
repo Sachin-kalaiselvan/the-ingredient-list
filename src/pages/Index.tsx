@@ -114,57 +114,43 @@ const processSteps = [
 const articles = [
   {
     id: 1,
-    title: "How AI Automation Saves Small Businesses Hours Every Week",
-    summary: "Discover practical ways to eliminate repetitive tasks, reduce manual work, and free up your team to focus on strategic growth.",
+    title: "How AI Automation Saves Businesses Hours Every Week",
+    summary: "Eliminate repetitive tasks and free up your team to focus on growth.",
     category: "Automation",
-    readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1677442d019cecf8e5c5b4ef1ea9d123?w=800&h=450&fit=crop",
+    readTime: "8 min",
     slug: "ai-automation-saves-hours",
   },
   {
     id: 2,
-    title: "The Anatomy of a High-Converting Business Website",
-    summary: "Learn the key elements that separate websites that generate leads from those that just exist. Psychology, design, and strategy combined.",
+    title: "The Anatomy of a High-Converting Website",
+    summary: "Learn what separates websites that generate leads from those that don't.",
     category: "Design",
-    readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=450&fit=crop",
-    slug: "high-converting-website-anatomy",
+    readTime: "10 min",
+    slug: "high-converting-website",
   },
   {
     id: 3,
-    title: "5 Costly Website Mistakes Most Businesses Make",
-    summary: "Avoid these common pitfalls that drain budget and kill conversions. From technical issues to UX failures—we cover what to avoid.",
-    category: "Web Design",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop",
-    slug: "costly-website-mistakes",
-  },
-  {
-    id: 4,
-    title: "Choosing the Right Tech Stack for Your Business Website",
-    summary: "Frontend, backend, hosting, and tools—we break down the decisions that affect your site's performance, maintenance, and scale.",
+    title: "Choosing Your Tech Stack: A Strategic Guide",
+    summary: "Frontend, backend, hosting — decisions that affect performance and scale.",
     category: "Technology",
-    readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=450&fit=crop",
+    readTime: "12 min",
     slug: "tech-stack-guide",
   },
   {
-    id: 5,
-    title: "When Should a Business Invest in Automation?",
-    summary: "Is automation right for your business? We break down the signs, ROI calculations, and exactly when to make the investment.",
+    id: 4,
+    title: "When Should You Invest in Automation?",
+    summary: "Signs, ROI calculations, and exactly when to make the investment.",
     category: "Strategy",
-    readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=450&fit=crop",
-    slug: "when-to-invest-automation",
+    readTime: "9 min",
+    slug: "when-to-automate",
   },
 ];
 
 const categoryColors: Record<string, string> = {
-  Automation: "bg-purple-100 text-purple-700 border-purple-200",
-  Design: "bg-orange-100 text-orange-700 border-orange-200",
-  "Web Design": "bg-blue-100 text-blue-700 border-blue-200",
-  Technology: "bg-green-100 text-green-700 border-green-200",
-  Strategy: "bg-pink-100 text-pink-700 border-pink-200",
+  Automation: "bg-purple-100/50 text-purple-700 border-purple-200/50",
+  Design: "bg-orange-100/50 text-orange-700 border-orange-200/50",
+  Technology: "bg-green-100/50 text-green-700 border-green-200/50",
+  Strategy: "bg-pink-100/50 text-pink-700 border-pink-200/50",
 };
 
 const testimonials = [
@@ -173,7 +159,6 @@ const testimonials = [
     name: "Rajesh Kumar",
     company: "Smart Packaging Solutions",
     role: "Founder & Director",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
     testimonial:
       "Sachin transformed our online presence completely. The website not only looks premium but converts like crazy. Within 3 months, we saw 40% more qualified RFQs. The entire process was transparent and communication was exceptional.",
     project: "Website Redesign",
@@ -184,7 +169,6 @@ const testimonials = [
     name: "Priya Sharma",
     company: "JKP Padmalaya",
     role: "Co-Founder",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
     testimonial:
       "Working with The Ingredient List was a game-changer for our farmstay business. The website captures the essence of our brand beautifully. Our booking rate increased by 212% in the first quarter. Highly recommend!",
     project: "Luxury Hospitality Website",
@@ -195,7 +179,6 @@ const testimonials = [
     name: "Vikram Patel",
     company: "Sierra Aerospace",
     role: "VP Marketing",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop",
     testimonial:
       "The team built us an enterprise-grade website that perfectly communicates our technical expertise to global markets. We now have clients in 11 countries. The attention to detail and understanding of B2B positioning was incredible.",
     project: "Enterprise Marketing Site",
@@ -206,91 +189,84 @@ const testimonials = [
     name: "Ananya Desai",
     company: "D2C Commerce Brand",
     role: "CEO",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
     testimonial:
       "The automation workflows Sachin built saved us 15+ hours per week. Our Shopify + Tally + WhatsApp integration is seamless. The founder-led approach means we got genuine strategy, not generic solutions.",
     project: "Workflow Automation",
     rating: 5,
   },
-  {
-    id: 5,
-    name: "Arjun Singh",
-    company: "Tech Startup",
-    role: "Founder",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
-    testimonial:
-      "From discovery to launch, everything was handled professionally. The team understood our vision immediately and delivered a website that sells our product better than we could have imagined. ROI was positive within 6 weeks.",
-    project: "SaaS Landing Page",
-    rating: 5,
-  },
-  {
-    id: 6,
-    name: "Sneha Gupta",
-    company: "E-Commerce Collective",
-    role: "Director of Operations",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
-    testimonial:
-      "Best decision we made this year. The website not only looks incredible but the custom integrations work flawlessly. Customer support is outstanding and responsive. Worth every rupee spent.",
-    project: "Full-Stack E-Commerce",
-    rating: 5,
-  },
 ];
 
 const trustMarkers = [
-  { icon: "★★★★★", label: "Client Satisfaction", description: "Average 4.9/5 rating" },
-  { icon: "⚡", label: "Fast Communication", description: "48-hour response time" },
-  { icon: "👨‍💼", label: "Founder-Led Execution", description: "Direct involvement on every project" },
-  { icon: "🎯", label: "Custom Solutions", description: "No templates, no shortcuts" },
-];
-
-const integrations = [
-  "Shopify", "Tally", "Razorpay", "Shiprocket", "WhatsApp", "Slack", "Stripe", "Supabase",
+  { label: "Client Satisfaction", value: "4.9/5", description: "Average rating across all projects" },
+  { label: "Average Timeline", value: "2-4 weeks", description: "From kickoff to launch" },
+  { label: "Direct Founder", value: "100%", description: "Lead involvement on every project" },
+  { label: "Custom Built", value: "0%", description: "Template usage - everything custom" },
 ];
 
 const pricing = [
   {
     name: "Starter",
-    price: "₹16K – 22K",
-    period: "1–2 weeks",
-    description: "Ideal for MVPs and early-stage launches.",
+    price: "₹16,000",
+    period: "One-time",
+    duration: "1–2 weeks",
+    description: "Perfect for validating your idea quickly.",
     features: [
-      "Single landing page",
-      "Hero section + CTA",
-      "Contact form",
-      "Mobile responsive",
-      "SEO fundamentals",
-      "2 weeks support",
+      { label: "Single landing page", details: "Hero, features, CTA" },
+      { label: "Mobile responsive design", details: "Optimized for all devices" },
+      { label: "Basic SEO setup", details: "Meta tags, sitemaps, indexing" },
+      { label: "Contact form", details: "Email notifications included" },
+      { label: "Performance optimization", details: "Fast load times guaranteed" },
     ],
+    notIncluded: [
+      "Custom integrations",
+      "Automation workflows",
+      "Analytics dashboard",
+    ],
+    bestFor: "MVPs, Portfolios, Landing Pages",
   },
   {
     name: "Growth",
-    price: "₹35K – 50K",
-    period: "2–3 weeks",
-    description: "Perfect for SaaS and B2B businesses.",
+    price: "₹35,000",
+    period: "One-time",
+    duration: "2–3 weeks",
+    description: "For businesses serious about conversions.",
     featured: true,
     features: [
-      "5+ page marketing site",
-      "Features & pricing sections",
-      "Full SEO setup",
-      "Analytics integration",
-      "API integrations",
-      "2 weeks support",
+      { label: "5+ page website", details: "Home, About, Services, Pricing, Contact" },
+      { label: "Conversion optimization", details: "Strategic CTA placement, lead capture" },
+      { label: "Advanced SEO", details: "Keyword strategy, content optimization, schema markup" },
+      { label: "Analytics integration", details: "Google Analytics 4 + conversion tracking" },
+      { label: "API integration", details: "Connect to your existing tools" },
+      { label: "Direct founder involvement", details: "Strategy + delivery by Sachin" },
     ],
+    notIncluded: [
+      "Custom backend systems",
+      "Automation workflows",
+      "Advanced integrations",
+    ],
+    bestFor: "SaaS, E-Commerce, Service Businesses",
   },
   {
     name: "Professional",
-    price: "₹60K – 90K",
-    period: "3–4 weeks",
-    description: "For enterprise and complex products.",
+    price: "₹60,000+",
+    period: "Project-based",
+    duration: "3–4 weeks",
+    description: "For complex requirements and custom solutions.",
     features: [
-      "Custom features & dashboard",
-      "Database + backend",
-      "Advanced animations",
-      "Multiple integrations",
-      "Performance & security audit",
-      "4 weeks support",
+      { label: "Custom feature development", details: "Dashboard, user accounts, CMS" },
+      { label: "Database + backend", details: "Scalable infrastructure, API endpoints" },
+      { label: "Advanced automation", details: "Shopify + Tally + WhatsApp workflows" },
+      { label: "Multiple integrations", details: "CRM, payment, shipping, accounting sync" },
+      { label: "Performance audit", details: "Load testing, optimization, security review" },
+      { label: "Extended support", details: "1 month post-launch assistance" },
     ],
+    notIncluded: [],
+    bestFor: "Enterprise, D2C Brands, Complex Systems",
   },
+];
+
+const integrations = [
+  "Shopify", "Tally", "Razorpay", "Shiprocket", "WhatsApp", "Slack", "Stripe", "Supabase",
 ];
 
 const stats = [
@@ -635,102 +611,88 @@ const Index = () => {
       </section>
 
       {/* INSIGHTS */}
-      <section id="insights" className="relative border-t border-border bg-background px-6 py-28 lg:px-10">
+      <section id="insights" className="relative border-t border-border bg-background px-6 py-20 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          {/* Section Header */}
-          <div className="mb-20">
-            <div className="flex items-center gap-3 mb-4">
-              <BookOpen className="h-5 w-5 text-primary" />
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Knowledge</span>
+          {/* Header */}
+          <div className="mb-14 flex items-center justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <BookOpen className="h-4 w-4 text-primary" />
+                <span className="text-xs font-semibold uppercase tracking-widest text-primary">
+                  Knowledge
+                </span>
+              </div>
+              <h2 className="font-brand text-3xl font-extrabold lg:text-4xl">
+                <span className="text-gradient-brand">Insights</span>
+              </h2>
             </div>
-            <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
-              <span className="text-gradient-brand">Insights</span>
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              Thoughts, strategies, and practical guides on websites, automation, AI, and digital growth.
-            </p>
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="rounded-full hidden md:inline-flex"
+            >
+              <a href="/insights">
+                View All
+                <ArrowUpRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
           </div>
 
-          {/* Articles Grid */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
-            {articles.map((article) => (
-              <article
+          {/* Articles Grid - 2x2 */}
+          <div className="grid gap-6 md:grid-cols-2 mb-10">
+            {articles.map((article, idx) => (
+              <a
                 key={article.id}
-                ref={addRef}
-                className="group relative flex flex-col translate-y-6 opacity-0 overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all duration-300 hover:border-primary/40 hover:shadow-glow hover:-translate-y-1"
-                style={{ transitionDelay: `${article.id * 50}ms` }}
+                href={`/insights/${article.slug}`}
+                className="group relative flex flex-col overflow-hidden rounded-xl border border-border/30 bg-card/60 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:bg-card hover:shadow-md hover:-translate-y-0.5 opacity-0 translate-y-6 animate-in"
+                style={{ transitionDelay: `${idx * 40}ms` }}
               >
-                {/* Image Container */}
-                <div className="relative h-48 overflow-hidden bg-card/70">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-
-                  {/* Category badge */}
-                  <div className="absolute top-4 right-4">
-                    <span
-                      className={`inline-block rounded-full px-3 py-1 text-xs font-semibold border ${
-                        categoryColors[article.category] || "bg-gray-100 text-gray-700 border-gray-200"
-                      }`}
-                    >
-                      {article.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="flex flex-1 flex-col p-6">
-                  {/* Meta */}
-                  <div className="mb-4 text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    {article.readTime}
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-brand text-lg font-extrabold leading-tight text-foreground mb-3 line-clamp-2">
-                    {article.title}
-                  </h3>
-
-                  {/* Summary */}
-                  <p className="text-sm leading-6 text-muted-foreground mb-6 line-clamp-2 flex-1">
-                    {article.summary}
-                  </p>
-
-                  {/* Link */}
-                  <a
-                    href={`/insights/${article.slug}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                {/* Category Badge */}
+                <div className="mb-3 flex items-center justify-between">
+                  <span
+                    className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${
+                      categoryColors[article.category] ||
+                      "bg-gray-100/50 text-gray-700 border-gray-200/50"
+                    }`}
                   >
-                    Read article
-                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
+                    {article.category}
+                  </span>
+                  <span className="text-xs text-muted-foreground font-medium">
+                    {article.readTime}
+                  </span>
                 </div>
-              </article>
+
+                {/* Title */}
+                <h3 className="font-brand text-lg font-extrabold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                  {article.title}
+                </h3>
+
+                {/* Summary */}
+                <p className="text-sm text-muted-foreground mb-4 line-clamp-2 flex-1">
+                  {article.summary}
+                </p>
+
+                {/* Link */}
+                <div className="text-sm font-semibold text-primary group-hover:gap-1 flex items-center gap-0 transition-all">
+                  Read more
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </div>
+              </a>
             ))}
           </div>
 
-          {/* Featured/Curated Message */}
-          <div className="mb-16 rounded-2xl border border-border bg-card p-8 text-center shadow-card lg:p-12">
-            <p className="text-foreground">
-              <span className="font-semibold">Curated insights</span> on building high-performing digital products, automating business workflows, and leveraging AI for growth. Written for ambitious founders and decision-makers.
-            </p>
-          </div>
-
-          {/* CTA */}
-          <div className="flex justify-center">
+          {/* CTA - Mobile and fallback */}
+          <div className="flex justify-center md:hidden">
             <Button
               asChild
               variant="brand"
-              size="lg"
-              className="rounded-full px-8"
+              size="sm"
+              className="rounded-full"
             >
               <a href="/insights">
                 Explore All Insights
-                <ArrowUpRight className="ml-2 h-5 w-5" />
+                <ArrowUpRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
           </div>
@@ -752,103 +714,75 @@ const Index = () => {
           </div>
 
           {/* Testimonials Grid */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-20">
-            {testimonials.map((testimonial) => (
+          <div className="grid gap-8 md:grid-cols-2 mb-20">
+            {testimonials.map((testimonial, index) => (
               <article
                 key={testimonial.id}
                 ref={addRef}
-                className="group relative flex flex-col translate-y-6 opacity-0 overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card/80 to-card/40 p-6 shadow-card backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:shadow-glow hover:from-card/90 hover:to-card/60 hover:-translate-y-1 lg:p-8"
-                style={{ transitionDelay: `${testimonial.id * 50}ms` }}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card/80 to-card/40 p-8 shadow-card backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:shadow-glow hover:from-card/90 hover:to-card/60 hover:-translate-y-1 opacity-0 translate-y-6 animate-in"
+                style={{ transitionDelay: `${index * 50}ms` }}
               >
                 {/* Star Rating */}
-                <div className="mb-4 flex gap-1">
+                <div className="mb-5 flex gap-0.5">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      className="h-4 w-4 fill-amber-400 text-amber-400"
                     />
                   ))}
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="mb-6 flex-1 text-sm leading-7 text-muted-foreground italic">
+                <p className="mb-8 flex-1 text-sm leading-7 text-muted-foreground italic">
                   "{testimonial.testimonial}"
                 </p>
 
                 {/* Divider */}
-                <div className="mb-6 h-px bg-gradient-to-r from-border/0 via-border/50 to-border/0" />
+                <div className="mb-6 h-px bg-gradient-to-r from-border/0 via-border/40 to-border/0" />
 
-                {/* Client Info */}
-                <div className="flex items-start gap-4">
-                  {/* Avatar */}
-                  <div className="relative h-12 w-12 overflow-hidden rounded-full border border-border/50 bg-gradient-to-br from-primary/10 to-primary/5 flex-shrink-0">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-
-                  {/* Client Details */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-brand text-sm font-extrabold text-foreground">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-xs text-muted-foreground">
-                      {testimonial.role}
+                {/* Client Info - Simplified */}
+                <div className="space-y-1">
+                  <h3 className="font-brand text-sm font-extrabold text-foreground">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    {testimonial.role} at <span className="font-semibold text-primary/80">{testimonial.company}</span>
+                  </p>
+                  {testimonial.project && (
+                    <p className="text-xs font-medium text-muted-foreground/60 pt-2">
+                      Project: {testimonial.project}
                     </p>
-                    <p className="text-xs font-medium text-primary/80">
-                      {testimonial.company}
-                    </p>
-                  </div>
+                  )}
                 </div>
-
-                {/* Project Tag (Optional) */}
-                {testimonial.project && (
-                  <div className="mt-4 pt-4 border-t border-border/30">
-                    <p className="text-xs font-medium text-muted-foreground/70">
-                      {testimonial.project}
-                    </p>
-                  </div>
-                )}
-
-                {/* Hover Glow Effect */}
-                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 opacity-0 transition-opacity duration-300 group-hover:opacity-5" />
               </article>
             ))}
           </div>
 
           {/* Trust Markers Bar */}
-          <div className="rounded-3xl border border-border/50 bg-gradient-to-r from-card/60 via-card/50 to-card/60 p-8 shadow-card backdrop-blur-sm lg:p-12">
+          <div className="rounded-2xl border border-border/40 bg-card/50 p-8 shadow-card backdrop-blur-sm lg:p-12">
+            <h3 className="font-brand text-lg font-extrabold text-foreground mb-8 text-center">
+              Why Businesses Trust Us
+            </h3>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               {trustMarkers.map((marker, index) => (
-                <div key={index} className="text-center">
-                  <div className="mb-3 text-3xl font-bold text-gradient-brand">
-                    {marker.icon}
+                <div key={index} className="relative">
+                  {/* Top line accent */}
+                  <div className="absolute -top-1 left-0 h-1 w-8 bg-gradient-to-r from-primary to-orange-500" />
+                  
+                  <div className="pt-4">
+                    <div className="mb-2 text-2xl font-extrabold bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
+                      {marker.value}
+                    </div>
+                    <h4 className="font-brand text-sm font-extrabold text-foreground mb-1">
+                      {marker.label}
+                    </h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {marker.description}
+                    </p>
                   </div>
-                  <h3 className="font-brand text-sm font-extrabold text-foreground mb-1">
-                    {marker.label}
-                  </h3>
-                  <p className="text-xs text-muted-foreground">
-                    {marker.description}
-                  </p>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Future Note */}
-          <div className="mt-12 text-center">
-            <p className="text-xs text-muted-foreground">
-              💬 Have a success story? We'd love to feature you.{" "}
-              <a
-                href={`mailto:${EMAIL}`}
-                className="text-primary hover:text-primary/80 font-semibold transition-colors"
-              >
-                Get in touch
-              </a>
-              .
-            </p>
           </div>
         </div>
       </section>
@@ -856,55 +790,121 @@ const Index = () => {
       {/* PRICING */}
       <section id="pricing" className="relative border-t border-border bg-background px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="mx-auto mb-16 max-w-2xl text-center" />
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-5xl mb-4">
+              Simple, Transparent <span className="text-gradient-brand">Pricing</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Pick the plan that fits your needs. No hidden fees, no surprises.
+            </p>
+          </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          {/* Pricing Cards */}
+          <div className="grid gap-8 lg:grid-cols-3 mb-12">
             {pricing.map((tier, i) => (
               <article
                 key={tier.name}
                 ref={addRef}
-                className={`relative translate-y-6 rounded-3xl border p-8 opacity-0 transition-all duration-700 ${
+                className={`relative rounded-2xl border p-8 transition-all duration-300 overflow-hidden opacity-0 translate-y-6 animate-in ${
                   tier.featured
-                    ? "border-primary/40 bg-card shadow-glow lg:-translate-y-4"
-                    : "border-border bg-card shadow-card"
+                    ? "border-primary/40 bg-card shadow-glow ring-1 ring-primary/20 lg:-translate-y-4"
+                    : "border-border/50 bg-card/50 shadow-card hover:border-primary/20 hover:shadow-sm"
                 }`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
+                {/* Featured Badge */}
                 {tier.featured && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-brand px-4 py-1 text-xs font-semibold text-primary-foreground shadow-glow">
-                    Most popular
-                  </span>
+                  <div className="absolute -top-0.5 left-1/2 -translate-x-1/2">
+                    <span className="inline-block rounded-b-xl bg-gradient-to-r from-primary to-orange-500 px-4 py-1 text-xs font-extrabold text-white uppercase tracking-wider">
+                      Most Popular
+                    </span>
+                  </div>
                 )}
-                <h3 className="font-brand text-xl font-extrabold">{tier.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{tier.description}</p>
-                <div className="mt-6">
-                  <p className="font-brand text-4xl font-extrabold text-gradient-brand">{tier.price}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.14em] text-muted-foreground">{tier.period}</p>
+
+                {/* Header */}
+                <div className={tier.featured ? "pt-6" : ""}>
+                  <h3 className="font-brand text-2xl font-extrabold text-foreground mb-2">
+                    {tier.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-6 h-10">
+                    {tier.description}
+                  </p>
+
+                  {/* Price */}
+                  <div className="mb-6">
+                    <div className="flex items-baseline gap-1 mb-1">
+                      <span className="font-brand text-4xl font-extrabold text-gradient-brand">
+                        {tier.price}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {tier.period}
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      Delivery: {tier.duration}
+                    </p>
+                  </div>
+
+                  {/* Best For */}
+                  <div className="mb-6 p-3 rounded-lg bg-muted/30 border border-border/30">
+                    <p className="text-xs font-semibold text-foreground mb-1">Best for:</p>
+                    <p className="text-xs text-muted-foreground">{tier.bestFor}</p>
+                  </div>
                 </div>
-                <ul className="mt-6 space-y-3">
-                  {tier.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-sm">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      <span className="text-foreground/85">{f}</span>
-                    </li>
+
+                {/* Features */}
+                <div className="mb-6 space-y-3 border-t border-border/30 pt-6">
+                  {tier.features.map((feature, idx) => (
+                    <div key={idx} className="flex gap-3">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-semibold text-foreground">
+                          {feature.label}
+                        </p>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          {feature.details}
+                        </p>
+                      </div>
+                    </div>
                   ))}
-                </ul>
+                </div>
+
+                {/* Not Included */}
+                {tier.notIncluded.length > 0 && (
+                  <div className="mb-6 pb-6 border-b border-border/30 space-y-2">
+                    {tier.notIncluded.map((item, idx) => (
+                      <p key={idx} className="text-xs text-muted-foreground/60 line-through">
+                        {item}
+                      </p>
+                    ))}
+                  </div>
+                )}
+
+                {/* CTA */}
                 <Button
                   asChild
-                  variant={tier.featured ? "brand" : "glass"}
-                  className="mt-8 w-full rounded-full"
+                  variant={tier.featured ? "brand" : "outline"}
+                  className="w-full rounded-lg"
                 >
-                  <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`${tier.name} engagement`)}`}>
-                    Get started <ArrowRight className="h-4 w-4" />
+                  <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`${tier.name} Package Inquiry`)}`}>
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
               </article>
             ))}
           </div>
 
-          <p className="mt-10 text-center text-xs text-muted-foreground">
-            50% to kickoff · 50% on delivery · UPI &amp; bank transfer · GST invoiced
-          </p>
+          {/* Payment Terms */}
+          <div className="text-center text-sm text-muted-foreground">
+            <p className="mb-2">
+              <span className="font-semibold text-foreground">50% to kickoff</span> · 50% on launch
+            </p>
+            <p>
+              <span className="font-semibold text-foreground">UPI, Bank Transfer, Credit Card</span> accepted · GST invoiced
+            </p>
+          </div>
         </div>
       </section>
 
