@@ -23,6 +23,13 @@ import projectJkp from "@/assets/project-jkpadmalaya.png";
 import projectSierra from "@/assets/project-sierra.png";
 import projectThrexa from "@/assets/project-threxa.png";
 import projectSmartPackaging from "@/assets/project-smartpackaging.png";
+
+// LOGO IMPORTS
+import thexaLogo from "@/assets/threxa-logo.png";
+import sierraLogo from "@/assets/sierra-logo.jpeg";
+import smartPackagingLogo from "@/assets/smart_packaging_solutions_logo.jpeg";
+import jkpLogo from "@/assets/jkp-padmalaya-logo.png";
+
 import { Button } from "@/components/ui/button";
 
 const projects = [
@@ -338,7 +345,7 @@ const Index = () => {
             >
               <div className="relative h-14 w-40 flex items-center justify-center">
                 <img
-                  src="https://raw.githubusercontent.com/Sachin-kalaiselvan/the-ingredient-list/main/src/assets/threxa-logo.png"
+                  src={thexaLogo}
                   alt="Threxa"
                   className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
                 />
@@ -353,7 +360,7 @@ const Index = () => {
             >
               <div className="relative h-14 w-40 flex items-center justify-center">
                 <img
-                  src="https://raw.githubusercontent.com/Sachin-kalaiselvan/the-ingredient-list/main/src/assets/sierra-logo.jpeg"
+                  src={sierraLogo}
                   alt="Sierra Aerospace"
                   className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
                 />
@@ -368,23 +375,25 @@ const Index = () => {
             >
               <div className="relative h-14 w-40 flex items-center justify-center">
                 <img
-                  src="https://raw.githubusercontent.com/Sachin-kalaiselvan/the-ingredient-list/main/src/assets/smart-packaging-logo.jpeg"
+                  src={smartPackagingLogo}
                   alt="Smart Packaging Solutions"
                   className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
                 />
               </div>
             </div>
 
-            {/* JKP Padmalaya - Placeholder (Design Coming) */}
+            {/* JKP Padmalaya Logo */}
             <div
               ref={addRef}
               className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
               style={{ transitionDelay: "150ms" }}
             >
-              <div className="relative h-14 w-40 flex items-center justify-center rounded-xl border-2 border-dashed border-primary/30 bg-primary/5 group-hover:bg-primary/10 group-hover:border-primary/60 transition-all">
-                <span className="text-xs font-extrabold text-primary/60 group-hover:text-primary/100 text-center px-2">
-                  JKP Padmalaya
-                </span>
+              <div className="relative h-14 w-40 flex items-center justify-center">
+                <img
+                  src={jkpLogo}
+                  alt="JKP Padmalaya"
+                  className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                />
               </div>
             </div>
           </div>
