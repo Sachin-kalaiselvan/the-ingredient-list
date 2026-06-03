@@ -1,4 +1,3 @@
-import Hero from "@/components/Hero";
 import { useEffect, useRef } from "react";
 import {
   ArrowRight,
@@ -133,6 +132,12 @@ const pricing = [
   },
 ];
 
+const stats = [
+  { value: "30+", label: "Brands shaped" },
+  { value: "8 yrs", label: "Crafting digital" },
+  { value: "100%", label: "In-house build" },
+];
+
 const EMAIL = "theingredientlist.co@gmail.com";
 const WHATSAPP = "+91 74839 92418";
 const CAL = "https://cal.com/threxa/design-audit";
@@ -162,8 +167,64 @@ const Index = () => {
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
-      {/* NEW HERO SECTION */}
-      <Hero />
+      {/* HERO */}
+      <section className="relative bg-gradient-hero">
+        <div className="absolute inset-0 til-grid opacity-70" aria-hidden="true" />
+        <div className="absolute left-1/2 top-[-14rem] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-gradient-brand opacity-15 blur-[140px]" aria-hidden="true" />
+
+        <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-7 lg:px-10 lg:py-9">
+          <a href="#top" aria-label="The Ingredient List — home" className="group -my-2 flex items-center">
+            <img
+              src={tilLogo}
+              alt="The Ingredient List"
+              className="h-16 w-auto object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.02] sm:h-20 md:h-24 lg:h-28"
+              style={{ marginTop: "-2px" }}
+            />
+          </a>
+          <nav className="hidden items-center gap-10 text-sm font-medium text-muted-foreground md:flex">
+            <a href="#work" className="transition-colors hover:text-foreground">Work</a>
+            <a href="#services" className="transition-colors hover:text-foreground">Services</a>
+            <a href="#pricing" className="transition-colors hover:text-foreground">Pricing</a>
+            <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
+          </nav>
+          <Button asChild variant="glass" size="sm" className="hidden rounded-full md:inline-flex">
+            <a href={`mailto:${EMAIL}`}>Start a project</a>
+          </Button>
+        </header>
+
+        <div id="top" className="relative z-10 mx-auto max-w-7xl px-6 pb-28 pt-16 text-center lg:px-10 lg:pt-24">
+          <div className="mx-auto mb-8 flex w-fit items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2 text-xs font-medium tracking-wide text-muted-foreground shadow-card backdrop-blur-xl">
+            <Sparkles className="h-3.5 w-3.5 text-primary" />
+            Websites • AI Systems • Automation
+          </div>
+
+          <h1 className="mx-auto max-w-5xl text-balance font-brand text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
+            Websites and AI systems{" "}
+            <span className="text-gradient-brand">built to help businesses grow</span>.
+          </h1>
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
+            We help businesses launch high-performing websites, automate repetitive work, and create digital experiences that drive measurable growth.
+          </p>
+
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button asChild variant="brand" size="lg" className="rounded-full px-7">
+              <a href={CAL} target="_blank" rel="noreferrer">Book a Free Strategy Call <ArrowRight className="h-4 w-4" /></a>
+            </Button>
+            <Button asChild variant="glass" size="lg" className="rounded-full px-7">
+              <a href="#work"><Play className="h-4 w-4" /> View Our Work</a>
+            </Button>
+          </div>
+
+          <div className="mx-auto mt-20 grid max-w-2xl grid-cols-3 gap-6">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center">
+                <p className="font-brand text-3xl font-extrabold text-gradient-brand">{s.value}</p>
+                <p className="mt-2 text-xs uppercase tracking-[0.14em] text-muted-foreground">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* WORK */}
       <section id="work" className="relative bg-gradient-warm px-6 py-28 lg:px-10">
