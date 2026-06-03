@@ -110,29 +110,6 @@ const processSteps = [
   },
 ];
 
-const clients = [
-  {
-    name: "Smart Packaging Solutions",
-    logo: "https://www.smartpackagingsolutions.in/assets/logo.png",
-    placeholder: "SPS",
-  },
-  {
-    name: "JKP Padmalaya",
-    logo: "https://jkpadmalaya.com/logo.png",
-    placeholder: "JKP",
-  },
-  {
-    name: "Sierra Aerospace",
-    logo: "https://sierraaerospace.in/logo.png",
-    placeholder: "SIERRA",
-  },
-  {
-    name: "Threxa",
-    logo: "https://threxa.theingredientlist.co/logo.png",
-    placeholder: "THREXA",
-  },
-];
-
 const testimonials = [
   {
     id: 1,
@@ -352,35 +329,64 @@ const Index = () => {
             Trusted By
           </p>
           
-          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
-            {clients.map((client, i) => (
-              <div
-                key={client.name}
-                ref={addRef}
-                className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
-                style={{ transitionDelay: `${i * 50}ms` }}
-              >
-                {/* Logo with fallback text */}
-                <div className="relative h-12 w-32 flex items-center justify-center">
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-60 group-hover:opacity-100"
-                    onError={(e) => {
-                      // Fallback to text if image fails
-                      const img = e.target as HTMLImageElement;
-                      img.style.display = "none";
-                      img.nextElementSibling?.classList.remove("hidden");
-                    }}
-                  />
-                  <div
-                    className="hidden absolute text-xs font-extrabold text-muted-foreground group-hover:text-primary transition-colors tracking-wider"
-                  >
-                    {client.placeholder}
-                  </div>
-                </div>
+          <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-16">
+            {/* Threxa Logo */}
+            <div
+              ref={addRef}
+              className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
+              style={{ transitionDelay: "0ms" }}
+            >
+              <div className="relative h-14 w-40 flex items-center justify-center">
+                <img
+                  src="https://raw.githubusercontent.com/Sachin-kalaiselvan/the-ingredient-list/main/src/assets/threxa-logo.png"
+                  alt="Threxa"
+                  className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                />
               </div>
-            ))}
+            </div>
+
+            {/* Sierra Aerospace Logo */}
+            <div
+              ref={addRef}
+              className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
+              style={{ transitionDelay: "50ms" }}
+            >
+              <div className="relative h-14 w-40 flex items-center justify-center">
+                <img
+                  src="https://raw.githubusercontent.com/Sachin-kalaiselvan/the-ingredient-list/main/src/assets/sierra-logo.jpeg"
+                  alt="Sierra Aerospace"
+                  className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                />
+              </div>
+            </div>
+
+            {/* Smart Packaging Solutions Logo */}
+            <div
+              ref={addRef}
+              className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
+              style={{ transitionDelay: "100ms" }}
+            >
+              <div className="relative h-14 w-40 flex items-center justify-center">
+                <img
+                  src="https://raw.githubusercontent.com/Sachin-kalaiselvan/the-ingredient-list/main/src/assets/smart-packaging-logo.jpeg"
+                  alt="Smart Packaging Solutions"
+                  className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                />
+              </div>
+            </div>
+
+            {/* JKP Padmalaya - Placeholder (Design Coming) */}
+            <div
+              ref={addRef}
+              className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
+              style={{ transitionDelay: "150ms" }}
+            >
+              <div className="relative h-14 w-40 flex items-center justify-center rounded-xl border-2 border-dashed border-primary/30 bg-primary/5 group-hover:bg-primary/10 group-hover:border-primary/60 transition-all">
+                <span className="text-xs font-extrabold text-primary/60 group-hover:text-primary/100 text-center px-2">
+                  JKP Padmalaya
+                </span>
+              </div>
+            </div>
           </div>
 
           <p className="text-center text-sm text-muted-foreground mt-10">
