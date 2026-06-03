@@ -45,8 +45,8 @@ const projects = [
     description:
       "A cinematic farmstay experience tucked into Kerala's spice country — editorial typography, immersive imagery, and a booking flow that feels like a deep breath.",
     image: projectJkp,
-    url: "jkpadmalaya.lovable.app",
-    href: "https://jkpadmalaya.lovable.app",
+    url: "jkpadmalaya.com",
+    href: "https://jkpadmalaya.com",
     stat: { icon: Users, label: "Bookings", value: "+212%" },
     chip: { icon: Star, label: "4.9 guest score" },
   },
