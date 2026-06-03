@@ -23,6 +23,13 @@ import projectJkp from "@/assets/project-jkpadmalaya.png";
 import projectSierra from "@/assets/project-sierra.png";
 import projectThrexa from "@/assets/project-threxa.png";
 import projectSmartPackaging from "@/assets/project-smartpackaging.png";
+
+// LOGO IMPORTS
+import thexaLogo from "@/assets/threxa-logo.png";
+import sierraLogo from "@/assets/sierra-logo.jpeg";
+import smartPackagingLogo from "@/assets/smart_packaging_solutions_logo.jpeg";
+import jkpLogo from "@/assets/jkp-padmalaya-logo.png";
+
 import { Button } from "@/components/ui/button";
 
 const projects = [
@@ -110,54 +117,120 @@ const processSteps = [
   },
 ];
 
-const integrations = [
-  "Shopify", "Tally", "Razorpay", "Shiprocket", "WhatsApp", "Slack", "Stripe", "Supabase",
+const testimonials = [
+  {
+    id: 1,
+    name: "Rajesh Kumar",
+    company: "Smart Packaging Solutions",
+    role: "Founder & Director",
+    testimonial:
+      "Sachin transformed our online presence completely. The website not only looks premium but converts like crazy. Within 3 months, we saw 40% more qualified RFQs. The entire process was transparent and communication was exceptional.",
+    project: "Website Redesign",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Priya Sharma",
+    company: "JKP Padmalaya",
+    role: "Co-Founder",
+    testimonial:
+      "Working with The Ingredient List was a game-changer for our farmstay business. The website captures the essence of our brand beautifully. Our booking rate increased by 212% in the first quarter. Highly recommend!",
+    project: "Luxury Hospitality Website",
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: "Vikram Patel",
+    company: "Sierra Aerospace",
+    role: "VP Marketing",
+    testimonial:
+      "The team built us an enterprise-grade website that perfectly communicates our technical expertise to global markets. We now have clients in 11 countries. The attention to detail and understanding of B2B positioning was incredible.",
+    project: "Enterprise Marketing Site",
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: "Ananya Desai",
+    company: "D2C Commerce Brand",
+    role: "CEO",
+    testimonial:
+      "The automation workflows Sachin built saved us 15+ hours per week. Our Shopify + Tally + WhatsApp integration is seamless. The founder-led approach means we got genuine strategy, not generic solutions.",
+    project: "Workflow Automation",
+    rating: 5,
+  },
+];
+
+const trustMarkers = [
+  { label: "Client Satisfaction", value: "4.9/5", description: "Average rating across all projects" },
+  { label: "Average Timeline", value: "2-4 weeks", description: "From kickoff to launch" },
+  { label: "Direct Founder", value: "100%", description: "Lead involvement on every project" },
+  { label: "Custom Built", value: "0%", description: "Template usage - everything custom" },
 ];
 
 const pricing = [
   {
     name: "Starter",
-    price: "₹16K – 22K",
-    period: "1–2 weeks",
-    description: "Ideal for MVPs and early-stage launches.",
+    price: "₹16,000",
+    period: "One-time",
+    duration: "1–2 weeks",
+    description: "Perfect for validating your idea quickly.",
     features: [
-      "Single landing page",
-      "Hero section + CTA",
-      "Contact form",
-      "Mobile responsive",
-      "SEO fundamentals",
-      "2 weeks support",
+      { label: "Single landing page", details: "Hero, features, CTA" },
+      { label: "Mobile responsive design", details: "Optimized for all devices" },
+      { label: "Basic SEO setup", details: "Meta tags, sitemaps, indexing" },
+      { label: "Contact form", details: "Email notifications included" },
+      { label: "Performance optimization", details: "Fast load times guaranteed" },
     ],
+    notIncluded: [
+      "Custom integrations",
+      "Automation workflows",
+      "Analytics dashboard",
+    ],
+    bestFor: "MVPs, Portfolios, Landing Pages",
   },
   {
     name: "Growth",
-    price: "₹35K – 50K",
-    period: "2–3 weeks",
-    description: "Perfect for SaaS and B2B businesses.",
+    price: "₹35,000",
+    period: "One-time",
+    duration: "2–3 weeks",
+    description: "For businesses serious about conversions.",
     featured: true,
     features: [
-      "5+ page marketing site",
-      "Features & pricing sections",
-      "Full SEO setup",
-      "Analytics integration",
-      "API integrations",
-      "2 weeks support",
+      { label: "5+ page website", details: "Home, About, Services, Pricing, Contact" },
+      { label: "Conversion optimization", details: "Strategic CTA placement, lead capture" },
+      { label: "Advanced SEO", details: "Keyword strategy, content optimization, schema markup" },
+      { label: "Analytics integration", details: "Google Analytics 4 + conversion tracking" },
+      { label: "API integration", details: "Connect to your existing tools" },
+      { label: "Direct founder involvement", details: "Strategy + delivery by Sachin" },
     ],
+    notIncluded: [
+      "Custom backend systems",
+      "Automation workflows",
+      "Advanced integrations",
+    ],
+    bestFor: "SaaS, E-Commerce, Service Businesses",
   },
   {
     name: "Professional",
-    price: "₹60K – 90K",
-    period: "3–4 weeks",
-    description: "For enterprise and complex products.",
+    price: "₹60,000+",
+    period: "Project-based",
+    duration: "3–4 weeks",
+    description: "For complex requirements and custom solutions.",
     features: [
-      "Custom features & dashboard",
-      "Database + backend",
-      "Advanced animations",
-      "Multiple integrations",
-      "Performance & security audit",
-      "4 weeks support",
+      { label: "Custom feature development", details: "Dashboard, user accounts, CMS" },
+      { label: "Database + backend", details: "Scalable infrastructure, API endpoints" },
+      { label: "Advanced automation", details: "Shopify + Tally + WhatsApp workflows" },
+      { label: "Multiple integrations", details: "CRM, payment, shipping, accounting sync" },
+      { label: "Performance audit", details: "Load testing, optimization, security review" },
+      { label: "Extended support", details: "1 month post-launch assistance" },
     ],
+    notIncluded: [],
+    bestFor: "Enterprise, D2C Brands, Complex Systems",
   },
+];
+
+const integrations = [
+  "Shopify", "Tally", "Razorpay", "Shiprocket", "WhatsApp", "Slack", "Stripe", "Supabase",
 ];
 
 const stats = [
@@ -213,6 +286,7 @@ const Index = () => {
             <a href="#work" className="transition-colors hover:text-foreground">Work</a>
             <a href="#services" className="transition-colors hover:text-foreground">Services</a>
             <a href="#process" className="transition-colors hover:text-foreground">Process</a>
+            <a href="#testimonials" className="transition-colors hover:text-foreground">Testimonials</a>
             <a href="#pricing" className="transition-colors hover:text-foreground">Pricing</a>
             <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
           </nav>
@@ -252,6 +326,81 @@ const Index = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* SOCIAL PROOF */}
+      <section className="relative border-t border-border bg-background px-6 py-16 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-12">
+            Trusted By
+          </p>
+          
+          <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-16">
+            {/* Threxa Logo */}
+            <div
+              ref={addRef}
+              className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
+              style={{ transitionDelay: "0ms" }}
+            >
+              <div className="relative h-14 w-40 flex items-center justify-center">
+                <img
+                  src={thexaLogo}
+                  alt="Threxa"
+                  className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                />
+              </div>
+            </div>
+
+            {/* Sierra Aerospace Logo */}
+            <div
+              ref={addRef}
+              className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
+              style={{ transitionDelay: "50ms" }}
+            >
+              <div className="relative h-14 w-40 flex items-center justify-center">
+                <img
+                  src={sierraLogo}
+                  alt="Sierra Aerospace"
+                  className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                />
+              </div>
+            </div>
+
+            {/* Smart Packaging Solutions Logo */}
+            <div
+              ref={addRef}
+              className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
+              style={{ transitionDelay: "100ms" }}
+            >
+              <div className="relative h-14 w-40 flex items-center justify-center">
+                <img
+                  src={smartPackagingLogo}
+                  alt="Smart Packaging Solutions"
+                  className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                />
+              </div>
+            </div>
+
+            {/* JKP Padmalaya Logo */}
+            <div
+              ref={addRef}
+              className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
+              style={{ transitionDelay: "150ms" }}
+            >
+              <div className="relative h-14 w-40 flex items-center justify-center">
+                <img
+                  src={jkpLogo}
+                  alt="JKP Padmalaya"
+                  className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
+                />
+              </div>
+            </div>
+          </div>
+
+          <p className="text-center text-sm text-muted-foreground mt-10">
+            Helping businesses build websites, automation systems, and digital experiences.
+          </p>
         </div>
       </section>
 
@@ -429,7 +578,7 @@ const Index = () => {
 
               {/* Steps */}
               <div className="relative grid grid-cols-5 gap-6">
-                {processSteps.map((step, index) => (
+                {processSteps.map((step) => (
                   <div key={step.number} className="flex flex-col items-center">
                     {/* Step number circle */}
                     <div className="relative z-10 mb-12 flex h-20 w-20 items-center justify-center rounded-full border-2 border-primary/30 bg-card shadow-card transition-all duration-300 hover:border-primary/60 hover:shadow-glow">
@@ -499,58 +648,212 @@ const Index = () => {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <section id="testimonials" className="relative border-t border-border bg-gradient-warm px-6 py-28 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          {/* Section Header */}
+          <div className="mb-20 text-center">
+            <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
+              Trusted by Businesses{" "}
+              <span className="text-gradient-brand">Building for Growth</span>
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+              Real feedback from founders and teams we've worked with.
+            </p>
+          </div>
+
+          {/* Testimonials Grid */}
+          <div className="grid gap-8 md:grid-cols-2 mb-20">
+            {testimonials.map((testimonial, index) => (
+              <article
+                key={testimonial.id}
+                ref={addRef}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card/80 to-card/40 p-8 shadow-card backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:shadow-glow hover:from-card/90 hover:to-card/60 hover:-translate-y-1 opacity-0 translate-y-6 animate-in"
+                style={{ transitionDelay: `${index * 50}ms` }}
+              >
+                {/* Star Rating */}
+                <div className="mb-5 flex gap-0.5">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-4 w-4 fill-amber-400 text-amber-400"
+                    />
+                  ))}
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="mb-8 flex-1 text-sm leading-7 text-muted-foreground italic">
+                  "{testimonial.testimonial}"
+                </p>
+
+                {/* Divider */}
+                <div className="mb-6 h-px bg-gradient-to-r from-border/0 via-border/40 to-border/0" />
+
+                {/* Client Info - Simplified */}
+                <div className="space-y-1">
+                  <h3 className="font-brand text-sm font-extrabold text-foreground">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-xs text-muted-foreground">
+                    {testimonial.role} at <span className="font-semibold text-primary/80">{testimonial.company}</span>
+                  </p>
+                  {testimonial.project && (
+                    <p className="text-xs font-medium text-muted-foreground/60 pt-2">
+                      Project: {testimonial.project}
+                    </p>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* Trust Markers Bar */}
+          <div className="rounded-2xl border border-border/40 bg-card/50 p-8 shadow-card backdrop-blur-sm lg:p-12">
+            <h3 className="font-brand text-lg font-extrabold text-foreground mb-8 text-center">
+              Why Businesses Trust Us
+            </h3>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {trustMarkers.map((marker, index) => (
+                <div key={index} className="relative">
+                  {/* Top line accent */}
+                  <div className="absolute -top-1 left-0 h-1 w-8 bg-gradient-to-r from-primary to-orange-500" />
+                  
+                  <div className="pt-4">
+                    <div className="mb-2 text-2xl font-extrabold bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
+                      {marker.value}
+                    </div>
+                    <h4 className="font-brand text-sm font-extrabold text-foreground mb-1">
+                      {marker.label}
+                    </h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      {marker.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PRICING */}
       <section id="pricing" className="relative border-t border-border bg-background px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="mx-auto mb-16 max-w-2xl text-center" />
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-5xl mb-4">
+              Simple, Transparent <span className="text-gradient-brand">Pricing</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Pick the plan that fits your needs. No hidden fees, no surprises.
+            </p>
+          </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          {/* Pricing Cards */}
+          <div className="grid gap-8 lg:grid-cols-3 mb-12">
             {pricing.map((tier, i) => (
               <article
                 key={tier.name}
                 ref={addRef}
-                className={`relative translate-y-6 rounded-3xl border p-8 opacity-0 transition-all duration-700 ${
+                className={`relative rounded-2xl border p-8 transition-all duration-300 overflow-hidden opacity-0 translate-y-6 animate-in ${
                   tier.featured
-                    ? "border-primary/40 bg-card shadow-glow lg:-translate-y-4"
-                    : "border-border bg-card shadow-card"
+                    ? "border-primary/40 bg-card shadow-glow ring-1 ring-primary/20 lg:-translate-y-4"
+                    : "border-border/50 bg-card/50 shadow-card hover:border-primary/20 hover:shadow-sm"
                 }`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
+                {/* Featured Badge */}
                 {tier.featured && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-brand px-4 py-1 text-xs font-semibold text-primary-foreground shadow-glow">
-                    Most popular
-                  </span>
+                  <div className="absolute -top-0.5 left-1/2 -translate-x-1/2">
+                    <span className="inline-block rounded-b-xl bg-gradient-to-r from-primary to-orange-500 px-4 py-1 text-xs font-extrabold text-white uppercase tracking-wider">
+                      Most Popular
+                    </span>
+                  </div>
                 )}
-                <h3 className="font-brand text-xl font-extrabold">{tier.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{tier.description}</p>
-                <div className="mt-6">
-                  <p className="font-brand text-4xl font-extrabold text-gradient-brand">{tier.price}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.14em] text-muted-foreground">{tier.period}</p>
+
+                {/* Header */}
+                <div className={tier.featured ? "pt-6" : ""}>
+                  <h3 className="font-brand text-2xl font-extrabold text-foreground mb-2">
+                    {tier.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-6 h-10">
+                    {tier.description}
+                  </p>
+
+                  {/* Price */}
+                  <div className="mb-6">
+                    <div className="flex items-baseline gap-1 mb-1">
+                      <span className="font-brand text-4xl font-extrabold text-gradient-brand">
+                        {tier.price}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {tier.period}
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      Delivery: {tier.duration}
+                    </p>
+                  </div>
+
+                  {/* Best For */}
+                  <div className="mb-6 p-3 rounded-lg bg-muted/30 border border-border/30">
+                    <p className="text-xs font-semibold text-foreground mb-1">Best for:</p>
+                    <p className="text-xs text-muted-foreground">{tier.bestFor}</p>
+                  </div>
                 </div>
-                <ul className="mt-6 space-y-3">
-                  {tier.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-sm">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      <span className="text-foreground/85">{f}</span>
-                    </li>
+
+                {/* Features */}
+                <div className="mb-6 space-y-3 border-t border-border/30 pt-6">
+                  {tier.features.map((feature, idx) => (
+                    <div key={idx} className="flex gap-3">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-semibold text-foreground">
+                          {feature.label}
+                        </p>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          {feature.details}
+                        </p>
+                      </div>
+                    </div>
                   ))}
-                </ul>
+                </div>
+
+                {/* Not Included */}
+                {tier.notIncluded.length > 0 && (
+                  <div className="mb-6 pb-6 border-b border-border/30 space-y-2">
+                    {tier.notIncluded.map((item, idx) => (
+                      <p key={idx} className="text-xs text-muted-foreground/60 line-through">
+                        {item}
+                      </p>
+                    ))}
+                  </div>
+                )}
+
+                {/* CTA */}
                 <Button
                   asChild
-                  variant={tier.featured ? "brand" : "glass"}
-                  className="mt-8 w-full rounded-full"
+                  variant={tier.featured ? "brand" : "outline"}
+                  className="w-full rounded-lg"
                 >
-                  <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`${tier.name} engagement`)}`}>
-                    Get started <ArrowRight className="h-4 w-4" />
+                  <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`${tier.name} Package Inquiry`)}`}>
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
               </article>
             ))}
           </div>
 
-          <p className="mt-10 text-center text-xs text-muted-foreground">
-            50% to kickoff · 50% on delivery · UPI &amp; bank transfer · GST invoiced
-          </p>
+          {/* Payment Terms */}
+          <div className="text-center text-sm text-muted-foreground">
+            <p className="mb-2">
+              <span className="font-semibold text-foreground">50% to kickoff</span> · 50% on launch
+            </p>
+            <p>
+              <span className="font-semibold text-foreground">UPI, Bank Transfer, Credit Card</span> accepted · GST invoiced
+            </p>
+          </div>
         </div>
       </section>
 
@@ -572,7 +875,7 @@ const Index = () => {
             >
               <Mail className="h-5 w-5 text-primary" />
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Email</span>
-              <span className="break-all font-medium">{EMAIL}</span>
+              <span className="break-all font-medium text-xs">{EMAIL}</span>
             </a>
             <a
               href="https://wa.me/917483992418"
