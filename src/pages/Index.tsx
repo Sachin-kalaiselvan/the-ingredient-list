@@ -480,7 +480,7 @@ const Index = () => {
 
       <footer className="border-t border-border bg-background px-6 py-12 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-sm text-muted-foreground md:flex-row">
-          <img src={tilLogo} alt="The Ingredient List" className="h-12 w-auto object-contain md:h-14" />
+          <img src={tilLogo} alt="The Ingredient List" className="h-16 w-auto object-contain mix-blend-multiply md:h-20" />
           <p>© {new Date().getFullYear()} The Ingredient List. Crafted in-house.</p>
         </div>
       </footer>
