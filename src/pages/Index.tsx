@@ -15,15 +15,29 @@ import {
   Mail,
   Phone,
   Calendar,
+  PackageCheck,
 } from "lucide-react";
 
 import tilLogo from "@/assets/til-logo.png";
 import projectJkp from "@/assets/project-jkpadmalaya.png";
 import projectSierra from "@/assets/project-sierra.png";
 import projectThrexa from "@/assets/project-threxa.png";
+import projectSmartPackaging from "@/assets/project-smartpackaging.png";
 import { Button } from "@/components/ui/button";
 
 const projects = [
+  {
+    name: "Smart Packaging Solutions",
+    tag: "Manufacturing · B2B",
+    year: "2026",
+    description:
+      "Bengaluru's trusted packaging partner since 2012 — a conversion-tuned site for corrugated cartons and printed mono boxes that moves RFQs from enquiry to order.",
+    image: projectSmartPackaging,
+    url: "smartpackagingsolutions.in",
+    href: "https://www.smartpackagingsolutions.in/",
+    stat: { icon: PackageCheck, label: "Boxes / year", value: "2M+" },
+    chip: { icon: Star, label: "500+ brands served" },
+  },
   {
     name: "JKP Padmalaya",
     tag: "Hospitality · Heritage",
@@ -367,15 +381,7 @@ const Index = () => {
       {/* PRICING */}
       <section id="pricing" className="relative border-t border-border bg-gradient-warm px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="mx-auto mb-16 max-w-2xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Transparent pricing</p>
-            <h2 className="mt-4 font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
-              Honest scope. <span className="text-gradient-brand">Fixed price.</span>
-            </h2>
-            <p className="mt-5 text-muted-foreground">
-              No surprise invoices. Pick the engagement that fits — we'll quote the exact number before kickoff.
-            </p>
-          </div>
+          <div className="mx-auto mb-16 max-w-2xl text-center" />
 
           <div className="grid gap-6 lg:grid-cols-3">
             {pricing.map((tier, i) => (
