@@ -24,6 +24,17 @@ import {
   MessageSquare,
   BookOpen,
   ChevronDown,
+  ArrowUp,
+  MessageCircle,
+  Send,
+  Plus,
+  Minus,
+  Shield,
+  Linkedin,
+  MapPin,
+  ExternalLink,
+  Workflow,
+  SearchCheck,
 } from "lucide-react";
 
 import tilLogo from "@/assets/til-logo.png";
@@ -364,6 +375,55 @@ const stats = [
 const EMAIL = "theingredientlist.co@gmail.com";
 const WHATSAPP = "+91 74839 92418";
 const CAL = "https://cal.com/threxa/design-audit";
+const LINKEDIN = "https://linkedin.com/in/sachinjk11";
+
+// ─────────────────────────────────────────────
+// FAQ DATA
+// ─────────────────────────────────────────────
+const faqs = [
+  {
+    q: "How much does a project cost?",
+    a: "Pricing depends on scope and complexity. Starter projects begin at ₹16,000, growth websites at ₹35,000, and professional builds at ₹60,000+. Every engagement starts with a free strategy call where I'll give you a clear estimate before anything is agreed. No vague quotes, no hidden costs.",
+  },
+  {
+    q: "How long does a website take?",
+    a: "Most websites are delivered in 1–4 weeks. A landing page takes 1–2 weeks. A multi-page growth site takes 2–3 weeks. Complex builds with custom backend or automation workflows take 3–6 weeks. You'll get a precise timeline in writing before we begin.",
+  },
+  {
+    q: "Do you offer ongoing support?",
+    a: "Yes. Every project includes post-launch support for 30 days. Beyond that, ongoing maintenance, performance monitoring, and content updates are available as a monthly retainer. Most clients stay on after launch — the relationship doesn't end at go-live.",
+  },
+  {
+    q: "Can you redesign existing websites?",
+    a: "Absolutely. Redesigns are often where the most value is unlocked — an existing site has real user data that informs what to change. I'll audit your current site, identify what's hurting conversions, and build something that performs better from day one.",
+  },
+  {
+    q: "Do you build automation systems?",
+    a: "Yes — through Threxa, my automation platform built specifically for Indian businesses. I connect Shopify, Tally, WhatsApp, Razorpay, Shiprocket and more. Automation workflows, RFQ routing, inventory syncing, customer communication — all built without code on your end.",
+  },
+  {
+    q: "Do you provide hosting?",
+    a: "Sites are deployed to Vercel (fast, reliable, globally distributed) by default. I handle setup and configuration. You own the hosting account — no lock-in. Domains are managed separately through your preferred registrar. I'll walk you through everything.",
+  },
+  {
+    q: "Do you work internationally?",
+    a: "Yes. While I'm based in Bengaluru and specialize in Indian market businesses, I work with clients internationally. Communication happens over email, WhatsApp, or video call. Payment is accepted via international bank transfer, Wise, or Stripe.",
+  },
+  {
+    q: "What happens after launch?",
+    a: "Launch is where most agencies disappear. I don't. Post-launch includes: 30 days of support, performance monitoring, SEO indexing confirmation, and a 2-week check-in call to review early metrics. Clients on retainer get ongoing improvements tracked in a shared roadmap.",
+  },
+];
+
+// ─────────────────────────────────────────────
+// AUDIT BENEFITS
+// ─────────────────────────────────────────────
+const auditBenefits = [
+  { icon: SearchCheck, title: "Find conversion bottlenecks", body: "Pinpoint exactly where visitors are dropping off and what's preventing them from taking action." },
+  { icon: Workflow, title: "Discover automation gaps", body: "Identify 3–5 workflows you could automate to save hours of manual work every week." },
+  { icon: Lightbulb, title: "UX improvements, prioritised", body: "Get a ranked list of experience improvements with estimated impact for each." },
+  { icon: BarChart3, title: "Actionable recommendations", body: "A specific, prioritised report — not a generic checklist. Every item is tied to a business outcome." },
+];
 
 // ─────────────────────────────────────────────
 // COMPONENT
@@ -371,6 +431,24 @@ const CAL = "https://cal.com/threxa/design-audit";
 const Index = () => {
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
   const [expandedCaseStudy, setExpandedCaseStudy] = useState<number | null>(null);
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showChat, setShowChat] = useState(false);
+  const [auditForm, setAuditForm] = useState({ name: "", email: "", website: "", businessType: "" });
+  const [auditSubmitted, setAuditSubmitted] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+      setShowChat(window.scrollY > 500);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -487,7 +565,7 @@ const Index = () => {
                 <article 
                   key={study.id} 
                   ref={addRef} 
-                  className="group relative opacity-0 translate-y-6 transition-all duration-700 rounded-2xl border border-border bg-card overflow-hidden cursor-pointer hover:border-primary/40 hover:shadow-lg"
+                  className="group relative opacity-0 translate-y-6 transition-all duration-700 rounded-2xl border border-border/40 bg-white/50 overflow-hidden cursor-pointer hover:border-primary/40 hover:bg-white/60 hover:shadow-lg"
                   style={{ transitionDelay: `${index * 80}ms` }}
                   onClick={() => setExpandedCaseStudy(isExpanded ? null : study.id)}
                 >
@@ -630,7 +708,7 @@ const Index = () => {
               </p>
               <div className="mt-8 h-px w-16 bg-gradient-to-r from-primary to-orange-500" />
               <p className="mt-6 font-brand text-xl font-extrabold text-foreground">
-                — The Ingredient List
+                — Sachin
               </p>
             </div>
 
@@ -640,7 +718,7 @@ const Index = () => {
                 <div
                   key={p.title}
                   ref={addRef}
-                  className="group rounded-2xl border border-border/40 bg-card/50 p-6 opacity-0 translate-y-6 backdrop-blur-sm transition-all duration-700 hover:border-primary/40 hover:bg-card hover:-translate-y-1"
+                  className="group rounded-2xl border border-border/20 p-6 opacity-0 translate-y-6 transition-all duration-700 hover:border-primary/40 hover:bg-white/30 hover:-translate-y-1"
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
                   <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-2.5">
@@ -670,7 +748,7 @@ const Index = () => {
             </div>
             <div className="grid gap-5 md:grid-cols-3">
               {services.map((s, i) => (
-                <article key={s.title} ref={addRef} className="group translate-y-6 rounded-2xl border border-border bg-card p-6 opacity-0 shadow-card transition-all duration-700 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft" style={{ transitionDelay: `${i * 100}ms` }}>
+                <article key={s.title} ref={addRef} className="group translate-y-6 rounded-2xl border border-border/20 p-6 opacity-0 transition-all duration-700 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/30" style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="mb-6 inline-flex rounded-2xl bg-gradient-brand p-3 text-primary-foreground shadow-glow">
                     <s.icon className="h-5 w-5" />
                   </div>
@@ -717,7 +795,7 @@ const Index = () => {
               <div
                 key={pillar.number}
                 ref={addRef}
-                className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/50 p-8 opacity-0 translate-y-6 backdrop-blur-sm transition-all duration-700 hover:border-primary/30 hover:bg-card hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-2xl border border-border/20 p-8 opacity-0 translate-y-6 transition-all duration-700 hover:border-primary/30 hover:bg-white/30 hover:-translate-y-1"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <span className="absolute right-6 top-6 font-brand text-5xl font-extrabold text-primary/8 select-none">
@@ -807,10 +885,10 @@ const Index = () => {
                 Eight years and 30+ brands later, the same thing still drives me: getting the work right, not just getting it done.
               </p>
 
-              <div className="pt-2">
-                <Button asChild variant="brand" size="lg" className="rounded-full px-8">
+              <div className="pt-4">
+                <Button asChild variant="brand" size="lg" className="rounded-full px-8 whitespace-nowrap">
                   <a href={CAL} target="_blank" rel="noreferrer">
-                    Let's Build Something Together
+                    Start Your Project
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
@@ -824,10 +902,10 @@ const Index = () => {
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-5">What you can expect</p>
                   <ul className="space-y-4">
                     {[
-                      { icon: MessageSquare, title: "Direct communication", body: "You talk to the person doing the work. Every time." },
-                      { icon: Target, title: "Strategic thinking first", body: "Every decision is tied to a business outcome. No decorative work." },
-                      { icon: Zap, title: "Fast, clean execution", body: "Shipped on time, built to last. No rebuilds, no drama." },
-                      { icon: BookOpen, title: "Honest at every step", body: "If something won't work, you'll hear it early — not after launch." },
+                      { icon: MessageSquare, title: "Direct Communication", body: "You work with me, not a team. Every conversation is with the person building your project—no middlemen, no delays." },
+                      { icon: Target, title: "Strategy First", body: "We begin by understanding your business, your market, and what success actually looks like. Design follows strategy." },
+                      { icon: Zap, title: "Built Fast, Built Right", body: "Clean code, shipped on time, zero technical debt. What you launch is what you keep—no rebuilds, no surprises." },
+                      { icon: BookOpen, title: "Honest Feedback", body: "If something won't work or isn't worth building, you'll hear it from me directly. You're paying for judgment, not just execution." },
                     ].map(({ icon: Icon, title, body }) => (
                       <li key={title} className="flex gap-4">
                         <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
@@ -847,7 +925,7 @@ const Index = () => {
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-brand text-primary-foreground font-brand font-extrabold text-lg shadow-glow">✓</div>
                     <div>
                       <p className="font-brand font-extrabold text-foreground">The Ingredient List</p>
-                      <p className="text-xs text-muted-foreground">Design · Engineering · Strategy · Bengaluru</p>
+                      <p className="text-xs text-muted-foreground">Digital design, engineering & strategy · Bengaluru</p>
                     </div>
                   </div>
                 </div>
@@ -864,10 +942,10 @@ const Index = () => {
           <div className="mb-16 text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Investment</p>
             <h2 className="mt-4 font-brand text-4xl font-extrabold leading-tight lg:text-5xl mb-4">
-              Simple, transparent <span className="text-gradient-brand">pricing</span>.
+              Pricing that <span className="text-gradient-brand">makes sense</span>.
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              No hidden fees, no scope-creep surprises. Pick the engagement that fits your stage.
+              Clear rates, no surprises, no hidden costs. Choose the package that fits your project.
             </p>
           </div>
 
@@ -921,9 +999,186 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center text-sm text-muted-foreground">
-            <p className="mb-2"><span className="font-semibold text-foreground">50% to kickoff</span> · 50% on launch</p>
-            <p><span className="font-semibold text-foreground">UPI, Bank Transfer, Credit Card</span> accepted · GST invoiced</p>
+        </div>
+      </section>
+
+      {/* ── FAQ ──────────────────────────────── */}
+      <section id="faq" className="relative border-t border-border bg-background px-6 py-28 lg:px-10">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-16 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Common questions</p>
+            <h2 className="mt-4 font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
+              Frequently Asked <span className="text-gradient-brand">Questions</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground">
+              Everything you need to know before starting. If something isn't covered here, ask directly.
+            </p>
+          </div>
+
+          <div className="divide-y divide-border/50">
+            {faqs.map((faq, i) => {
+              const isOpen = expandedFaq === i;
+              return (
+                <div key={i} className="group">
+                  <button
+                    onClick={() => setExpandedFaq(isOpen ? null : i)}
+                    className="flex w-full items-center justify-between gap-6 py-6 text-left transition-colors hover:text-primary"
+                  >
+                    <span className="font-brand text-base font-extrabold text-foreground group-hover:text-primary transition-colors lg:text-lg">
+                      {faq.q}
+                    </span>
+                    <span className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full border border-border transition-all group-hover:border-primary/40 group-hover:bg-primary/5">
+                      {isOpen
+                        ? <Minus className="h-4 w-4 text-primary" />
+                        : <Plus className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+                      }
+                    </span>
+                  </button>
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 pb-6" : "max-h-0"}`}>
+                    <p className="text-base leading-8 text-muted-foreground pr-14">{faq.a}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-14 rounded-2xl border border-border/30 bg-gradient-warm p-8 text-center">
+            <p className="font-brand text-lg font-extrabold text-foreground">Still have questions?</p>
+            <p className="mt-2 text-sm text-muted-foreground">A 15-minute call is the fastest way to get answers specific to your project.</p>
+            <Button asChild variant="brand" size="sm" className="mt-6 rounded-full px-6">
+              <a href={CAL} target="_blank" rel="noreferrer">Book a free call <ArrowRight className="ml-2 h-4 w-4" /></a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ── LEAD GEN AUDIT ───────────────────── */}
+      <section id="audit" className="relative border-t border-border bg-gradient-warm px-6 py-28 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 lg:items-start">
+
+            {/* Left — offer */}
+            <div className="text-left">
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-semibold text-primary mb-6">
+                <Sparkles className="h-3.5 w-3.5" /> Free · No obligation
+              </div>
+              <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
+                Get a Free Website <span className="text-gradient-brand">&amp; Automation Audit</span>
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                I'll personally review your website and digital workflows and send back a specific, prioritised breakdown of what to fix — free, with no strings attached.
+              </p>
+
+              <div className="mt-10 space-y-5">
+                {auditBenefits.map(({ icon: Icon, title, body }) => (
+                  <div key={title} className="flex gap-4 text-left">
+                    <div className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl border border-border/20 bg-primary/10">
+                      <Icon className="h-4 w-4 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <p className="font-semibold text-foreground text-sm">{title}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">{body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-10 flex items-center gap-3 text-sm text-muted-foreground">
+                <Shield className="h-4 w-4 text-primary flex-shrink-0" />
+                <span>Your information is kept confidential. No spam, ever.</span>
+              </div>
+            </div>
+
+            {/* Right — form */}
+            <div className="rounded-3xl border border-border/40 bg-white p-8 shadow-soft lg:p-10">
+              {auditSubmitted ? (
+                <div className="flex flex-col items-center justify-center gap-5 py-16 text-center">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-brand shadow-glow">
+                    <Check className="h-7 w-7 text-white" />
+                  </div>
+                  <h3 className="font-brand text-2xl font-extrabold text-foreground">Audit request received.</h3>
+                  <p className="text-muted-foreground max-w-xs">I'll personally review your site and send the audit within 48 hours.</p>
+                  <Button asChild variant="ghost" size="sm" className="rounded-full mt-2">
+                    <a href={CAL} target="_blank" rel="noreferrer">Want to talk sooner? Book a call <ArrowRight className="ml-2 h-4 w-4" /></a>
+                  </Button>
+                </div>
+              ) : (
+                <>
+                  <h3 className="font-brand text-xl font-extrabold text-foreground mb-1">Request your free audit</h3>
+                  <p className="text-sm text-muted-foreground mb-8">Takes 60 seconds. Delivered within 48 hours.</p>
+
+                  <div className="space-y-5">
+                    <div>
+                      <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-foreground mb-2">Your Name</label>
+                      <input
+                        type="text"
+                        placeholder="Rajesh Kumar"
+                        value={auditForm.name}
+                        onChange={e => setAuditForm(f => ({ ...f, name: e.target.value }))}
+                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-foreground mb-2">Email Address</label>
+                      <input
+                        type="email"
+                        placeholder="you@company.com"
+                        value={auditForm.email}
+                        onChange={e => setAuditForm(f => ({ ...f, email: e.target.value }))}
+                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-foreground mb-2">Website URL</label>
+                      <input
+                        type="url"
+                        placeholder="https://yourwebsite.com"
+                        value={auditForm.website}
+                        onChange={e => setAuditForm(f => ({ ...f, website: e.target.value }))}
+                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-foreground mb-2">Business Type</label>
+                      <select
+                        value={auditForm.businessType}
+                        onChange={e => setAuditForm(f => ({ ...f, businessType: e.target.value }))}
+                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all"
+                      >
+                        <option value="" disabled>Select your business type</option>
+                        <option value="ecommerce">E-Commerce / D2C Brand</option>
+                        <option value="saas">SaaS / Software</option>
+                        <option value="service">Service Business</option>
+                        <option value="manufacturing">Manufacturing / B2B</option>
+                        <option value="hospitality">Hospitality / Tourism</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    <Button
+                      variant="brand"
+                      size="lg"
+                      className="w-full rounded-xl mt-2"
+                      disabled={!auditForm.name || !auditForm.email}
+                      onClick={() => {
+                        if (auditForm.name && auditForm.email) {
+                          window.open(
+                            `mailto:${EMAIL}?subject=Free Audit Request from ${encodeURIComponent(auditForm.name)}&body=Name: ${encodeURIComponent(auditForm.name)}%0AEmail: ${encodeURIComponent(auditForm.email)}%0AWebsite: ${encodeURIComponent(auditForm.website)}%0ABusiness Type: ${encodeURIComponent(auditForm.businessType)}`,
+                            '_blank'
+                          );
+                          setAuditSubmitted(true);
+                        }
+                      }}
+                    >
+                      Request My Free Audit <Send className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -959,12 +1214,137 @@ const Index = () => {
       </section>
 
       {/* ── FOOTER ────────────────────────────── */}
-      <footer className="border-t border-border bg-background px-6 py-12 lg:px-10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-sm text-muted-foreground md:flex-row">
-          <img src={tilLogo} alt="The Ingredient List" className="h-16 w-auto object-contain mix-blend-multiply md:h-20" />
-          <p>© {new Date().getFullYear()} The Ingredient List. Crafted in-house.</p>
+      <footer className="border-t border-border bg-foreground text-background px-6 pt-20 pb-10 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+
+          {/* Footer CTA */}
+          <div className="mb-20 flex flex-col items-start justify-between gap-8 border-b border-white/10 pb-16 lg:flex-row lg:items-end">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50 mb-4">Let's work together</p>
+              <h2 className="font-brand text-4xl font-extrabold leading-tight text-white lg:text-5xl">
+                Ready to build something<br />
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">exceptional?</span>
+              </h2>
+            </div>
+            <Button asChild size="lg" className="rounded-full bg-white text-foreground hover:bg-white/90 hover:text-foreground px-8 flex-shrink-0">
+              <a href={CAL} target="_blank" rel="noreferrer">
+                Book a Strategy Call <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+
+          {/* Nav columns */}
+          <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-4 mb-20">
+
+            {/* Brand */}
+            <div className="text-left">
+              <div className="h-14 mb-5 flex items-center">
+                <img 
+                  src={tilLogo} 
+                  alt="The Ingredient List" 
+                  className="h-full w-auto object-contain" 
+                  style={{ filter: "grayscale(100%) brightness(200%)" }}
+                />
+              </div>
+              <p className="text-sm text-white/70 leading-7 mb-6">Digital design, engineering &amp; strategy for Indian businesses. Built in Bengaluru.</p>
+              <div className="flex items-center gap-3">
+                <a href={`mailto:${EMAIL}`} aria-label="Email" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/50 transition-all hover:border-white/40 hover:text-white">
+                  <Mail className="h-4 w-4" />
+                </a>
+                <a href={LINKEDIN} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/50 transition-all hover:border-white/40 hover:text-white">
+                  <Linkedin className="h-4 w-4" />
+                </a>
+                <a href="https://wa.me/917483992418" target="_blank" rel="noreferrer" aria-label="WhatsApp" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/50 transition-all hover:border-white/40 hover:text-white">
+                  <MessageCircle className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+
+            {/* Services & Work */}
+            <div className="text-left">
+              <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40 mb-5">Services</h4>
+              <ul className="space-y-3 text-sm text-white/60">
+                <li><a href="#services" className="hover:text-white transition-colors">Brand &amp; Identity</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">Product Design</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">Engineering &amp; Development</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">Workflow Automation</a></li>
+                <li><a href="https://threxa.theingredientlist.co/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-1">Threxa Platform <ExternalLink className="h-3 w-3" /></a></li>
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div className="text-left">
+              <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40 mb-5">Company</h4>
+              <ul className="space-y-3 text-sm text-white/60">
+                <li><a href="#work" className="hover:text-white transition-colors">Selected Work</a></li>
+                <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
+                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
+                <li><a href="#audit" className="hover:text-white transition-colors">Free Audit</a></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div className="text-left">
+              <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40 mb-5">Contact</h4>
+              <ul className="space-y-3 text-sm text-white/60">
+                <li className="flex items-start gap-2">
+                  <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                  <a href={`mailto:${EMAIL}`} className="hover:text-white transition-colors break-all">{EMAIL}</a>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                  <a href="https://wa.me/917483992418" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">{WHATSAPP}</a>
+                </li>
+                <li className="flex items-start gap-2">
+                  <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                  <span>Bengaluru, India</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Calendar className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                  <a href={CAL} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Book a strategy call</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="border-t border-white/10 pt-8 flex flex-col items-center justify-between gap-4 text-xs text-white/40 sm:flex-row">
+            <p>© {new Date().getFullYear()} The Ingredient List. All rights reserved.</p>
+            <div className="flex items-center gap-6">
+              <a href="/terms" className="hover:text-white/70 transition-colors">Terms &amp; Conditions</a>
+              <a href="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</a>
+            </div>
+            <p>Built for Indian commerce</p>
+          </div>
         </div>
       </footer>
+
+      {/* ── FLOATING BUTTONS ──────────────────── */}
+      
+      {/* Floating Chat Button */}
+      {showChat && (
+        <button
+          onClick={() => window.open(`https://wa.me/917483992418?text=Hi, I'd like to discuss a project with The Ingredient List.`, '_blank')}
+          className="fixed bottom-8 right-8 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-brand text-white shadow-glow transition-all duration-300 hover:scale-110 hover:shadow-lg active:scale-95 animate-in fade-in duration-500"
+          title="Chat with us on WhatsApp"
+          aria-label="Open WhatsApp chat"
+        >
+          <MessageCircle className="h-6 w-6" />
+        </button>
+      )}
+
+      {/* Floating Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-28 right-8 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card transition-all duration-300 hover:bg-foreground hover:text-background hover:border-foreground active:scale-95 animate-in fade-in duration-500"
+          title="Scroll to top"
+          aria-label="Scroll to top of page"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </button>
+      )}
     </main>
   );
 };
