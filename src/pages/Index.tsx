@@ -504,7 +504,7 @@ const Index = () => {
                 <article 
                   key={study.id} 
                   ref={addRef} 
-                  className="group relative opacity-0 translate-y-6 transition-all duration-700 rounded-2xl border border-border bg-card overflow-hidden cursor-pointer hover:border-primary/40 hover:shadow-lg"
+                  className="group relative opacity-0 translate-y-6 transition-all duration-700 rounded-2xl border border-border/40 bg-white/50 overflow-hidden cursor-pointer hover:border-primary/40 hover:bg-white/60 hover:shadow-lg"
                   style={{ transitionDelay: `${index * 80}ms` }}
                   onClick={() => setExpandedCaseStudy(isExpanded ? null : study.id)}
                 >
@@ -657,7 +657,7 @@ const Index = () => {
                 <div
                   key={p.title}
                   ref={addRef}
-                  className="group rounded-2xl border border-border/40 bg-card/50 p-6 opacity-0 translate-y-6 backdrop-blur-sm transition-all duration-700 hover:border-primary/40 hover:bg-card hover:-translate-y-1"
+                  className="group rounded-2xl border border-border/20 p-6 opacity-0 translate-y-6 transition-all duration-700 hover:border-primary/40 hover:bg-white/30 hover:-translate-y-1"
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
                   <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-2.5">
@@ -687,7 +687,7 @@ const Index = () => {
             </div>
             <div className="grid gap-5 md:grid-cols-3">
               {services.map((s, i) => (
-                <article key={s.title} ref={addRef} className="group translate-y-6 rounded-2xl border border-border bg-card p-6 opacity-0 shadow-card transition-all duration-700 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft" style={{ transitionDelay: `${i * 100}ms` }}>
+                <article key={s.title} ref={addRef} className="group translate-y-6 rounded-2xl border border-border/20 p-6 opacity-0 transition-all duration-700 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/30" style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="mb-6 inline-flex rounded-2xl bg-gradient-brand p-3 text-primary-foreground shadow-glow">
                     <s.icon className="h-5 w-5" />
                   </div>
@@ -734,7 +734,7 @@ const Index = () => {
               <div
                 key={pillar.number}
                 ref={addRef}
-                className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/50 p-8 opacity-0 translate-y-6 backdrop-blur-sm transition-all duration-700 hover:border-primary/30 hover:bg-card hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-2xl border border-border/20 p-8 opacity-0 translate-y-6 transition-all duration-700 hover:border-primary/30 hover:bg-white/30 hover:-translate-y-1"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <span className="absolute right-6 top-6 font-brand text-5xl font-extrabold text-primary/8 select-none">
