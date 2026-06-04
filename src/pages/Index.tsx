@@ -836,7 +836,7 @@ const Index = () => {
 
             {/* Credentials card */}
             <div ref={addRef} className="opacity-0 translate-y-6 transition-all duration-700" style={{ transitionDelay: "100ms" }}>
-              <div className="rounded-3xl border border-border/40 bg-card/60 p-8 backdrop-blur-sm shadow-soft lg:p-10 space-y-8">
+              <div className="rounded-3xl border border-border/20 bg-transparent backdrop-blur-sm p-8 lg:p-10 space-y-8">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-5">What you can expect</p>
                   <ul className="space-y-4">
@@ -972,12 +972,52 @@ const Index = () => {
       </section>
 
       {/* ── FOOTER ────────────────────────────── */}
-      <footer className="border-t border-border bg-background px-6 py-12 lg:px-10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-sm text-muted-foreground md:flex-row">
-          <img src={tilLogo} alt="The Ingredient List" className="h-16 w-auto object-contain mix-blend-multiply md:h-20" />
-          <div className="flex items-center gap-6">
-            <p>© {new Date().getFullYear()} The Ingredient List.</p>
-            <a href="/terms" className="text-xs hover:text-foreground transition-colors">Terms & Conditions</a>
+      <footer className="border-t border-border bg-background px-6 py-16 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 md:grid-cols-4 mb-12">
+            {/* Company Info */}
+            <div>
+              <h3 className="font-brand text-sm font-extrabold text-foreground mb-3">The Ingredient List</h3>
+              <p className="text-xs text-muted-foreground leading-6">Digital design, engineering & strategy for Indian businesses. Built in Bengaluru.</p>
+            </div>
+
+            {/* Product */}
+            <div>
+              <h4 className="font-semibold text-xs uppercase tracking-[0.1em] text-foreground mb-4">Product</h4>
+              <ul className="space-y-2 text-xs text-muted-foreground">
+                <li><a href="#services" className="hover:text-foreground transition-colors">Services</a></li>
+                <li><a href="#work" className="hover:text-foreground transition-colors">Case Studies</a></li>
+                <li><a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a></li>
+                <li><a href="#contact" className="hover:text-foreground transition-colors">Contact</a></li>
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h4 className="font-semibold text-xs uppercase tracking-[0.1em] text-foreground mb-4">Company</h4>
+              <ul className="space-y-2 text-xs text-muted-foreground">
+                <li><a href="#about" className="hover:text-foreground transition-colors">About</a></li>
+                <li><a href="https://cal.com/threxa/design-audit" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">Book a Call</a></li>
+                <li><a href="/terms" className="hover:text-foreground transition-colors">Terms & Conditions</a></li>
+              </ul>
+            </div>
+
+            {/* Reach Us */}
+            <div>
+              <h4 className="font-semibold text-xs uppercase tracking-[0.1em] text-foreground mb-4">Reach Us</h4>
+              <ul className="space-y-2 text-xs text-muted-foreground">
+                <li><a href="mailto:theingredientlist.co@gmail.com" className="hover:text-foreground transition-colors">theingredientlist.co@gmail.com</a></li>
+                <li><a href="https://wa.me/917483992418" target="_blank" rel="noreferrer" className="hover:text-foreground transition-colors">+91 74839 92418</a></li>
+                <li><span>Bengaluru, India</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-border pt-8">
+            <div className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground md:flex-row">
+              <p>© {new Date().getFullYear()} The Ingredient List. All rights reserved.</p>
+              <p>Built for Indian commerce</p>
+            </div>
           </div>
         </div>
       </footer>
