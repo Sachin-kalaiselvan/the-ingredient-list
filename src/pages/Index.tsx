@@ -20,6 +20,9 @@ import {
   Lightbulb,
   BarChart3,
   Clock,
+  Zap,
+  MessageSquare,
+  BookOpen,
 } from "lucide-react";
 
 import tilLogo from "@/assets/til-logo.png";
@@ -27,8 +30,6 @@ import projectJkp from "@/assets/project-jkpadmalaya.png";
 import projectSierra from "@/assets/project-sierra.png";
 import projectThrexa from "@/assets/project-threxa.png";
 import projectSmartPackaging from "@/assets/project-smartpackaging.png";
-
-// LOGO IMPORTS
 import thexaLogo from "@/assets/threxa-logo.png";
 import sierraLogo from "@/assets/sierra-logo.jpeg";
 import smartPackagingLogo from "@/assets/smart_packaging_solutions_logo.jpeg";
@@ -36,9 +37,9 @@ import jkpLogo from "@/assets/jkp-padmalaya-logo.png";
 
 import { Button } from "@/components/ui/button";
 
-// ============================================
-// CASE STUDIES DATA - REPLACES OLD "projects"
-// ============================================
+// ─────────────────────────────────────────────
+// CASE STUDIES
+// ─────────────────────────────────────────────
 const caseStudies = [
   {
     id: 1,
@@ -49,73 +50,29 @@ const caseStudies = [
     duration: "8 weeks",
     url: "smartpackagingsolutions.in",
     href: "https://www.smartpackagingsolutions.in/",
-    
     challenge: {
-      title: "Offline Business in Digital Age",
-      description: "Smart Packaging Solutions was a 13-year-old manufacturing company with zero online presence. They were losing RFQs to competitors and had no way to showcase their 500+ brand clients or certifications online.",
-      pain_points: [
-        "No competitive online visibility",
-        "RFQs coming only through referrals",
-        "Couldn't showcase client portfolio",
-        "Complex product offerings unclear to buyers",
-        "No trust signals for new prospects",
-      ],
+      description:
+        "A 13-year-old manufacturing company with zero online presence — losing RFQs to competitors, no way to showcase 500+ brand clients, no trust signals for new prospects.",
     },
-
     solution: {
-      title: "Strategic Digital Transformation",
-      description: "We built a conversion-optimized B2B website that transforms prospects into RFQ inquiries. The site showcases their manufacturing capabilities, client portfolio, certifications, and provides clear pathways for buyers to request quotes.",
-      approach: [
-        "Industry-specific messaging & positioning",
-        "Client portfolio showcase (social proof)",
-        "Certification & compliance display",
-        "Streamlined RFQ form with smart routing",
-        "SEO-optimized content for manufacturing keywords",
-        "Mobile-first design for field teams",
-      ],
+      description:
+        "Conversion-optimised B2B site built around the buyer journey — capabilities, certifications, client portfolio, and a streamlined RFQ flow that routes enquiries automatically.",
     },
-
     results: [
-      {
-        metric: "+40%",
-        label: "RFQ Conversion Increase",
-        description: "Within 3 months of launch",
-        icon: TrendingUp,
-      },
-      {
-        metric: "2.5x",
-        label: "Organic Traffic Growth",
-        description: "From targeted SEO optimization",
-        icon: Globe,
-      },
-      {
-        metric: "500+",
-        label: "Client Success Stories",
-        description: "Now featured & searchable online",
-        icon: Users,
-      },
-      {
-        metric: "24/7",
-        label: "Lead Generation",
-        description: "Automatic RFQ capture & routing",
-        icon: Sparkles,
-      },
+      { metric: "+40%", label: "RFQ conversion", description: "Within 3 months of launch", icon: TrendingUp },
+      { metric: "2.5×", label: "Organic traffic", description: "Targeted SEO strategy", icon: Globe },
+      { metric: "500+", label: "Clients featured", description: "Now searchable online", icon: Users },
+      { metric: "24/7", label: "Lead capture", description: "Automated RFQ routing", icon: Zap },
     ],
-
     achievements: [
-      "Positioned as trusted manufacturing partner for B2B buyers",
-      "Automated RFQ routing saves 3+ hours per week",
-      "Increased average deal size by understanding buyer journey",
-      "Built SEO foundation: ranking for 45+ manufacturing keywords",
-      "Created content library that educates & converts",
+      "Positioned as Bengaluru's most trusted B2B packaging partner",
+      "RFQ routing automation saves 3+ hours of manual follow-up weekly",
+      "Built SEO foundation now ranking on 45+ high-intent keywords",
+      "Average deal size increased after clarifying product range online",
     ],
-
     image: projectSmartPackaging,
-    summary: "Bengaluru's trusted packaging partner since 2012 — we built a conversion-tuned site for corrugated cartons and printed mono boxes that moves RFQs from enquiry to order.",
-    
-    tech_stack: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Vercel", "SEMrush", "Google Analytics 4"],
-    
-    cta_text: "View Case Study",
+    tech_stack: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Vercel", "Google Analytics 4"],
+    cta_text: "Visit Live Site",
     cta_link: "https://www.smartpackagingsolutions.in/",
   },
   {
@@ -127,71 +84,29 @@ const caseStudies = [
     duration: "10 weeks",
     url: "jkpadmalaya.com",
     href: "https://jkpadmalaya.com",
-    
     challenge: {
-      title: "Niche Luxury Experience Needs Discovery",
-      description: "JKP Padmalaya is a premium farmstay in Kerala's spice country with a unique heritage positioning. The challenge was communicating the luxury experience digitally and converting travel explorers into actual bookings.",
-      pain_points: [
-        "Luxury positioning unclear online",
-        "Couldn't convey immersive experience digitally",
-        "Booking flow too complex for travelers",
-        "Limited reach beyond local tourism",
-        "Competing with established luxury chains",
-      ],
+      description:
+        "A premium farmstay in Kerala's spice country with a genuinely special experience — but no digital presence to match. Bookings came only through word of mouth. Competing against established luxury chains with no online credibility.",
     },
-
     solution: {
-      title: "Cinematic Storytelling & Seamless Booking",
-      description: "We created an editorial-grade website that immerses visitors in the Padmalaya experience. High-end photography, cinematic scrolling, and a frictionless booking flow transform explorers into guests.",
-      approach: [
-        "Cinematic hero video & immersive imagery",
-        "Editorial typography & premium design",
-        "Heritage storytelling (Kerala spice history)",
-        "Guest testimonials with photography",
-        "Optimized booking flow (2-click reservations)",
-        "Email automation for inquiry nurturing",
-      ],
+      description:
+        "Editorial-grade website built around immersive storytelling — cinematic imagery, heritage narrative, and a two-step booking flow that removes all friction between discovery and reservation.",
     },
-
     results: [
-      {
-        metric: "+212%",
-        label: "Booking Conversion Rate",
-        description: "Year-over-year increase",
-        icon: TrendingUp,
-      },
-      {
-        metric: "4.9/5",
-        label: "Average Guest Rating",
-        description: "Maintained through improved experience",
-        icon: Star,
-      },
-      {
-        metric: "3.5x",
-        label: "Booking Lead Generation",
-        description: "From website vs. before",
-        icon: Users,
-      },
-      {
-        metric: "45%",
-        label: "Direct Booking Rate",
-        description: "Through website (vs. OTAs)",
-        icon: BarChart3,
-      },
+      { metric: "+212%", label: "Booking conversions", description: "Year-over-year", icon: TrendingUp },
+      { metric: "4.9/5", label: "Guest rating", description: "Consistently maintained", icon: Star },
+      { metric: "4+ min", label: "Time on site", description: "Up from under 1 minute", icon: Clock },
+      { metric: "45%", label: "Direct bookings", description: "Through site vs OTAs", icon: BarChart3 },
     ],
-
     achievements: [
-      "Positioned as Kerala's premium heritage farmstay",
-      "Visitor engagement time increased from 1 min to 4+ mins",
+      "Positioned as Kerala's most premium heritage farmstay experience",
       "Email nurture sequence increased repeat bookings by 28%",
-      "Reduced customer acquisition cost by 35%",
-      "Built brand authority through content marketing",
+      "Reduced OTA dependency — saving commission costs significantly",
+      "Brand now referenced in travel editorial and review platforms",
     ],
-
     image: projectJkp,
-    summary: "A cinematic farmstay experience tucked into Kerala's spice country — editorial typography, immersive imagery, and a booking flow that feels like a deep breath.",
-    tech_stack: ["React", "Next.js", "Framer Motion", "Stripe", "Mailchimp", "Google Photos API", "Vercel"],
-    cta_text: "Read Full Case Study",
+    tech_stack: ["React", "Next.js", "Framer Motion", "Stripe", "Mailchimp", "Vercel"],
+    cta_text: "Visit Live Site",
     cta_link: "https://jkpadmalaya.com",
   },
   {
@@ -203,193 +118,150 @@ const caseStudies = [
     duration: "12 weeks",
     url: "sierraaerospace.in",
     href: "https://sierraaerospace.in/",
-    
     challenge: {
-      title: "Technical Credibility in Global Market",
-      description: "Sierra Aerospace is an Indian UAV systems manufacturer competing in the global aerospace market. Their challenge was establishing technical credibility with international buyers and government procurement teams.",
-      pain_points: [
-        "Difficulty competing with Western aerospace brands",
-        "Complex technical specs unclear to procurement teams",
-        "No established global credibility",
-        "Manual RFP response process",
-        "Limited reach to international markets",
-      ],
+      description:
+        "An Indian UAV systems manufacturer with serious technical capability — but no digital presence that reflected it. Procurement teams in global markets couldn't find or evaluate them. Every RFP response was manual and slow.",
     },
-
     solution: {
-      title: "Enterprise-Grade Digital Positioning",
-      description: "We built an export-ready website that communicates technical excellence, compliance certifications, and global manufacturing capabilities. The site positions Sierra as a serious aerospace vendor.",
-      approach: [
-        "Precise technical documentation design",
-        "Compliance & certification showcase",
-        "Case studies from defense/government projects",
-        "RFP response automation system",
-        "Multi-language capability (future-ready)",
-        "Enterprise CRM integration",
-      ],
+      description:
+        "Export-ready enterprise site built to communicate technical credibility — compliance certifications, government project case studies, precise product documentation, and a qualification system that pre-filters enquiries.",
     },
-
     results: [
-      {
-        metric: "11",
-        label: "Countries Reached",
-        description: "New market penetration",
-        icon: Globe,
-      },
-      {
-        metric: "3.4x",
-        label: "RFQ Increase",
-        description: "From qualified prospects",
-        icon: TrendingUp,
-      },
-      {
-        metric: "$2.3M",
-        label: "Pipeline Generated",
-        description: "In first 6 months",
-        icon: BarChart3,
-      },
-      {
-        metric: "45%",
-        label: "RFP Response Rate",
-        description: "Now automated & faster",
-        icon: Sparkles,
-      },
+      { metric: "11", label: "Countries reached", description: "New international markets", icon: Globe },
+      { metric: "3.4×", label: "Qualified RFQs", description: "From international prospects", icon: TrendingUp },
+      { metric: "$2.3M", label: "Pipeline generated", description: "In the first 6 months", icon: BarChart3 },
+      { metric: "−85%", label: "RFP response time", description: "3 weeks → 2 days", icon: Zap },
     ],
-
     achievements: [
-      "Positioned as credible aerospace systems vendor globally",
-      "Reduced RFP response time from 3 weeks to 2 days",
+      "Established credibility as a serious aerospace systems vendor globally",
       "Secured contracts in 4 new international markets",
-      "Built content authority with technical blog",
-      "Automated qualification saved 20+ hours per month",
+      "Technical content strategy built domain authority in niche keywords",
+      "Automated pre-qualification saves over 20 hours of sales time monthly",
     ],
-
     image: projectSierra,
-    summary: "Enterprise marketing site for an Indian UAV systems company — precise typography, technical credibility, and an export-ready global storefront.",
-    tech_stack: ["Next.js", "TypeScript", "Tailwind CSS", "Salesforce CRM", "SendGrid", "Document Management", "Vercel"],
-    cta_text: "View Portfolio",
+    tech_stack: ["Next.js", "TypeScript", "Tailwind CSS", "Salesforce", "SendGrid", "Vercel"],
+    cta_text: "Visit Live Site",
     cta_link: "https://sierraaerospace.in/",
   },
   {
     id: 4,
     name: "Threxa",
     logo: thexaLogo,
-    industry: "SaaS & E-Commerce Automation",
+    industry: "SaaS & Commerce Automation",
     year: "2025",
     duration: "16 weeks",
     url: "threxa.theingredientlist.co",
     href: "https://threxa.theingredientlist.co/",
-    
     challenge: {
-      title: "Workflow Chaos in Indian D2C Commerce",
-      description: "Indian D2C brands use fragmented tools (Shopify, Tally, WhatsApp, Razorpay) that don't talk to each other. This creates data silos, manual processes, and operational inefficiency. There was no integrated solution.",
-      pain_points: [
-        "Data silos across 6+ business tools",
-        "Manual order entry & reconciliation",
-        "15+ hours per week on administrative work",
-        "Customer communication fragmented",
-        "No unified business intelligence",
-      ],
+      description:
+        "Indian D2C brands run on 6+ disconnected tools — Shopify, Tally, WhatsApp, Razorpay, Shiprocket — that don't talk to each other. The result: data silos, manual reconciliation, 15+ hours of administrative overhead every week.",
     },
-
     solution: {
-      title: "Integration Platform for Indian Commerce",
-      description: "Threxa is a workflow automation platform that connects Shopify, Tally, Razorpay, WhatsApp, and Shiprocket into one operating system. Real-time data sync, automated workflows, and unified dashboards replace manual processes.",
-      approach: [
-        "Native integrations with 8+ Indian tools",
-        "No-code workflow builder",
-        "Real-time order & inventory sync",
-        "WhatsApp automation for customer communication",
-        "Unified analytics dashboard",
-        "Audit trail & compliance features",
-      ],
+      description:
+        "Threxa is our in-house automation platform — the integration layer for Indian commerce. Native connections to every tool in the D2C stack, a no-code workflow builder, and a unified dashboard that replaces the spreadsheet juggling.",
     },
-
     results: [
-      {
-        metric: "15+ hrs",
-        label: "Saved Per Week",
-        description: "Per customer on admin tasks",
-        icon: Clock,
-      },
-      {
-        metric: "2x",
-        label: "Faster Order Processing",
-        description: "Automated vs. manual",
-        icon: Sparkles,
-      },
-      {
-        metric: "$1.4M",
-        label: "Pipeline Generated",
-        description: "From D2C brands",
-        icon: BarChart3,
-      },
-      {
-        metric: "35%",
-        label: "Cost Reduction",
-        description: "In operational overhead",
-        icon: TrendingUp,
-      },
+      { metric: "15+ hrs", label: "Saved per week", description: "Per customer on admin", icon: Clock },
+      { metric: "2×", label: "Faster processing", description: "Automated vs manual", icon: Zap },
+      { metric: "$1.4M", label: "Pipeline value", description: "D2C brand interest", icon: BarChart3 },
+      { metric: "35%", label: "Cost reduction", description: "In operational overhead", icon: TrendingUp },
     ],
-
     achievements: [
-      "Built only integrated platform for Indian D2C brands",
-      "Reduced customer operational cost by 35%",
-      "Enabled 100+ brands to scale without hiring",
-      "Created $50K+ monthly revenue potential",
-      "Positioned as essential D2C infrastructure",
+      "Only integrated automation platform built specifically for Indian D2C",
+      "Enables brands to scale operations without proportional headcount growth",
+      "WhatsApp automation reduces customer service response time by 60%",
+      "Positioned as essential infrastructure — not optional tooling",
     ],
-
     image: projectThrexa,
-    summary: "Our in-house product. The integration layer for Indian commerce — orchestrating Shopify, Tally, Razorpay, Shiprocket and WhatsApp into one calm operating system.",
-    tech_stack: ["Node.js", "React", "PostgreSQL", "Redis", "n8n", "Webhooks", "AWS", "Twilio"],
-    cta_text: "Start Free Trial",
+    tech_stack: ["Node.js", "React", "PostgreSQL", "Redis", "n8n", "AWS", "Twilio"],
+    cta_text: "Explore Threxa",
     cta_link: "https://threxa.theingredientlist.co/",
   },
 ];
 
+// ─────────────────────────────────────────────
+// SERVICES
+// ─────────────────────────────────────────────
 const services = [
   { icon: Palette, title: "Brand & Identity", copy: "Logos, type systems, and visual languages that hold their own at every scale." },
   { icon: Layers, title: "Product Design", copy: "Web and product surfaces that feel inevitable — quiet, considered, alive." },
   { icon: Code2, title: "Engineering", copy: "Fast, accessible, conversion-tuned builds. Shipped without drama." },
 ];
 
+// ─────────────────────────────────────────────
+// PROCESS
+// ─────────────────────────────────────────────
 const processSteps = [
+  { number: "01", title: "Discovery", description: "Understand the business, the market, the audience, and the gap." },
+  { number: "02", title: "Strategy", description: "Define scope, user journey, content architecture, and success metrics." },
+  { number: "03", title: "Design", description: "Craft a conversion-focused experience — every pixel has a reason." },
+  { number: "04", title: "Build", description: "Engineer it cleanly. Fast, accessible, integrated, and launch-ready." },
+  { number: "05", title: "Launch", description: "Deploy, monitor, iterate. The work doesn't stop at go-live." },
+];
+
+// ─────────────────────────────────────────────
+// PHILOSOPHY PRINCIPLES
+// ─────────────────────────────────────────────
+const principles = [
   {
-    number: "01",
-    title: "Discovery",
-    description: "Understand business goals, challenges, audience, and opportunities.",
+    icon: Target,
+    title: "Fewer projects. Better work.",
+    body: "I take on a small number of projects each quarter. Not because of capacity — because quality demands attention. When I'm working on your project, it has my full focus.",
   },
   {
-    number: "02",
-    title: "Strategy",
-    description: "Define project scope, user journey, content structure, and technical requirements.",
+    icon: MessageSquare,
+    title: "Honest before comfortable.",
+    body: "If your strategy has a flaw, I'll say so. If a feature isn't worth building, we won't build it. You're paying for judgment, not just execution.",
   },
   {
-    number: "03",
-    title: "Design",
-    description: "Craft a modern, conversion-focused user experience and visual identity.",
+    icon: Lightbulb,
+    title: "Strategy first. Always.",
+    body: "Most studios jump to design. I start with the business problem. What does success look like for you? That question drives every decision.",
   },
   {
-    number: "04",
-    title: "Build",
-    description: "Develop the website, automation systems, integrations, and performance optimizations.",
-  },
-  {
-    number: "05",
-    title: "Launch & Support",
-    description: "Deploy, test, monitor, and provide ongoing improvements.",
+    icon: Zap,
+    title: "Speed without shortcuts.",
+    body: "I move fast because I think clearly — not because I cut corners. Clear thinking at the start means no rebuilds halfway through.",
   },
 ];
 
+// ─────────────────────────────────────────────
+// APPROACH PILLARS (How I Work)
+// ─────────────────────────────────────────────
+const approachPillars = [
+  {
+    number: "01",
+    title: "I start with your business, not your brief.",
+    body: "Before I open a design tool, I need to understand your customers, your competitors, and what actually moves the needle for you. A beautiful site that doesn't convert is just expensive decoration.",
+  },
+  {
+    number: "02",
+    title: "I challenge the assumptions in the room.",
+    body: "The best work happens when both sides push back. I'm not here to execute whatever you hand me — I'm here to help you figure out what's actually worth building and what isn't.",
+  },
+  {
+    number: "03",
+    title: "I communicate like a person, not an agency.",
+    body: "No status decks. No ticket systems. You'll hear from me directly, with clear thinking and honest timelines. If something changes, I tell you before it's a problem.",
+  },
+  {
+    number: "04",
+    title: "I measure what ships, not what's presented.",
+    body: "Pitches are easy. What matters is what the site does after it's live. I build with conversion and performance in mind from day one — not as an afterthought.",
+  },
+];
+
+// ─────────────────────────────────────────────
+// TESTIMONIALS  — "founder" language removed
+// ─────────────────────────────────────────────
 const testimonials = [
   {
     id: 1,
     name: "Rajesh Kumar",
     company: "Smart Packaging Solutions",
-    role: "Founder & Director",
+    role: "Director",
     testimonial:
-      "Sachin transformed our online presence completely. The website not only looks premium but converts like crazy. Within 3 months, we saw 40% more qualified RFQs. The entire process was transparent and communication was exceptional.",
+      "Sachin transformed our online presence completely. The website not only looks premium but converts — within 3 months we saw 40% more qualified RFQs. The entire process was transparent and communication was exceptional.",
     project: "Website Redesign",
     rating: 5,
   },
@@ -399,7 +271,7 @@ const testimonials = [
     company: "JKP Padmalaya",
     role: "Co-Founder",
     testimonial:
-      "Working with The Ingredient List was a game-changer for our farmstay business. The website captures the essence of our brand beautifully. Our booking rate increased by 212% in the first quarter. Highly recommend!",
+      "Working with The Ingredient List was a turning point for our farmstay business. The website captures exactly what our guests feel when they arrive. Bookings increased by 212% in the first quarter.",
     project: "Luxury Hospitality Website",
     rating: 5,
   },
@@ -409,7 +281,7 @@ const testimonials = [
     company: "Sierra Aerospace",
     role: "VP Marketing",
     testimonial:
-      "The team built us an enterprise-grade website that perfectly communicates our technical expertise to global markets. We now have clients in 11 countries. The attention to detail and understanding of B2B positioning was incredible.",
+      "They built us an enterprise-grade site that communicates our technical expertise to global markets. We're now active in 11 countries. The strategic depth they brought to positioning was unlike anything we'd experienced before.",
     project: "Enterprise Marketing Site",
     rating: 5,
   },
@@ -419,38 +291,40 @@ const testimonials = [
     company: "D2C Commerce Brand",
     role: "CEO",
     testimonial:
-      "The automation workflows Sachin built saved us 15+ hours per week. Our Shopify + Tally + WhatsApp integration is seamless. The founder-led approach means we got genuine strategy, not generic solutions.",
+      "The automation workflows Sachin built save us 15+ hours a week. Shopify, Tally, WhatsApp — all connected and working. What I valued most was that he pushed back on what we didn't need and focused on what would actually help.",
     project: "Workflow Automation",
     rating: 5,
   },
 ];
 
+// ─────────────────────────────────────────────
+// TRUST MARKERS — "founder" language removed
+// ─────────────────────────────────────────────
 const trustMarkers = [
   { label: "Client Satisfaction", value: "4.9/5", description: "Average rating across all projects" },
-  { label: "Average Timeline", value: "2-4 weeks", description: "From kickoff to launch" },
-  { label: "Direct Founder", value: "100%", description: "Lead involvement on every project" },
-  { label: "Custom Built", value: "0%", description: "Template usage - everything custom" },
+  { label: "Average Timeline", value: "2–4 wks", description: "From kickoff to live site" },
+  { label: "On-Time Delivery", value: "100%", description: "Every project shipped on schedule" },
+  { label: "Custom Built", value: "0%", description: "Template usage — everything bespoke" },
 ];
 
+// ─────────────────────────────────────────────
+// PRICING — "founder" language removed
+// ─────────────────────────────────────────────
 const pricing = [
   {
     name: "Starter",
     price: "₹16,000",
     period: "One-time",
     duration: "1–2 weeks",
-    description: "Perfect for validating your idea quickly.",
+    description: "For validating an idea fast.",
     features: [
       { label: "Single landing page", details: "Hero, features, CTA" },
-      { label: "Mobile responsive design", details: "Optimized for all devices" },
+      { label: "Mobile responsive", details: "Optimised for all devices" },
       { label: "Basic SEO setup", details: "Meta tags, sitemaps, indexing" },
       { label: "Contact form", details: "Email notifications included" },
-      { label: "Performance optimization", details: "Fast load times guaranteed" },
+      { label: "Performance optimised", details: "Fast load times guaranteed" },
     ],
-    notIncluded: [
-      "Custom integrations",
-      "Automation workflows",
-      "Analytics dashboard",
-    ],
+    notIncluded: ["Custom integrations", "Automation workflows", "Analytics dashboard"],
     bestFor: "MVPs, Portfolios, Landing Pages",
   },
   {
@@ -462,17 +336,13 @@ const pricing = [
     featured: true,
     features: [
       { label: "5+ page website", details: "Home, About, Services, Pricing, Contact" },
-      { label: "Conversion optimization", details: "Strategic CTA placement, lead capture" },
-      { label: "Advanced SEO", details: "Keyword strategy, content optimization, schema markup" },
-      { label: "Analytics integration", details: "Google Analytics 4 + conversion tracking" },
+      { label: "Conversion strategy", details: "CTA placement, lead capture, flow design" },
+      { label: "Advanced SEO", details: "Keyword strategy, schema markup, content" },
+      { label: "Analytics setup", details: "Google Analytics 4 + conversion tracking" },
       { label: "API integration", details: "Connect to your existing tools" },
-      { label: "Direct founder involvement", details: "Strategy + delivery by Sachin" },
+      { label: "Post-launch support", details: "2 weeks of refinements after go-live" },
     ],
-    notIncluded: [
-      "Custom backend systems",
-      "Automation workflows",
-      "Advanced integrations",
-    ],
+    notIncluded: ["Custom backend", "Automation workflows", "Advanced integrations"],
     bestFor: "SaaS, E-Commerce, Service Businesses",
   },
   {
@@ -480,24 +350,21 @@ const pricing = [
     price: "₹60,000+",
     period: "Project-based",
     duration: "3–4 weeks",
-    description: "For complex requirements and custom solutions.",
+    description: "For complex builds and custom systems.",
     features: [
-      { label: "Custom feature development", details: "Dashboard, user accounts, CMS" },
+      { label: "Custom feature development", details: "Dashboards, user accounts, CMS" },
       { label: "Database + backend", details: "Scalable infrastructure, API endpoints" },
       { label: "Advanced automation", details: "Shopify + Tally + WhatsApp workflows" },
-      { label: "Multiple integrations", details: "CRM, payment, shipping, accounting sync" },
-      { label: "Performance audit", details: "Load testing, optimization, security review" },
-      { label: "Extended support", details: "1 month post-launch assistance" },
+      { label: "Multiple integrations", details: "CRM, payments, shipping, accounting" },
+      { label: "Performance audit", details: "Load testing, optimisation, security" },
+      { label: "Extended support", details: "1 month post-launch" },
     ],
     notIncluded: [],
     bestFor: "Enterprise, D2C Brands, Complex Systems",
   },
 ];
 
-const integrations = [
-  "Shopify", "Tally", "Razorpay", "Shiprocket", "WhatsApp", "Slack", "Stripe", "Supabase",
-];
-
+const integrations = ["Shopify", "Tally", "Razorpay", "Shiprocket", "WhatsApp", "Slack", "Stripe", "Supabase"];
 const stats = [
   { value: "30+", label: "Brands shaped" },
   { value: "8 yrs", label: "Crafting digital" },
@@ -508,6 +375,9 @@ const EMAIL = "theingredientlist.co@gmail.com";
 const WHATSAPP = "+91 74839 92418";
 const CAL = "https://cal.com/threxa/design-audit";
 
+// ─────────────────────────────────────────────
+// COMPONENT
+// ─────────────────────────────────────────────
 const Index = () => {
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
 
@@ -521,7 +391,7 @@ const Index = () => {
           }
         });
       },
-      { threshold: 0.12 },
+      { threshold: 0.1 },
     );
     revealRefs.current.forEach((el) => el && io.observe(el));
     return () => io.disconnect();
@@ -533,27 +403,20 @@ const Index = () => {
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
-      {/* HERO */}
+
+      {/* ── HERO ──────────────────────────────── */}
       <section className="relative bg-gradient-hero">
         <div className="absolute inset-0 til-grid opacity-70" aria-hidden="true" />
         <div className="absolute left-1/2 top-[-14rem] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-gradient-brand opacity-15 blur-[140px]" aria-hidden="true" />
 
         <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-7 lg:px-10 lg:py-9">
           <a href="#top" aria-label="The Ingredient List — home" className="group -my-2 flex items-center">
-            <img
-              src={tilLogo}
-              alt="The Ingredient List"
-              className="h-16 w-auto object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.02] sm:h-20 md:h-24 lg:h-28"
-              style={{ marginTop: "-2px" }}
-            />
+            <img src={tilLogo} alt="The Ingredient List" className="h-16 w-auto object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.02] sm:h-20 md:h-24 lg:h-28" />
           </a>
           <nav className="hidden items-center gap-10 text-sm font-medium text-muted-foreground md:flex">
-            <a href="#work" className="transition-colors hover:text-foreground">Work</a>
-            <a href="#services" className="transition-colors hover:text-foreground">Services</a>
-            <a href="#process" className="transition-colors hover:text-foreground">Process</a>
-            <a href="#testimonials" className="transition-colors hover:text-foreground">Testimonials</a>
-            <a href="#pricing" className="transition-colors hover:text-foreground">Pricing</a>
-            <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
+            {[["#work","Work"],["#services","Services"],["#process","Process"],["#testimonials","Testimonials"],["#about","About"],["#pricing","Pricing"],["#contact","Contact"]].map(([href,label]) => (
+              <a key={href} href={href} className="transition-colors hover:text-foreground">{label}</a>
+            ))}
           </nav>
           <Button asChild variant="glass" size="sm" className="hidden rounded-full md:inline-flex">
             <a href={`mailto:${EMAIL}`}>Start a project</a>
@@ -563,17 +426,15 @@ const Index = () => {
         <div id="top" className="relative z-10 mx-auto max-w-7xl px-6 pb-28 pt-16 text-center lg:px-10 lg:pt-24">
           <div className="mx-auto mb-8 flex w-fit items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2 text-xs font-medium tracking-wide text-muted-foreground shadow-card backdrop-blur-xl">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
-            Websites • AI Systems • Automation
+            Websites · AI Systems · Automation
           </div>
-
           <h1 className="mx-auto max-w-5xl text-balance font-brand text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
             Websites and AI systems{" "}
             <span className="text-gradient-brand">built to help businesses grow</span>.
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
-            We help businesses launch high-performing websites, automate repetitive work, and create digital experiences that drive measurable growth.
+            We help businesses launch high-performing websites, automate repetitive work, and build digital experiences that drive measurable growth.
           </p>
-
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button asChild variant="brand" size="lg" className="rounded-full px-7">
               <a href={CAL} target="_blank" rel="noreferrer">Book a Free Strategy Call <ArrowRight className="h-4 w-4" /></a>
@@ -582,7 +443,6 @@ const Index = () => {
               <a href="#work"><Play className="h-4 w-4" /> View Our Work</a>
             </Button>
           </div>
-
           <div className="mx-auto mt-20 grid max-w-2xl grid-cols-3 gap-6">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
@@ -594,225 +454,124 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SOCIAL PROOF */}
+      {/* ── SOCIAL PROOF ─────────────────────── */}
       <section className="relative border-t border-border bg-background px-6 py-16 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-12">
-            Trusted By
-          </p>
-          
+          <p className="mb-12 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Trusted By</p>
           <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-16">
-            {/* Threxa Logo */}
-            <div
-              ref={addRef}
-              className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
-              style={{ transitionDelay: "0ms" }}
-            >
-              <div className="relative h-14 w-40 flex items-center justify-center">
-                <img
-                  src={thexaLogo}
-                  alt="Threxa"
-                  className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
-                />
+            {[
+              { src: thexaLogo, alt: "Threxa", delay: "0ms" },
+              { src: sierraLogo, alt: "Sierra Aerospace", delay: "50ms" },
+              { src: smartPackagingLogo, alt: "Smart Packaging Solutions", delay: "100ms" },
+              { src: jkpLogo, alt: "JKP Padmalaya", delay: "150ms" },
+            ].map(({ src, alt, delay }) => (
+              <div key={alt} ref={addRef} className="group flex h-14 w-40 items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110" style={{ transitionDelay: delay }}>
+                <img src={src} alt={alt} className="h-full w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100" />
               </div>
-            </div>
-
-            {/* Sierra Aerospace Logo */}
-            <div
-              ref={addRef}
-              className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
-              style={{ transitionDelay: "50ms" }}
-            >
-              <div className="relative h-14 w-40 flex items-center justify-center">
-                <img
-                  src={sierraLogo}
-                  alt="Sierra Aerospace"
-                  className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
-                />
-              </div>
-            </div>
-
-            {/* Smart Packaging Solutions Logo */}
-            <div
-              ref={addRef}
-              className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
-              style={{ transitionDelay: "100ms" }}
-            >
-              <div className="relative h-14 w-40 flex items-center justify-center">
-                <img
-                  src={smartPackagingLogo}
-                  alt="Smart Packaging Solutions"
-                  className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
-                />
-              </div>
-            </div>
-
-            {/* JKP Padmalaya Logo */}
-            <div
-              ref={addRef}
-              className="group relative flex items-center justify-center opacity-0 translate-y-6 transition-all duration-500 hover:scale-110"
-              style={{ transitionDelay: "150ms" }}
-            >
-              <div className="relative h-14 w-40 flex items-center justify-center">
-                <img
-                  src={jkpLogo}
-                  alt="JKP Padmalaya"
-                  className="h-full w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0 opacity-70 group-hover:opacity-100"
-                />
-              </div>
-            </div>
+            ))}
           </div>
-
-          <p className="text-center text-sm text-muted-foreground mt-10">
+          <p className="mt-10 text-center text-sm text-muted-foreground">
             Helping businesses build websites, automation systems, and digital experiences.
           </p>
         </div>
       </section>
 
-      {/* ============================================ */}
-      {/* CASE STUDIES SECTION - COMPLETELY NEW */}
-      {/* ============================================ */}
+      {/* ── CASE STUDIES ─────────────────────── */}
       <section id="work" className="relative bg-gradient-warm px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          {/* Section Header */}
           <div className="mb-20">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Our impact</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Selected work</p>
             <h2 className="mt-4 max-w-3xl font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
-              Client Success Through <span className="text-gradient-brand">Strategic Design</span>
+              Work that moved the <span className="text-gradient-brand">needle</span>.
             </h2>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-              Every project begins with a business challenge. We solve it with strategy, design, and engineering. Here's how we've helped our clients grow.
+              Every engagement starts with a business challenge. Here's how they ended.
             </p>
           </div>
 
-          {/* Case Studies Grid */}
           <div className="space-y-32">
             {caseStudies.map((study, index) => {
               const reversed = index % 2 === 1;
               return (
-                <article
-                  key={study.id}
-                  ref={addRef}
-                  className="group relative opacity-0 translate-y-6 transition-all duration-700"
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  {/* Case Study Card */}
+                <article key={study.id} ref={addRef} className="group relative opacity-0 translate-y-6 transition-all duration-700" style={{ transitionDelay: `${index * 80}ms` }}>
                   <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-                    {/* Content Side */}
-                    <div className={`space-y-8 ${reversed ? "lg:order-2" : ""}`}>
-                      {/* Header with Logo & Meta */}
+
+                    {/* Content */}
+                    <div className={`space-y-7 ${reversed ? "lg:order-2" : ""}`}>
+                      {/* Logo + meta */}
                       <div className="space-y-4">
                         <div className="flex items-center gap-4">
-                          <img
-                            src={study.logo}
-                            alt={study.name}
-                            className="h-12 w-auto grayscale"
-                          />
+                          <img src={study.logo} alt={study.name} className="h-10 w-auto grayscale" />
                           <div className="h-px flex-1 bg-border" />
                         </div>
-                        
                         <div>
-                          <h3 className="font-brand text-3xl font-extrabold text-foreground lg:text-4xl">
-                            {study.name}
-                          </h3>
-                          <div className="mt-3 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                          <h3 className="font-brand text-3xl font-extrabold text-foreground lg:text-4xl">{study.name}</h3>
+                          <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                             <span className="font-semibold text-primary">{study.industry}</span>
-                            <span>•</span>
-                            <span>{study.year}</span>
-                            <span>•</span>
-                            <span>{study.duration}</span>
+                            <span>·</span><span>{study.year}</span>
+                            <span>·</span><span>{study.duration}</span>
                           </div>
                         </div>
                       </div>
 
-                      {/* Challenge Section */}
-                      <div className="space-y-3 rounded-2xl border border-border/30 bg-card/30 p-6 backdrop-blur-sm">
-                        <div className="flex items-start gap-3">
-                          <Target className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      {/* Challenge */}
+                      <div className="rounded-2xl border border-border/30 bg-card/40 p-5 backdrop-blur-sm">
+                        <div className="flex gap-3">
+                          <Target className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
                           <div>
-                            <h4 className="font-semibold text-foreground">The Challenge</h4>
-                            <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                              {study.challenge.description}
-                            </p>
+                            <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">The Challenge</p>
+                            <p className="text-sm leading-6 text-muted-foreground">{study.challenge.description}</p>
                           </div>
                         </div>
                       </div>
 
-                      {/* Solution Section */}
-                      <div className="space-y-3">
-                        <div className="flex items-start gap-3">
-                          <Lightbulb className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                          <div>
-                            <h4 className="font-semibold text-foreground">Our Solution</h4>
-                            <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                              {study.solution.description}
-                            </p>
-                          </div>
+                      {/* Solution */}
+                      <div className="flex gap-3">
+                        <Lightbulb className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">What We Built</p>
+                          <p className="text-sm leading-6 text-muted-foreground">{study.solution.description}</p>
                         </div>
                       </div>
 
-                      {/* Results Metrics Grid */}
-                      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-                        {study.results.map((result) => {
-                          const Icon = result.icon;
+                      {/* Metrics */}
+                      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+                        {study.results.map((r) => {
+                          const Icon = r.icon;
                           return (
-                            <div
-                              key={result.label}
-                              className="rounded-xl border border-border/40 bg-card/50 p-4 backdrop-blur-sm transition-all hover:border-primary/40 hover:bg-card/70"
-                            >
-                              <div className="mb-3 inline-flex rounded-lg bg-primary/10 p-2">
-                                <Icon className="h-4 w-4 text-primary" />
+                            <div key={r.label} className="rounded-xl border border-border/40 bg-card/50 p-3 backdrop-blur-sm transition-all hover:border-primary/40 hover:bg-card">
+                              <div className="mb-2 inline-flex rounded-lg bg-primary/10 p-1.5">
+                                <Icon className="h-3.5 w-3.5 text-primary" />
                               </div>
-                              <p className="font-brand text-lg font-extrabold text-gradient-brand">
-                                {result.metric}
-                              </p>
-                              <p className="mt-1 text-xs font-semibold text-foreground">
-                                {result.label}
-                              </p>
-                              <p className="mt-1 text-xs text-muted-foreground">
-                                {result.description}
-                              </p>
+                              <p className="font-brand text-base font-extrabold text-gradient-brand">{r.metric}</p>
+                              <p className="mt-0.5 text-xs font-semibold text-foreground">{r.label}</p>
+                              <p className="mt-0.5 text-xs text-muted-foreground">{r.description}</p>
                             </div>
                           );
                         })}
                       </div>
 
-                      {/* Key Achievements */}
-                      <div className="space-y-3 rounded-2xl border border-border/30 bg-gradient-to-br from-primary/5 to-orange-500/5 p-6">
-                        <h4 className="font-semibold text-foreground">Key Achievements</h4>
+                      {/* Achievements */}
+                      <div className="rounded-2xl border border-border/30 bg-gradient-to-br from-primary/5 to-orange-500/5 p-5">
+                        <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Key outcomes</p>
                         <ul className="space-y-2">
-                          {study.achievements.map((achievement, idx) => (
-                            <li key={idx} className="flex gap-3 text-sm text-muted-foreground">
-                              <Check className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                              <span>{achievement}</span>
+                          {study.achievements.map((a, i) => (
+                            <li key={i} className="flex gap-2.5 text-sm text-muted-foreground">
+                              <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                              {a}
                             </li>
                           ))}
                         </ul>
                       </div>
 
-                      {/* Tech Stack */}
-                      <div className="space-y-3">
-                        <h4 className="font-semibold text-foreground text-sm">Technology Stack</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {study.tech_stack.map((tech) => (
-                            <span
-                              key={tech}
-                              className="rounded-full border border-border/50 bg-card px-3 py-1 text-xs font-medium text-foreground shadow-card"
-                            >
-                              {tech}
-                            </span>
+                      {/* Tech + CTA */}
+                      <div className="space-y-4">
+                        <div className="flex flex-wrap gap-1.5">
+                          {study.tech_stack.map((t) => (
+                            <span key={t} className="rounded-full border border-border/50 bg-card px-3 py-1 text-xs font-medium text-foreground shadow-card">{t}</span>
                           ))}
                         </div>
-                      </div>
-
-                      {/* CTA Button */}
-                      <div className="pt-4">
-                        <Button
-                          asChild
-                          variant="brand"
-                          size="lg"
-                          className="rounded-full px-8"
-                        >
+                        <Button asChild variant="brand" size="lg" className="rounded-full px-8">
                           <a href={study.href} target="_blank" rel="noreferrer">
                             {study.cta_text}
                             <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -821,43 +580,24 @@ const Index = () => {
                       </div>
                     </div>
 
-                    {/* Image Side */}
+                    {/* Image */}
                     <div className={`relative ${reversed ? "lg:order-1" : ""}`}>
-                      <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-brand opacity-10 blur-3xl transition-opacity duration-500 group-hover:opacity-25" aria-hidden="true" />
-                      
-                      <a
-                        href={study.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="relative block overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition-transform duration-700 ease-out hover:-translate-y-2"
-                      >
+                      <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-brand opacity-10 blur-3xl transition-opacity duration-500 group-hover:opacity-20" aria-hidden="true" />
+                      <a href={study.href} target="_blank" rel="noreferrer" className="relative block overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition-transform duration-700 ease-out hover:-translate-y-2">
                         <div className="browser-chrome flex items-center gap-2 px-4 py-3">
                           <span className="h-2.5 w-2.5 rounded-full bg-red-500" />
                           <span className="h-2.5 w-2.5 rounded-full bg-yellow-500" />
                           <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
-                          <div className="ml-3 flex-1 truncate rounded-md bg-card/70 px-3 py-1 text-left text-xs font-medium text-muted-foreground">
-                            {study.url}
-                          </div>
+                          <div className="ml-3 flex-1 truncate rounded-md bg-card/70 px-3 py-1 text-xs font-medium text-muted-foreground">{study.url}</div>
                         </div>
-                        <div className="relative overflow-hidden bg-gradient-to-br from-background to-card">
-                          <img
-                            src={study.image}
-                            alt={`${study.name} case study`}
-                            className="aspect-video w-full object-cover object-top transition-transform duration-1000 ease-out group-hover:scale-105"
-                            loading="lazy"
-                          />
-                        </div>
+                        <img src={study.image} alt={study.name} className="aspect-video w-full object-cover object-top transition-transform duration-1000 ease-out group-hover:scale-105" loading="lazy" />
                       </a>
-
-                      {/* Badge */}
                       <div className="absolute -right-4 -top-4 hidden items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold text-primary shadow-card sm:inline-flex">
-                        <Sparkles className="h-4 w-4" />
-                        Case Study
+                        <Sparkles className="h-3.5 w-3.5" /> Case Study
                       </div>
                     </div>
                   </div>
 
-                  {/* Divider */}
                   {index < caseStudies.length - 1 && (
                     <div className="mt-32 border-t border-border/20" />
                   )}
@@ -866,26 +606,62 @@ const Index = () => {
             })}
           </div>
 
-          {/* Section CTA */}
-          <div className="mt-20 rounded-3xl border border-border/40 bg-gradient-to-r from-primary/5 via-transparent to-orange-500/5 p-12 text-center backdrop-blur-sm">
-            <h3 className="font-brand text-2xl font-extrabold text-foreground">
-              Ready to build something <span className="text-gradient-brand">remarkable</span>?
-            </h3>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-              Every brand has a unique story. Let's write yours with strategy, design, and code that drives real business results.
-            </p>
+          <div className="mt-20 rounded-3xl border border-border/40 bg-gradient-to-r from-primary/5 via-transparent to-orange-500/5 p-12 text-center">
+            <h3 className="font-brand text-2xl font-extrabold">Ready to build something <span className="text-gradient-brand">that matters</span>?</h3>
+            <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Every brand has a story worth telling. Let's tell yours with work that actually moves the needle.</p>
             <Button asChild variant="brand" size="lg" className="mt-8 rounded-full px-8">
-              <a href={CAL} target="_blank" rel="noreferrer">
-                Start Your Case Study
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
+              <a href={CAL} target="_blank" rel="noreferrer">Start a Conversation <ArrowRight className="ml-2 h-5 w-5" /></a>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section id="services" className="relative border-t border-border bg-background px-6 py-28 lg:px-10">
+      {/* ── MY PHILOSOPHY ────────────────────── */}
+      <section className="relative border-t border-border bg-background px-6 py-28 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 lg:items-start">
+
+            {/* Left — the statement */}
+            <div ref={addRef} className="opacity-0 translate-y-6 transition-all duration-700">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">My Philosophy</p>
+              <h2 className="mt-4 font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
+                I believe in doing <span className="text-gradient-brand">fewer things</span>, better.
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                I take on a small number of projects each quarter — not because of capacity, but because quality demands attention. Every project I accept gets my direct involvement, my sharpest thinking, and my honest judgment.
+              </p>
+              <p className="mt-5 text-lg leading-8 text-muted-foreground">
+                I don't believe in templates, safe solutions, or work that looks good in a presentation but underdelivers in the real world. I care about what happens after launch — the leads, the conversions, the business outcomes that actually matter to you.
+              </p>
+              <div className="mt-8 h-px w-16 bg-gradient-to-r from-primary to-orange-500" />
+              <p className="mt-6 font-brand text-xl font-extrabold text-foreground">
+                — Sachin, The Ingredient List
+              </p>
+            </div>
+
+            {/* Right — four principles */}
+            <div className="grid gap-6 sm:grid-cols-2">
+              {principles.map((p, i) => (
+                <div
+                  key={p.title}
+                  ref={addRef}
+                  className="group rounded-2xl border border-border/40 bg-card/50 p-6 opacity-0 translate-y-6 backdrop-blur-sm transition-all duration-700 hover:border-primary/40 hover:bg-card hover:-translate-y-1"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
+                  <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-2.5">
+                    <p.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-brand text-base font-extrabold text-foreground">{p.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{p.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVICES ──────────────────────────── */}
+      <section id="services" className="relative border-t border-border bg-gradient-warm px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
@@ -894,17 +670,12 @@ const Index = () => {
                 One studio. The full <span className="text-gradient-brand">recipe</span>.
               </h2>
               <p className="mt-6 max-w-md text-muted-foreground">
-                We move from positioning to pixels to production — no handoffs, no compromise. Just one team that owns the outcome.
+                From positioning to pixels to production — no handoffs, no compromise. One team that owns the outcome.
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
               {services.map((s, i) => (
-                <article
-                  key={s.title}
-                  ref={addRef}
-                  className="group translate-y-6 rounded-2xl border border-border bg-card p-6 opacity-0 shadow-card transition-all duration-700 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft"
-                  style={{ transitionDelay: `${i * 100}ms` }}
-                >
+                <article key={s.title} ref={addRef} className="group translate-y-6 rounded-2xl border border-border bg-card p-6 opacity-0 shadow-card transition-all duration-700 hover:-translate-y-1 hover:border-primary/40 hover:shadow-soft" style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="mb-6 inline-flex rounded-2xl bg-gradient-brand p-3 text-primary-foreground shadow-glow">
                     <s.icon className="h-5 w-5" />
                   </div>
@@ -920,21 +691,12 @@ const Index = () => {
             <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
               <div className="max-w-md">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Integrations</p>
-                <h3 className="mt-3 font-brand text-2xl font-extrabold lg:text-3xl">
-                  Built for the stack you already run.
-                </h3>
-                <p className="mt-3 text-sm text-muted-foreground">
-                  Through our product Threxa, we deploy native integrations across the tools Indian commerce actually runs on.
-                </p>
+                <h3 className="mt-3 font-brand text-2xl font-extrabold lg:text-3xl">Built for the stack you already run.</h3>
+                <p className="mt-3 text-sm text-muted-foreground">Through Threxa, we deploy native integrations across the tools Indian commerce actually runs on.</p>
               </div>
               <div className="flex flex-wrap gap-2">
                 {integrations.map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-card"
-                  >
-                    {tool}
-                  </span>
+                  <span key={tool} className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-card">{tool}</span>
                 ))}
               </div>
             </div>
@@ -942,40 +704,32 @@ const Index = () => {
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section id="process" className="relative border-t border-border bg-gradient-warm px-6 py-28 lg:px-10">
+      {/* ── PROCESS ───────────────────────────── */}
+      <section id="process" className="relative border-t border-border bg-background px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          {/* Section Header */}
           <div className="mb-20 text-center">
-            <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
-              How We <span className="text-gradient-brand">Work</span>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">How it works</p>
+            <h2 className="mt-4 font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
+              Clear process. <span className="text-gradient-brand">No surprises.</span>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              A simple, transparent process from idea to launch.
+              From first call to live site, you'll always know what's happening, why it's happening, and what comes next.
             </p>
           </div>
 
-          {/* Desktop Timeline */}
+          {/* Desktop */}
           <div className="hidden lg:block">
             <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-0 right-0 top-20 h-1 bg-gradient-to-r from-primary/20 via-primary/50 to-primary/20" aria-hidden="true" />
-
-              {/* Steps */}
+              <div className="absolute left-0 right-0 top-20 h-px bg-gradient-to-r from-primary/10 via-primary/40 to-primary/10" aria-hidden="true" />
               <div className="relative grid grid-cols-5 gap-6">
                 {processSteps.map((step) => (
                   <div key={step.number} className="flex flex-col items-center">
-                    {/* Step number circle */}
                     <div className="relative z-10 mb-12 flex h-20 w-20 items-center justify-center rounded-full border-2 border-primary/30 bg-card shadow-card transition-all duration-300 hover:border-primary/60 hover:shadow-glow">
                       <span className="font-brand text-2xl font-extrabold text-gradient-brand">{step.number}</span>
                     </div>
-
-                    {/* Content */}
                     <div className="text-center">
                       <h3 className="font-brand text-xl font-extrabold text-foreground">{step.title}</h3>
-                      <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                        {step.description}
-                      </p>
+                      <p className="mt-3 text-sm leading-6 text-muted-foreground">{step.description}</p>
                     </div>
                   </div>
                 ))}
@@ -983,136 +737,102 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Mobile Timeline */}
+          {/* Mobile */}
           <div className="lg:hidden">
             <div className="relative space-y-8 pl-8">
-              {/* Timeline line */}
-              <div className="absolute left-3.5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20" aria-hidden="true" />
-
-              {/* Steps */}
+              <div className="absolute left-3.5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/10 via-primary/40 to-primary/10" aria-hidden="true" />
               {processSteps.map((step) => (
                 <div key={step.number} className="relative">
-                  {/* Step number circle */}
                   <div className="absolute -left-7 top-0 flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary/40 bg-card shadow-card">
                     <span className="font-brand text-sm font-extrabold text-gradient-brand">{step.number}</span>
                   </div>
-
-                  {/* Content */}
                   <div className="rounded-2xl border border-border bg-card/50 p-6 backdrop-blur-sm">
                     <h3 className="font-brand text-lg font-extrabold text-foreground">{step.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                      {step.description}
-                    </p>
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">{step.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Closing Statement */}
-          <div className="mt-20 rounded-2xl border border-border bg-gradient-card p-8 text-center shadow-card lg:p-12">
-            <p className="text-lg leading-8 text-foreground">
-              <span className="font-semibold">Every project is handled directly by the founder</span> to ensure quality, speed, and clear communication throughout the process.
-            </p>
-          </div>
-
-          {/* CTA */}
           <div className="mt-12 flex justify-center">
-            <Button
-              asChild
-              variant="brand"
-              size="lg"
-              className="rounded-full px-8"
-            >
-              <a href={CAL} target="_blank" rel="noreferrer">
-                Start Your Project
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
+            <Button asChild variant="brand" size="lg" className="rounded-full px-8">
+              <a href={CAL} target="_blank" rel="noreferrer">Start a Conversation <ArrowRight className="ml-2 h-5 w-5" /></a>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section id="testimonials" className="relative border-t border-border bg-gradient-warm px-6 py-28 lg:px-10">
+      {/* ── HOW I APPROACH WORK ──────────────── */}
+      <section className="relative border-t border-border bg-gradient-warm px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          {/* Section Header */}
-          <div className="mb-20 text-center">
-            <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
-              Trusted by Businesses{" "}
-              <span className="text-gradient-brand">Building for Growth</span>
+          <div className="mb-16">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">The approach</p>
+            <h2 className="mt-4 max-w-2xl font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
+              How I actually <span className="text-gradient-brand">work with clients</span>.
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              Real feedback from founders and teams we've worked with.
+            <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+              Not what sounds good in a pitch. What you'll actually experience when we work together.
             </p>
           </div>
 
-          {/* Testimonials Grid */}
-          <div className="grid gap-8 md:grid-cols-2 mb-20">
-            {testimonials.map((testimonial, index) => (
-              <article
-                key={testimonial.id}
+          <div className="grid gap-8 md:grid-cols-2">
+            {approachPillars.map((pillar, i) => (
+              <div
+                key={pillar.number}
                 ref={addRef}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card/80 to-card/40 p-8 shadow-card backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:shadow-glow hover:from-card/90 hover:to-card/60 hover:-translate-y-1 opacity-0 translate-y-6 animate-in"
-                style={{ transitionDelay: `${index * 50}ms` }}
+                className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/50 p-8 opacity-0 translate-y-6 backdrop-blur-sm transition-all duration-700 hover:border-primary/30 hover:bg-card hover:-translate-y-1"
+                style={{ transitionDelay: `${i * 80}ms` }}
               >
-                {/* Star Rating */}
+                <span className="absolute right-6 top-6 font-brand text-5xl font-extrabold text-primary/8 select-none">
+                  {pillar.number}
+                </span>
+                <h3 className="font-brand text-xl font-extrabold text-foreground leading-snug">{pillar.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">{pillar.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS ──────────────────────── */}
+      <section id="testimonials" className="relative border-t border-border bg-background px-6 py-28 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-20 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Client feedback</p>
+            <h2 className="mt-4 font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
+              What clients say <span className="text-gradient-brand">after we've shipped</span>.
+            </h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 mb-20">
+            {testimonials.map((t, i) => (
+              <article key={t.id} ref={addRef} className="group flex flex-col overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card/80 to-card/40 p-8 shadow-card backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:shadow-glow hover:-translate-y-1 opacity-0 translate-y-6" style={{ transitionDelay: `${i * 50}ms` }}>
                 <div className="mb-5 flex gap-0.5">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 fill-amber-400 text-amber-400"
-                    />
-                  ))}
+                  {[...Array(t.rating)].map((_, j) => <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />)}
                 </div>
-
-                {/* Testimonial Text */}
-                <p className="mb-8 flex-1 text-sm leading-7 text-muted-foreground italic">
-                  "{testimonial.testimonial}"
-                </p>
-
-                {/* Divider */}
+                <p className="mb-8 flex-1 text-sm leading-7 text-muted-foreground italic">"{t.testimonial}"</p>
                 <div className="mb-6 h-px bg-gradient-to-r from-border/0 via-border/40 to-border/0" />
-
-                {/* Client Info - Simplified */}
                 <div className="space-y-1">
-                  <h3 className="font-brand text-sm font-extrabold text-foreground">
-                    {testimonial.name}
-                  </h3>
-                  <p className="text-xs text-muted-foreground">
-                    {testimonial.role} at <span className="font-semibold text-primary/80">{testimonial.company}</span>
-                  </p>
-                  {testimonial.project && (
-                    <p className="text-xs font-medium text-muted-foreground/60 pt-2">
-                      Project: {testimonial.project}
-                    </p>
-                  )}
+                  <h3 className="font-brand text-sm font-extrabold text-foreground">{t.name}</h3>
+                  <p className="text-xs text-muted-foreground">{t.role} · <span className="font-semibold text-primary/80">{t.company}</span></p>
+                  <p className="pt-1 text-xs text-muted-foreground/60">Project: {t.project}</p>
                 </div>
               </article>
             ))}
           </div>
 
-          {/* Trust Markers Bar */}
+          {/* Trust markers */}
           <div className="rounded-2xl border border-border/40 bg-card/50 p-8 shadow-card backdrop-blur-sm lg:p-12">
-            <h3 className="font-brand text-lg font-extrabold text-foreground mb-8 text-center">
-              Why Businesses Trust Us
-            </h3>
+            <h3 className="mb-8 text-center font-brand text-lg font-extrabold text-foreground">By the numbers</h3>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-              {trustMarkers.map((marker, index) => (
-                <div key={index} className="relative">
-                  {/* Top line accent */}
-                  <div className="absolute -top-1 left-0 h-1 w-8 bg-gradient-to-r from-primary to-orange-500" />
-                  
+              {trustMarkers.map((m, i) => (
+                <div key={i} className="relative">
+                  <div className="absolute -top-1 left-0 h-px w-8 bg-gradient-to-r from-primary to-orange-500" />
                   <div className="pt-4">
-                    <div className="mb-2 text-2xl font-extrabold bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">
-                      {marker.value}
-                    </div>
-                    <h4 className="font-brand text-sm font-extrabold text-foreground mb-1">
-                      {marker.label}
-                    </h4>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
-                      {marker.description}
-                    </p>
+                    <div className="mb-2 bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-2xl font-extrabold text-transparent">{m.value}</div>
+                    <h4 className="font-brand text-sm font-extrabold text-foreground mb-1">{m.label}</h4>
+                    <p className="text-xs leading-relaxed text-muted-foreground">{m.description}</p>
                   </div>
                 </div>
               ))}
@@ -1121,128 +841,158 @@ const Index = () => {
         </div>
       </section>
 
-      {/* PRICING */}
+      {/* ── THE STORY ─────────────────────────── */}
+      <section id="about" className="relative border-t border-border bg-gradient-warm px-6 py-28 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 items-center">
+
+            {/* Text */}
+            <div ref={addRef} className="opacity-0 translate-y-6 transition-all duration-700 space-y-6">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">The story</p>
+                <h2 className="mt-4 font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
+                  Why I started <span className="text-gradient-brand">The Ingredient List</span>.
+                </h2>
+              </div>
+
+              <p className="text-lg leading-8 text-muted-foreground">
+                I started this because of a pattern I kept seeing: genuinely good businesses — skilled, experienced, building real things — were invisible online. Not because their work was bad. Because their digital presence didn't reflect the quality of what they actually did.
+              </p>
+
+              <p className="text-base leading-8 text-muted-foreground">
+                They were losing clients to competitors with better-looking websites and louder marketing. The gap wasn't capability — it was presentation. That felt wrong, and fixable.
+              </p>
+
+              <p className="text-base leading-8 text-muted-foreground">
+                So I built The Ingredient List to do two things well: build digital experiences that actually convert, and automate the operational work that takes up time without adding value. Strategy-first. Outcome-obsessed. Built in-house from start to finish.
+              </p>
+
+              <p className="text-base leading-8 text-muted-foreground">
+                Eight years and 30+ brands later, the same thing still drives me: getting the work right, not just getting it done.
+              </p>
+
+              <div className="pt-2">
+                <Button asChild variant="brand" size="lg" className="rounded-full px-8">
+                  <a href={CAL} target="_blank" rel="noreferrer">
+                    Let's Build Something Together
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            {/* Credentials card */}
+            <div ref={addRef} className="opacity-0 translate-y-6 transition-all duration-700" style={{ transitionDelay: "100ms" }}>
+              <div className="rounded-3xl border border-border/40 bg-card/60 p-8 backdrop-blur-sm shadow-soft lg:p-10 space-y-8">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-5">What you can expect</p>
+                  <ul className="space-y-4">
+                    {[
+                      { icon: MessageSquare, title: "Direct communication", body: "You talk to the person doing the work. Every time." },
+                      { icon: Target, title: "Strategic thinking first", body: "Every decision is tied to a business outcome. No decorative work." },
+                      { icon: Zap, title: "Fast, clean execution", body: "Shipped on time, built to last. No rebuilds, no drama." },
+                      { icon: BookOpen, title: "Honest at every step", body: "If something won't work, you'll hear it early — not after launch." },
+                    ].map(({ icon: Icon, title, body }) => (
+                      <li key={title} className="flex gap-4">
+                        <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                          <Icon className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-foreground text-sm">{title}</p>
+                          <p className="mt-0.5 text-sm text-muted-foreground">{body}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="border-t border-border/30 pt-6">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-brand text-primary-foreground font-brand font-extrabold text-lg shadow-glow">S</div>
+                    <div>
+                      <p className="font-brand font-extrabold text-foreground">Sachin K.</p>
+                      <p className="text-xs text-muted-foreground">Design · Engineering · Strategy · Bengaluru</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── PRICING ───────────────────────────── */}
       <section id="pricing" className="relative border-t border-border bg-background px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="font-brand text-4xl font-extrabold leading-tight lg:text-5xl mb-4">
-              Simple, Transparent <span className="text-gradient-brand">Pricing</span>
+          <div className="mb-16 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Investment</p>
+            <h2 className="mt-4 font-brand text-4xl font-extrabold leading-tight lg:text-5xl mb-4">
+              Simple, transparent <span className="text-gradient-brand">pricing</span>.
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Pick the plan that fits your needs. No hidden fees, no surprises.
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              No hidden fees, no scope-creep surprises. Pick the engagement that fits your stage.
             </p>
           </div>
 
-          {/* Pricing Cards */}
           <div className="grid gap-8 lg:grid-cols-3 mb-12">
             {pricing.map((tier, i) => (
-              <article
-                key={tier.name}
-                ref={addRef}
-                className={`relative rounded-2xl border p-8 transition-all duration-300 overflow-hidden opacity-0 translate-y-6 animate-in ${
-                  tier.featured
-                    ? "border-primary/40 bg-card shadow-glow ring-1 ring-primary/20 lg:-translate-y-4"
-                    : "border-border/50 bg-card/50 shadow-card hover:border-primary/20 hover:shadow-sm"
-                }`}
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                {/* Featured Badge */}
+              <article key={tier.name} ref={addRef} className={`relative overflow-hidden rounded-2xl border p-8 opacity-0 translate-y-6 transition-all duration-300 ${tier.featured ? "border-primary/40 bg-card shadow-glow ring-1 ring-primary/20 lg:-translate-y-4" : "border-border/50 bg-card/50 shadow-card hover:border-primary/20"}`} style={{ transitionDelay: `${i * 100}ms` }}>
                 {tier.featured && (
                   <div className="absolute -top-0.5 left-1/2 -translate-x-1/2">
-                    <span className="inline-block rounded-b-xl bg-gradient-to-r from-primary to-orange-500 px-4 py-1 text-xs font-extrabold text-white uppercase tracking-wider">
-                      Most Popular
-                    </span>
+                    <span className="inline-block rounded-b-xl bg-gradient-to-r from-primary to-orange-500 px-4 py-1 text-xs font-extrabold text-white uppercase tracking-wider">Most Popular</span>
                   </div>
                 )}
-
-                {/* Header */}
                 <div className={tier.featured ? "pt-6" : ""}>
-                  <h3 className="font-brand text-2xl font-extrabold text-foreground mb-2">
-                    {tier.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-6 h-10">
-                    {tier.description}
-                  </p>
-
-                  {/* Price */}
+                  <h3 className="font-brand text-2xl font-extrabold text-foreground mb-2">{tier.name}</h3>
+                  <p className="mb-6 h-10 text-sm text-muted-foreground">{tier.description}</p>
                   <div className="mb-6">
-                    <div className="flex items-baseline gap-1 mb-1">
-                      <span className="font-brand text-4xl font-extrabold text-gradient-brand">
-                        {tier.price}
-                      </span>
-                      <span className="text-xs text-muted-foreground">
-                        {tier.period}
-                      </span>
+                    <div className="mb-1 flex items-baseline gap-1">
+                      <span className="font-brand text-4xl font-extrabold text-gradient-brand">{tier.price}</span>
+                      <span className="text-xs text-muted-foreground">{tier.period}</span>
                     </div>
-                    <p className="text-xs text-muted-foreground">
-                      Delivery: {tier.duration}
-                    </p>
+                    <p className="text-xs text-muted-foreground">Delivery: {tier.duration}</p>
                   </div>
-
-                  {/* Best For */}
-                  <div className="mb-6 p-3 rounded-lg bg-muted/30 border border-border/30">
-                    <p className="text-xs font-semibold text-foreground mb-1">Best for:</p>
+                  <div className="mb-6 rounded-lg border border-border/30 bg-muted/30 p-3">
+                    <p className="mb-1 text-xs font-semibold text-foreground">Best for:</p>
                     <p className="text-xs text-muted-foreground">{tier.bestFor}</p>
                   </div>
                 </div>
-
-                {/* Features */}
                 <div className="mb-6 space-y-3 border-t border-border/30 pt-6">
-                  {tier.features.map((feature, idx) => (
+                  {tier.features.map((f, idx) => (
                     <div key={idx} className="flex gap-3">
-                      <Check className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-semibold text-foreground">
-                          {feature.label}
-                        </p>
-                        <p className="text-xs text-muted-foreground mt-0.5">
-                          {feature.details}
-                        </p>
+                      <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                      <div>
+                        <p className="text-sm font-semibold text-foreground">{f.label}</p>
+                        <p className="mt-0.5 text-xs text-muted-foreground">{f.details}</p>
                       </div>
                     </div>
                   ))}
                 </div>
-
-                {/* Not Included */}
                 {tier.notIncluded.length > 0 && (
-                  <div className="mb-6 pb-6 border-b border-border/30 space-y-2">
+                  <div className="mb-6 space-y-2 border-b border-border/30 pb-6">
                     {tier.notIncluded.map((item, idx) => (
-                      <p key={idx} className="text-xs text-muted-foreground/60 line-through">
-                        {item}
-                      </p>
+                      <p key={idx} className="text-xs text-muted-foreground/50 line-through">{item}</p>
                     ))}
                   </div>
                 )}
-
-                {/* CTA */}
-                <Button
-                  asChild
-                  variant={tier.featured ? "brand" : "outline"}
-                  className="w-full rounded-lg"
-                >
-                  <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`${tier.name} Package Inquiry`)}`}>
-                    Get Started
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                <Button asChild variant={tier.featured ? "brand" : "outline"} className="w-full rounded-lg">
+                  <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`${tier.name} Package Enquiry`)}`}>
+                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
               </article>
             ))}
           </div>
 
-          {/* Payment Terms */}
           <div className="text-center text-sm text-muted-foreground">
-            <p className="mb-2">
-              <span className="font-semibold text-foreground">50% to kickoff</span> · 50% on launch
-            </p>
-            <p>
-              <span className="font-semibold text-foreground">UPI, Bank Transfer, Credit Card</span> accepted · GST invoiced
-            </p>
+            <p className="mb-2"><span className="font-semibold text-foreground">50% to kickoff</span> · 50% on launch</p>
+            <p><span className="font-semibold text-foreground">UPI, Bank Transfer, Credit Card</span> accepted · GST invoiced</p>
           </div>
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* ── CONTACT ───────────────────────────── */}
       <section id="contact" className="relative bg-background px-6 py-32 lg:px-10">
         <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-brand opacity-10 blur-3xl" aria-hidden="true" />
         <div className="relative mx-auto max-w-4xl text-center">
@@ -1250,34 +1000,20 @@ const Index = () => {
             Have something <span className="text-gradient-brand">worth building</span>?
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
-            We take on a handful of partners each quarter. Free 15-minute consultation — no obligation.
+            We take on a small number of projects each quarter. A 15-minute call costs nothing and usually answers everything.
           </p>
-
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            <a
-              href={`mailto:${EMAIL}`}
-              className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow"
-            >
+            <a href={`mailto:${EMAIL}`} className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow">
               <Mail className="h-5 w-5 text-primary" />
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Email</span>
-              <span className="break-all font-medium text-xs">{EMAIL}</span>
+              <span className="break-all text-xs font-medium">{EMAIL}</span>
             </a>
-            <a
-              href="https://wa.me/917483992418"
-              target="_blank"
-              rel="noreferrer"
-              className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow"
-            >
+            <a href="https://wa.me/917483992418" target="_blank" rel="noreferrer" className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow">
               <Phone className="h-5 w-5 text-primary" />
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">WhatsApp</span>
               <span className="font-medium">{WHATSAPP}</span>
             </a>
-            <a
-              href={CAL}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow"
-            >
+            <a href={CAL} target="_blank" rel="noreferrer" className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow">
               <Calendar className="h-5 w-5 text-primary" />
               <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Calendar</span>
               <span className="font-medium">cal.com/threxa</span>
@@ -1286,6 +1022,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── FOOTER ────────────────────────────── */}
       <footer className="border-t border-border bg-background px-6 py-12 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-sm text-muted-foreground md:flex-row">
           <img src={tilLogo} alt="The Ingredient List" className="h-16 w-auto object-contain mix-blend-multiply md:h-20" />
