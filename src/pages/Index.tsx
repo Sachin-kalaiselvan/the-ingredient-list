@@ -1058,7 +1058,7 @@ const Index = () => {
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 lg:items-start">
 
             {/* Left — offer */}
-            <div>
+            <div className="text-left">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-semibold text-primary mb-6">
                 <Sparkles className="h-3.5 w-3.5" /> Free · No obligation
               </div>
@@ -1071,11 +1071,11 @@ const Index = () => {
 
               <div className="mt-10 space-y-5">
                 {auditBenefits.map(({ icon: Icon, title, body }) => (
-                  <div key={title} className="flex gap-4">
+                  <div key={title} className="flex gap-4 text-left">
                     <div className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl border border-border/20 bg-primary/10">
                       <Icon className="h-4 w-4 text-primary" />
                     </div>
-                    <div>
+                    <div className="text-left">
                       <p className="font-semibold text-foreground text-sm">{title}</p>
                       <p className="mt-1 text-sm text-muted-foreground">{body}</p>
                     </div>
@@ -1238,7 +1238,7 @@ const Index = () => {
 
             {/* Brand */}
             <div>
-              <img src={tilLogo} alt="The Ingredient List" className="h-14 w-auto object-contain brightness-0 invert mb-5 opacity-90" />
+              <img src={tilLogo} alt="The Ingredient List" className="h-14 w-auto object-contain mb-5" style={{ filter: "brightness(0) invert(1)" }} />
               <p className="text-sm text-white/60 leading-7 mb-6">Digital design, engineering &amp; strategy for Indian businesses. Built in Bengaluru.</p>
               <div className="flex items-center gap-3">
                 <a href={`mailto:${EMAIL}`} aria-label="Email" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/50 transition-all hover:border-white/40 hover:text-white">
@@ -1254,7 +1254,7 @@ const Index = () => {
             </div>
 
             {/* Services & Work */}
-            <div>
+            <div className="text-left">
               <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40 mb-5">Services</h4>
               <ul className="space-y-3 text-sm text-white/60">
                 <li><a href="#services" className="hover:text-white transition-colors">Brand &amp; Identity</a></li>
@@ -1266,7 +1266,7 @@ const Index = () => {
             </div>
 
             {/* Company */}
-            <div>
+            <div className="text-left">
               <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40 mb-5">Company</h4>
               <ul className="space-y-3 text-sm text-white/60">
                 <li><a href="#work" className="hover:text-white transition-colors">Selected Work</a></li>
