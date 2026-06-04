@@ -24,6 +24,8 @@ import {
   MessageSquare,
   BookOpen,
   ChevronDown,
+  ArrowUp,
+  MessageCircle,
 } from "lucide-react";
 
 import tilLogo from "@/assets/til-logo.png";
@@ -371,6 +373,21 @@ const CAL = "https://cal.com/threxa/design-audit";
 const Index = () => {
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
   const [expandedCaseStudy, setExpandedCaseStudy] = useState<number | null>(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showChat, setShowChat] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+      setShowChat(window.scrollY > 500);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -630,7 +647,7 @@ const Index = () => {
               </p>
               <div className="mt-8 h-px w-16 bg-gradient-to-r from-primary to-orange-500" />
               <p className="mt-6 font-brand text-xl font-extrabold text-foreground">
-                — The Ingredient List
+                — Sachin
               </p>
             </div>
 
@@ -810,7 +827,7 @@ const Index = () => {
               <div className="pt-2">
                 <Button asChild variant="brand" size="lg" className="rounded-full px-8">
                   <a href={CAL} target="_blank" rel="noreferrer">
-                    Let's Build Something Together
+                    Start Your Project
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
@@ -824,10 +841,10 @@ const Index = () => {
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-5">What you can expect</p>
                   <ul className="space-y-4">
                     {[
-                      { icon: MessageSquare, title: "Direct communication", body: "You talk to the person doing the work. Every time." },
-                      { icon: Target, title: "Strategic thinking first", body: "Every decision is tied to a business outcome. No decorative work." },
-                      { icon: Zap, title: "Fast, clean execution", body: "Shipped on time, built to last. No rebuilds, no drama." },
-                      { icon: BookOpen, title: "Honest at every step", body: "If something won't work, you'll hear it early — not after launch." },
+                      { icon: MessageSquare, title: "Direct Communication", body: "You work with me, not a team. Every conversation is with the person building your project—no middlemen, no delays." },
+                      { icon: Target, title: "Strategy First", body: "We begin by understanding your business, your market, and what success actually looks like. Design follows strategy." },
+                      { icon: Zap, title: "Built Fast, Built Right", body: "Clean code, shipped on time, zero technical debt. What you launch is what you keep—no rebuilds, no surprises." },
+                      { icon: BookOpen, title: "Honest Feedback", body: "If something won't work or isn't worth building, you'll hear it from me directly. You're paying for judgment, not just execution." },
                     ].map(({ icon: Icon, title, body }) => (
                       <li key={title} className="flex gap-4">
                         <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
@@ -847,7 +864,7 @@ const Index = () => {
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-brand text-primary-foreground font-brand font-extrabold text-lg shadow-glow">✓</div>
                     <div>
                       <p className="font-brand font-extrabold text-foreground">The Ingredient List</p>
-                      <p className="text-xs text-muted-foreground">Design · Engineering · Strategy · Bengaluru</p>
+                      <p className="text-xs text-muted-foreground">Digital design, engineering & strategy · Bengaluru</p>
                     </div>
                   </div>
                 </div>
@@ -864,10 +881,10 @@ const Index = () => {
           <div className="mb-16 text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Investment</p>
             <h2 className="mt-4 font-brand text-4xl font-extrabold leading-tight lg:text-5xl mb-4">
-              Simple, transparent <span className="text-gradient-brand">pricing</span>.
+              Pricing that <span className="text-gradient-brand">makes sense</span>.
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              No hidden fees, no scope-creep surprises. Pick the engagement that fits your stage.
+              Clear rates, no surprises, no hidden costs. Choose the package that fits your project.
             </p>
           </div>
 
@@ -921,10 +938,6 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center text-sm text-muted-foreground">
-            <p className="mb-2"><span className="font-semibold text-foreground">50% to kickoff</span> · 50% on launch</p>
-            <p><span className="font-semibold text-foreground">UPI, Bank Transfer, Credit Card</span> accepted · GST invoiced</p>
-          </div>
         </div>
       </section>
 
@@ -958,6 +971,69 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── TERMS & CONDITIONS ────────────────── */}
+      <section className="relative border-t border-border bg-gradient-warm px-6 py-16 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="rounded-2xl border border-border/40 bg-card/50 p-8 lg:p-12 backdrop-blur-sm">
+            <div className="max-w-3xl mx-auto prose prose-sm text-muted-foreground space-y-6 text-justify">
+              <h3 className="font-brand text-2xl font-extrabold text-foreground not-prose mb-6">Terms & Conditions</h3>
+              
+              <div>
+                <h4 className="font-semibold text-foreground not-prose mb-2">1. Engagement & Scope</h4>
+                <p>All projects begin with a detailed scope discussion and written agreement. Once approved, scope changes require a written amendment and may impact timeline and cost. Change requests submitted mid-project are treated as additions and billed separately.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-foreground not-prose mb-2">2. Payment Terms</h4>
+                <p>Invoices are issued upon project commencement and at agreed milestones. Payment via UPI, bank transfer, or credit card. GST will be added where applicable. Late payments may incur interest at 1.5% per month. All prices quoted are in Indian Rupees (₹).</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-foreground not-prose mb-2">3. Timeline & Delivery</h4>
+                <p>Delivery dates are estimates based on timely feedback and approvals from your end. Delays in providing content, feedback, or approvals may push the launch date. We maintain the right to pause projects if payments are pending for 15+ days.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-foreground not-prose mb-2">4. Intellectual Property</h4>
+                <p>Upon final payment, all custom work becomes your property. We retain the right to use the work as a portfolio reference and case study (with your permission). Third-party libraries and frameworks remain under their original licenses.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-foreground not-prose mb-2">5. Revisions & Support</h4>
+                <p>Revision rounds are included as specified in the engagement letter. Additional revisions beyond the agreed scope are billed at ₹5,000/hour. Post-launch support is provided for 30 days. Ongoing maintenance and updates can be discussed separately.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-foreground not-prose mb-2">6. Hosting & Domain</h4>
+                <p>We deploy to Vercel or your preferred hosting provider. Domain registration and annual renewals are your responsibility. We can assist in setup for an additional fee. Migration of existing sites is charged separately based on complexity.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-foreground not-prose mb-2">7. Confidentiality</h4>
+                <p>All client information, strategy, and unpublished work are kept confidential. We will not share details about your project, metrics, or business without explicit written consent. This obligation survives project completion.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-foreground not-prose mb-2">8. Limitation of Liability</h4>
+                <p>Our liability is capped at the total amount paid for the project. We are not responsible for indirect damages, lost revenue, or third-party integrations beyond our control. Use of the site is at your own risk.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-foreground not-prose mb-2">9. Cancellation</h4>
+                <p>Projects can be cancelled with written notice. If cancelled before 25% completion, a 25% cancellation fee applies. Beyond that, work completed to date is non-refundable. In-progress projects may have partial refunds at our discretion.</p>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-foreground not-prose mb-2">10. Communication</h4>
+                <p>Communication is via email and WhatsApp. Regular check-ins and updates are provided as agreed. Delayed responses from your end may impact project velocity. We maintain the right to establish reasonable response time expectations.</p>
+              </div>
+
+              <p className="text-xs text-muted-foreground/60 pt-6 border-t border-border/30 not-prose">Last updated: {new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })} · These terms apply to all engagements with The Ingredient List.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FOOTER ────────────────────────────── */}
       <footer className="border-t border-border bg-background px-6 py-12 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-sm text-muted-foreground md:flex-row">
@@ -965,6 +1041,32 @@ const Index = () => {
           <p>© {new Date().getFullYear()} The Ingredient List. Crafted in-house.</p>
         </div>
       </footer>
+
+      {/* ── FLOATING BUTTONS ──────────────────── */}
+      
+      {/* Floating Chat Button */}
+      {showChat && (
+        <button
+          onClick={() => window.open(`https://wa.me/917483992418?text=Hi, I'd like to discuss a project with The Ingredient List.`, '_blank')}
+          className="fixed bottom-8 right-8 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-brand text-white shadow-glow transition-all duration-300 hover:scale-110 hover:shadow-lg active:scale-95 animate-in fade-in duration-500"
+          title="Chat with us on WhatsApp"
+          aria-label="Open WhatsApp chat"
+        >
+          <MessageCircle className="h-6 w-6" />
+        </button>
+      )}
+
+      {/* Floating Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-28 right-8 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card transition-all duration-300 hover:bg-foreground hover:text-background hover:border-foreground active:scale-95 animate-in fade-in duration-500"
+          title="Scroll to top"
+          aria-label="Scroll to top of page"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </button>
+      )}
     </main>
   );
 };
