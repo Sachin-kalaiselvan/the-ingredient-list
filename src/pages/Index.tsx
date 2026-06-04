@@ -497,7 +497,7 @@ const Index = () => {
                       <div className="flex-1">
                         {/* Logo + Meta */}
                         <div className="flex items-center gap-4 mb-4">
-                          <img src={study.logo} alt={study.name} className="h-10 w-auto grayscale" />
+                          <img src={study.logo} alt={study.name} className="h-10 w-auto transition-all duration-300 grayscale group-hover:grayscale-0" />
                           <div className="h-px flex-1 bg-border" />
                         </div>
 
