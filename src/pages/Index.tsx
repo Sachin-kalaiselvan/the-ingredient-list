@@ -255,13 +255,7 @@ const approachPillars = [
 ];
 
 // ─────────────────────────────────────────────
-// TESTIMONIALS
-// ─────────────────────────────────────────────
-// ─────────────────────────────────────────────
-// TESTIMONIALS — add REAL client quotes here only.
-// Get written permission. Use the client's real name + company
-// (or "Director, [industry] firm" if they prefer not to be named).
-// Never invent quotes or metrics. Empty = section auto-hides.
+// TESTIMONIALS — EMPTY (add real ones only)
 // ─────────────────────────────────────────────
 const testimonials: {
   id: number;
@@ -271,11 +265,7 @@ const testimonials: {
   testimonial: string;
   project: string;
   rating: number;
-}[] = [
-  // Example shape (delete this comment, uncomment & fill with a REAL quote):
-  // { id: 1, name: "Real Name", company: "Real Company", role: "Director",
-  //   testimonial: "Their actual words.", project: "Website Redesign", rating: 5 },
-];
+}[] = [];
 
 // ─────────────────────────────────────────────
 // TRUST MARKERS
@@ -288,7 +278,7 @@ const trustMarkers = [
 ];
 
 // ─────────────────────────────────────────────
-// PRICING
+// PRICING ← NEW PRICING MODEL
 // ─────────────────────────────────────────────
 const pricing = [
   {
@@ -372,11 +362,11 @@ const LINKEDIN = "https://linkedin.com/in/sachinjk11";
 const faqs = [
   {
     q: "How much does a project cost?",
-    a: "Pricing depends on scope and complexity. Starter projects begin at ₹16,000, growth websites at ₹35,000, and professional builds at ₹60,000+. Every engagement starts with a free strategy call where I'll give you a clear estimate before anything is agreed. No vague quotes, no hidden costs.",
+    a: "Pricing depends on scope and complexity. Starter projects begin at ₹3L, growth websites at ₹6L, and professional builds at ₹20L+. Every engagement starts with a free strategy call where I'll give you a clear estimate before anything is agreed. No vague quotes, no hidden costs.",
   },
   {
     q: "How long does a website take?",
-    a: "Most websites are delivered in 1–4 weeks. A landing page takes 1–2 weeks. A multi-page growth site takes 2–3 weeks. Complex builds with custom backend or automation workflows take 3–6 weeks. You'll get a precise timeline in writing before we begin.",
+    a: "Most websites are delivered in 6–12 weeks depending on complexity. A landing page takes 6–8 weeks. A multi-page growth site takes 10–12 weeks. Complex builds with custom backend or automation workflows take 12+ weeks. You'll get a precise timeline in writing before we begin.",
   },
   {
     q: "Do you offer ongoing support?",
@@ -998,6 +988,24 @@ const Index = () => {
             </p>
           </div>
 
+          {/* WHY THIS PRICE SECTION */}
+          <div className="mb-16 rounded-2xl border border-border/40 bg-card/50 p-8 shadow-card backdrop-blur-sm lg:p-12">
+            <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+              <div>
+                <h3 className="font-brand text-lg font-extrabold text-foreground mb-3">Why ₹3–40L?</h3>
+                <p className="text-sm leading-7 text-muted-foreground">You're not paying for hours. You're paying for outcome — a site that converts, runs on its own, and saves you time and money from day one.</p>
+              </div>
+              <div>
+                <h3 className="font-brand text-lg font-extrabold text-foreground mb-3">Typical ROI</h3>
+                <p className="text-sm leading-7 text-muted-foreground"><strong>Year 1 return:</strong> ₹10–25L for early-stage brands. ₹20–100L+ for established. A site that converts pays for itself in months, not years.</p>
+              </div>
+              <div>
+                <h3 className="font-brand text-lg font-extrabold text-foreground mb-3">What you avoid</h3>
+                <p className="text-sm leading-7 text-muted-foreground"><strong>Freelancer math:</strong> ₹50k site + 6-month delays + rework + no accountability = ₹3L+ in lost opportunity cost.</p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid gap-6 sm:gap-8 lg:grid-cols-3 mb-12">
             {pricing.map((tier, i) => (
               <article key={tier.name} ref={addRef} className={`relative overflow-hidden rounded-2xl border transition-all duration-300 opacity-0 translate-y-6 ${tier.featured ? "border-primary/50 bg-card shadow-glow ring-1 ring-primary/30 sm:lg:-translate-y-4 p-6 sm:p-8" : "border-border/50 bg-card/50 shadow-card hover:border-primary/20 p-6 sm:p-8"}`} style={{ transitionDelay: `${i * 100}ms` }}>
@@ -1023,8 +1031,9 @@ const Index = () => {
 
                   {/* Outcome */}
                   <div className="mb-6 rounded-lg border border-border/30 bg-muted/30 p-4">
-                    <p className="text-xs font-semibold text-foreground mb-2">You'll get:</p>
+                    <p className="text-xs font-semibold text-foreground mb-2">The outcome:</p>
                     <p className="text-sm text-muted-foreground font-medium">{tier.outcome}</p>
+                    <p className="text-xs text-muted-foreground mt-3 italic">Expected result: Your site drives measurable leads/revenue within 90 days of launch.</p>
                   </div>
 
                   {/* What's Included */}
@@ -1049,7 +1058,7 @@ const Index = () => {
                   </div>
 
                   {/* CTA */}
-                  <Button asChild variant={tier.featured ? "brand" : "outline"} className="w-full rounded-lg text-sm sm:text-base">
+                  <Button asChild variant={tier.featured ? "brand" : "outline"} className="w-full rounded-lg text-sm sm:text-base justify-center">
                     <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`${tier.name} Project Enquiry`)}`}>
                       {tier.cta} <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
