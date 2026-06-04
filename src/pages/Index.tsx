@@ -1237,9 +1237,16 @@ const Index = () => {
           <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-4 mb-20">
 
             {/* Brand */}
-            <div>
-              <img src={tilLogo} alt="The Ingredient List" className="h-14 w-auto object-contain mb-5" style={{ filter: "brightness(0) invert(1)" }} />
-              <p className="text-sm text-white/60 leading-7 mb-6">Digital design, engineering &amp; strategy for Indian businesses. Built in Bengaluru.</p>
+            <div className="text-left">
+              <div className="h-14 mb-5 flex items-center">
+                <img 
+                  src={tilLogo} 
+                  alt="The Ingredient List" 
+                  className="h-full w-auto object-contain" 
+                  style={{ filter: "grayscale(100%) brightness(200%)" }}
+                />
+              </div>
+              <p className="text-sm text-white/70 leading-7 mb-6">Digital design, engineering &amp; strategy for Indian businesses. Built in Bengaluru.</p>
               <div className="flex items-center gap-3">
                 <a href={`mailto:${EMAIL}`} aria-label="Email" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/50 transition-all hover:border-white/40 hover:text-white">
                   <Mail className="h-4 w-4" />
@@ -1278,7 +1285,7 @@ const Index = () => {
             </div>
 
             {/* Contact */}
-            <div>
+            <div className="text-left">
               <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40 mb-5">Contact</h4>
               <ul className="space-y-3 text-sm text-white/60">
                 <li className="flex items-start gap-2">
