@@ -824,8 +824,8 @@ const Index = () => {
                 Eight years and 30+ brands later, the same thing still drives me: getting the work right, not just getting it done.
               </p>
 
-              <div className="pt-2">
-                <Button asChild variant="brand" size="lg" className="rounded-full px-8">
+              <div className="pt-4">
+                <Button asChild variant="brand" size="lg" className="rounded-full px-8 whitespace-nowrap">
                   <a href={CAL} target="_blank" rel="noreferrer">
                     Start Your Project
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -836,7 +836,7 @@ const Index = () => {
 
             {/* Credentials card */}
             <div ref={addRef} className="opacity-0 translate-y-6 transition-all duration-700" style={{ transitionDelay: "100ms" }}>
-              <div className="rounded-3xl border border-border/20 bg-transparent backdrop-blur-sm p-8 lg:p-10 space-y-8">
+              <div className="rounded-3xl border border-border/40 bg-card/60 p-8 backdrop-blur-sm shadow-soft lg:p-10 space-y-8">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-5">What you can expect</p>
                   <ul className="space-y-4">
