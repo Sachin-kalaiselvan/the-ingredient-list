@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -23,6 +23,7 @@ import {
   Zap,
   MessageSquare,
   BookOpen,
+  ChevronDown,
 } from "lucide-react";
 
 import tilLogo from "@/assets/til-logo.png";
@@ -189,17 +190,6 @@ const services = [
 ];
 
 // ─────────────────────────────────────────────
-// PROCESS
-// ─────────────────────────────────────────────
-const processSteps = [
-  { number: "01", title: "Discovery", description: "Understand the business, the market, the audience, and the gap." },
-  { number: "02", title: "Strategy", description: "Define scope, user journey, content architecture, and success metrics." },
-  { number: "03", title: "Design", description: "Craft a conversion-focused experience — every pixel has a reason." },
-  { number: "04", title: "Build", description: "Engineer it cleanly. Fast, accessible, integrated, and launch-ready." },
-  { number: "05", title: "Launch", description: "Deploy, monitor, iterate. The work doesn't stop at go-live." },
-];
-
-// ─────────────────────────────────────────────
 // PHILOSOPHY PRINCIPLES
 // ─────────────────────────────────────────────
 const principles = [
@@ -252,7 +242,7 @@ const approachPillars = [
 ];
 
 // ─────────────────────────────────────────────
-// TESTIMONIALS  — "founder" language removed
+// TESTIMONIALS
 // ─────────────────────────────────────────────
 const testimonials = [
   {
@@ -298,7 +288,7 @@ const testimonials = [
 ];
 
 // ─────────────────────────────────────────────
-// TRUST MARKERS — "founder" language removed
+// TRUST MARKERS
 // ─────────────────────────────────────────────
 const trustMarkers = [
   { label: "Client Satisfaction", value: "4.9/5", description: "Average rating across all projects" },
@@ -308,7 +298,7 @@ const trustMarkers = [
 ];
 
 // ─────────────────────────────────────────────
-// PRICING — "founder" language removed
+// PRICING
 // ─────────────────────────────────────────────
 const pricing = [
   {
@@ -380,6 +370,7 @@ const CAL = "https://cal.com/threxa/design-audit";
 // ─────────────────────────────────────────────
 const Index = () => {
   const revealRefs = useRef<(HTMLElement | null)[]>([]);
+  const [expandedCaseStudy, setExpandedCaseStudy] = useState<number | null>(null);
 
   useEffect(() => {
     const io = new IntersectionObserver(
@@ -414,7 +405,7 @@ const Index = () => {
             <img src={tilLogo} alt="The Ingredient List" className="h-16 w-auto object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.02] sm:h-20 md:h-24 lg:h-28" />
           </a>
           <nav className="hidden items-center gap-10 text-sm font-medium text-muted-foreground md:flex">
-            {[["#work","Work"],["#services","Services"],["#process","Process"],["#testimonials","Testimonials"],["#about","About"],["#pricing","Pricing"],["#contact","Contact"]].map(([href,label]) => (
+            {[["#work","Work"],["#services","Services"],["#about","About"],["#pricing","Pricing"],["#contact","Contact"]].map(([href,label]) => (
               <a key={href} href={href} className="transition-colors hover:text-foreground">{label}</a>
             ))}
           </nav>
@@ -476,7 +467,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── CASE STUDIES ─────────────────────── */}
+      {/* ── CASE STUDIES (EXPANDABLE) ─────────────────────── */}
       <section id="work" className="relative bg-gradient-warm px-6 py-28 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-20">
@@ -489,52 +480,77 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="space-y-32">
+          <div className="space-y-6">
             {caseStudies.map((study, index) => {
-              const reversed = index % 2 === 1;
+              const isExpanded = expandedCaseStudy === study.id;
               return (
-                <article key={study.id} ref={addRef} className="group relative opacity-0 translate-y-6 transition-all duration-700" style={{ transitionDelay: `${index * 80}ms` }}>
-                  <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-
-                    {/* Content */}
-                    <div className={`space-y-7 ${reversed ? "lg:order-2" : ""}`}>
-                      {/* Logo + meta */}
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-4">
+                <article 
+                  key={study.id} 
+                  ref={addRef} 
+                  className="group relative opacity-0 translate-y-6 transition-all duration-700 rounded-2xl border border-border bg-card overflow-hidden cursor-pointer hover:border-primary/40 hover:shadow-lg"
+                  style={{ transitionDelay: `${index * 80}ms` }}
+                  onClick={() => setExpandedCaseStudy(isExpanded ? null : study.id)}
+                >
+                  {/* PREVIEW - Always Visible */}
+                  <div className="p-6 lg:p-8">
+                    <div className="flex items-start justify-between gap-6">
+                      <div className="flex-1">
+                        {/* Logo + Meta */}
+                        <div className="flex items-center gap-4 mb-4">
                           <img src={study.logo} alt={study.name} className="h-10 w-auto grayscale" />
                           <div className="h-px flex-1 bg-border" />
                         </div>
-                        <div>
-                          <h3 className="font-brand text-3xl font-extrabold text-foreground lg:text-4xl">{study.name}</h3>
-                          <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                            <span className="font-semibold text-primary">{study.industry}</span>
-                            <span>·</span><span>{study.year}</span>
-                            <span>·</span><span>{study.duration}</span>
+
+                        {/* Title */}
+                        <h3 className="font-brand text-2xl lg:text-3xl font-extrabold text-foreground">{study.name}</h3>
+                        <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                          <span className="font-semibold text-primary">{study.industry}</span>
+                          <span>·</span>
+                          <span>{study.year}</span>
+                          <span>·</span>
+                          <span>{study.duration}</span>
+                        </div>
+
+                        {/* Excerpt */}
+                        <p className="mt-4 text-sm text-muted-foreground line-clamp-2">{study.solution.description}</p>
+                      </div>
+
+                      {/* Expand Indicator */}
+                      <div className="flex-shrink-0 flex items-center gap-2 text-xs text-muted-foreground font-medium">
+                        <span>{isExpanded ? "Hide details" : "View details"}</span>
+                        <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* EXPANDED DETAILS */}
+                  {isExpanded && (
+                    <div className="border-t border-border/20 p-6 lg:p-8 bg-card/50 space-y-8 animate-in fade-in duration-300">
+                      <div className="grid gap-8 lg:grid-cols-2">
+                        {/* Challenge */}
+                        <div className="rounded-2xl border border-border/30 bg-card/40 p-5 backdrop-blur-sm">
+                          <div className="flex gap-3">
+                            <Target className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                            <div>
+                              <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">The Challenge</p>
+                              <p className="text-sm leading-6 text-muted-foreground">{study.challenge.description}</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Solution */}
+                        <div className="rounded-2xl border border-border/30 bg-card/40 p-5 backdrop-blur-sm">
+                          <div className="flex gap-3">
+                            <Lightbulb className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                            <div>
+                              <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">What We Built</p>
+                              <p className="text-sm leading-6 text-muted-foreground">{study.solution.description}</p>
+                            </div>
                           </div>
                         </div>
                       </div>
 
-                      {/* Challenge */}
-                      <div className="rounded-2xl border border-border/30 bg-card/40 p-5 backdrop-blur-sm">
-                        <div className="flex gap-3">
-                          <Target className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                          <div>
-                            <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">The Challenge</p>
-                            <p className="text-sm leading-6 text-muted-foreground">{study.challenge.description}</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Solution */}
-                      <div className="flex gap-3">
-                        <Lightbulb className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">What We Built</p>
-                          <p className="text-sm leading-6 text-muted-foreground">{study.solution.description}</p>
-                        </div>
-                      </div>
-
-                      {/* Metrics */}
+                      {/* Metrics Grid */}
                       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
                         {study.results.map((r) => {
                           const Icon = r.icon;
@@ -564,14 +580,14 @@ const Index = () => {
                         </ul>
                       </div>
 
-                      {/* Tech + CTA */}
+                      {/* Tech Stack + CTA */}
                       <div className="space-y-4">
                         <div className="flex flex-wrap gap-1.5">
                           {study.tech_stack.map((t) => (
                             <span key={t} className="rounded-full border border-border/50 bg-card px-3 py-1 text-xs font-medium text-foreground shadow-card">{t}</span>
                           ))}
                         </div>
-                        <Button asChild variant="brand" size="lg" className="rounded-full px-8">
+                        <Button asChild variant="brand" size="lg" className="rounded-full px-8" onClick={(e) => e.stopPropagation()}>
                           <a href={study.href} target="_blank" rel="noreferrer">
                             {study.cta_text}
                             <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -579,27 +595,6 @@ const Index = () => {
                         </Button>
                       </div>
                     </div>
-
-                    {/* Image */}
-                    <div className={`relative ${reversed ? "lg:order-1" : ""}`}>
-                      <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-brand opacity-10 blur-3xl transition-opacity duration-500 group-hover:opacity-20" aria-hidden="true" />
-                      <a href={study.href} target="_blank" rel="noreferrer" className="relative block overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition-transform duration-700 ease-out hover:-translate-y-2">
-                        <div className="browser-chrome flex items-center gap-2 px-4 py-3">
-                          <span className="h-2.5 w-2.5 rounded-full bg-red-500" />
-                          <span className="h-2.5 w-2.5 rounded-full bg-yellow-500" />
-                          <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
-                          <div className="ml-3 flex-1 truncate rounded-md bg-card/70 px-3 py-1 text-xs font-medium text-muted-foreground">{study.url}</div>
-                        </div>
-                        <img src={study.image} alt={study.name} className="aspect-video w-full object-cover object-top transition-transform duration-1000 ease-out group-hover:scale-105" loading="lazy" />
-                      </a>
-                      <div className="absolute -right-4 -top-4 hidden items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold text-primary shadow-card sm:inline-flex">
-                        <Sparkles className="h-3.5 w-3.5" /> Case Study
-                      </div>
-                    </div>
-                  </div>
-
-                  {index < caseStudies.length - 1 && (
-                    <div className="mt-32 border-t border-border/20" />
                   )}
                 </article>
               );
@@ -635,7 +630,7 @@ const Index = () => {
               </p>
               <div className="mt-8 h-px w-16 bg-gradient-to-r from-primary to-orange-500" />
               <p className="mt-6 font-brand text-xl font-extrabold text-foreground">
-                — Sachin, The Ingredient List
+                — The Ingredient List
               </p>
             </div>
 
@@ -700,65 +695,6 @@ const Index = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── PROCESS ───────────────────────────── */}
-      <section id="process" className="relative border-t border-border bg-background px-6 py-28 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-20 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">How it works</p>
-            <h2 className="mt-4 font-brand text-4xl font-extrabold leading-tight lg:text-5xl">
-              Clear process. <span className="text-gradient-brand">No surprises.</span>
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-              From first call to live site, you'll always know what's happening, why it's happening, and what comes next.
-            </p>
-          </div>
-
-          {/* Desktop */}
-          <div className="hidden lg:block">
-            <div className="relative">
-              <div className="absolute left-0 right-0 top-20 h-px bg-gradient-to-r from-primary/10 via-primary/40 to-primary/10" aria-hidden="true" />
-              <div className="relative grid grid-cols-5 gap-6">
-                {processSteps.map((step) => (
-                  <div key={step.number} className="flex flex-col items-center">
-                    <div className="relative z-10 mb-12 flex h-20 w-20 items-center justify-center rounded-full border-2 border-primary/30 bg-card shadow-card transition-all duration-300 hover:border-primary/60 hover:shadow-glow">
-                      <span className="font-brand text-2xl font-extrabold text-gradient-brand">{step.number}</span>
-                    </div>
-                    <div className="text-center">
-                      <h3 className="font-brand text-xl font-extrabold text-foreground">{step.title}</h3>
-                      <p className="mt-3 text-sm leading-6 text-muted-foreground">{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile */}
-          <div className="lg:hidden">
-            <div className="relative space-y-8 pl-8">
-              <div className="absolute left-3.5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/10 via-primary/40 to-primary/10" aria-hidden="true" />
-              {processSteps.map((step) => (
-                <div key={step.number} className="relative">
-                  <div className="absolute -left-7 top-0 flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary/40 bg-card shadow-card">
-                    <span className="font-brand text-sm font-extrabold text-gradient-brand">{step.number}</span>
-                  </div>
-                  <div className="rounded-2xl border border-border bg-card/50 p-6 backdrop-blur-sm">
-                    <h3 className="font-brand text-lg font-extrabold text-foreground">{step.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">{step.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-12 flex justify-center">
-            <Button asChild variant="brand" size="lg" className="rounded-full px-8">
-              <a href={CAL} target="_blank" rel="noreferrer">Start a Conversation <ArrowRight className="ml-2 h-5 w-5" /></a>
-            </Button>
           </div>
         </div>
       </section>
@@ -908,9 +844,9 @@ const Index = () => {
 
                 <div className="border-t border-border/30 pt-6">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-brand text-primary-foreground font-brand font-extrabold text-lg shadow-glow">S</div>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-brand text-primary-foreground font-brand font-extrabold text-lg shadow-glow">✓</div>
                     <div>
-                      <p className="font-brand font-extrabold text-foreground">Sachin K.</p>
+                      <p className="font-brand font-extrabold text-foreground">The Ingredient List</p>
                       <p className="text-xs text-muted-foreground">Design · Engineering · Strategy · Bengaluru</p>
                     </div>
                   </div>
