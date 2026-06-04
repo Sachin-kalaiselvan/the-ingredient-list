@@ -1,123 +1,116 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
-export default {
-  darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
-  prefix: "",
+const config: Config = {
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       fontFamily: {
-        body: ["Inter", "system-ui", "sans-serif"],
-        brand: ["Inter", "system-ui", "sans-serif"],
+        brand: ['DM Serif Display', 'serif'],
+        body: ['Inter', 'sans-serif'],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        surface: {
-          DEFAULT: "hsl(var(--surface))",
-          elevated: "hsl(var(--surface-elevated))",
-          soft: "hsl(var(--surface-soft))",
-        },
-        brand: {
-          violet: "hsl(var(--brand-violet))",
-          blue: "hsl(var(--brand-blue))",
-          cyan: "hsl(var(--brand-cyan))",
-          warm: "hsl(var(--warm-accent))",
-        },
-        success: "hsl(var(--success))",
-        warning: "hsl(var(--warning))",
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        background: '#ffffff',
+        foreground: '#000000',
+        primary: '#000000',
+        'primary-foreground': '#ffffff',
+        secondary: '#f5f5f5',
+        'secondary-foreground': '#000000',
+        muted: '#f5f5f5',
+        'muted-foreground': '#666666',
+        accent: '#3b82f6',
+        'accent-foreground': '#ffffff',
+        destructive: '#ef4444',
+        'destructive-foreground': '#ffffff',
+        border: '#e5e5e5',
+        input: '#ffffff',
+        ring: '#000000',
+        card: '#ffffff',
+        popover: '#ffffff',
+        'popover-foreground': '#000000',
+      },
+      backgroundColor: {
+        card: '#ffffff',
+        background: '#ffffff',
+        gradient: {
+          card: 'linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%)',
         },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      backgroundImage: {
+        'gradient-hero': 'linear-gradient(135deg, #ffffff 0%, #fafafa 100%)',
+        'gradient-warm': 'linear-gradient(135deg, #fefdfb 0%, #faf8f3 100%)',
+        'gradient-brand': 'linear-gradient(135deg, #000000 0%, #333333 100%)',
+        'gradient-to-r': 'linear-gradient(90deg, var(--tw-gradient-stops))',
+        'gradient-to-br': 'linear-gradient(135deg, var(--tw-gradient-stops))',
+        'gradient-card': 'linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(245,245,245,0.3) 100%)',
       },
-      keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
-        "float-panel": {
-          "0%, 100%": { transform: "translate3d(0, 0, 0)" },
-          "50%": { transform: "translate3d(0, -10px, 0)" },
-        },
-        "shine-sweep": {
-          "0%": { transform: "translateX(-120%) skewX(-16deg)" },
-          "100%": { transform: "translateX(220%) skewX(-16deg)" },
-        },
-        "fade-up": {
-          from: { opacity: "0", transform: "translateY(18px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
+      textGradient: {
+        'gradient-brand': 'linear-gradient(135deg, #000000 0%, #333333 100%)',
+      },
+      gradientColorStops: {
+        primary: '#000000',
+        secondary: '#333333',
+        orange: '#ff6b35',
+      },
+      boxShadow: {
+        card: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        soft: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+        glow: '0 0 20px -2px rgba(0, 0, 0, 0.1)',
+        inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "float-panel": "float-panel 6s ease-in-out infinite",
-        "shine-sweep": "shine-sweep 3.8s ease-in-out infinite",
-        "fade-up": "fade-up 0.75s ease-out both",
+        'fade-in': 'fadeIn 0.3s ease-in-out',
+        in: 'fadeIn 0.3s ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          from: {
+            opacity: '0',
+            transform: 'translateY(10px)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+      },
+      spacing: {
+        '128': '32rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+      },
+      borderWidth: {
+        '1': '1px',
+      },
+      opacity: {
+        '5': '0.05',
+        '10': '0.1',
+        '15': '0.15',
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+  plugins: [
+    // Custom gradient text plugin
+    function ({ addUtilities }) {
+      addUtilities({
+        '.text-gradient-brand': {
+          'background': 'linear-gradient(135deg, #000000 0%, #333333 100%)',
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+          'background-clip': 'text',
+          'color': 'transparent',
+        },
+        '.animate-in': {
+          animation: 'fadeIn 0.3s ease-in-out',
+        },
+      })
+    },
+  ],
+}
+
+export default config
