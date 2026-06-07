@@ -1058,7 +1058,7 @@ const Index = () => {
                   </div>
 
                   {/* CTA */}
-                  <Button asChild variant={tier.featured ? "brand" : "outline"} className="w-full rounded-lg text-sm sm:text-base justify-center">
+                  <Button asChild variant={tier.featured ? "brand" : "outline"} className="w-full rounded-lg text-sm sm:text-base flex items-center justify-center h-11 whitespace-nowrap">
                     <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`${tier.name} Project Enquiry`)}`}>
                       {tier.cta} <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
