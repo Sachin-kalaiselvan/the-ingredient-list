@@ -235,7 +235,10 @@ const trustMarkers = [
 // ─── PRICING ───
 const pricing = [
   {
-    name: "Launch", price: "Custom Quote", period: "Project-based", duration: "6–8 weeks",
+    name: "Launch",
+    price: "Custom Quote",
+    period: "Project-based",
+    duration: "6–8 weeks",
     description: "New brand. Fast execution. Built right from the start.",
     outcome: "Conversion-optimized website + automation foundation",
     details: [
@@ -252,7 +255,10 @@ const pricing = [
     featured: false,
   },
   {
-    name: "Scaling", price: "Custom Quote", period: "Project-based", duration: "10–12 weeks",
+    name: "Scaling",
+    price: "Custom Quote",
+    period: "Project-based",
+    duration: "10–12 weeks",
     description: "Growing business. Complex needs. Built for performance.",
     outcome: "Full-stack web presence + advanced automation",
     details: [
@@ -269,7 +275,10 @@ const pricing = [
     featured: true,
   },
   {
-    name: "Enterprise", price: "Custom Quote", period: "Project-based", duration: "12+ weeks",
+    name: "Enterprise",
+    price: "Custom Quote",
+    period: "Project-based",
+    duration: "12+ weeks",
     description: "Enterprise scale. Custom systems. No compromises.",
     outcome: "Full ecosystem redesign + competitive advantage",
     details: [
@@ -897,7 +906,7 @@ const Index = () => {
                   {/* FIXED: flex + items-center + justify-center + h-11 + whitespace-nowrap */}
                   <Button asChild variant={tier.featured ? "brand" : "outline"}
                     className="w-full rounded-lg flex items-center justify-center h-11 text-sm font-semibold whitespace-nowrap">
-                    <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`${tier.name} Project Enquiry`)}`}>
+                    <a href={`https://wa.me/917483992418?text=${encodeURIComponent(`Hi Sachin, I'm interested in the ${tier.name} package. Can we discuss?`)}`} target="_blank" rel="noreferrer">
                       {tier.cta} <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" />
                     </a>
                   </Button>
