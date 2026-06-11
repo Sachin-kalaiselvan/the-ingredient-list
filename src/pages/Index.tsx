@@ -19,7 +19,7 @@ import jkpLogo from "@/assets/jkp-padmalaya-logo.png";
 
 import { Button } from "@/components/ui/button";
 
-// ─── Animation keyframes injected globally ───
+// ─── Animation keyframes ───
 const AnimationStyles = () => (
   <style>{`
     @keyframes cardFall {
@@ -37,6 +37,10 @@ const AnimationStyles = () => (
     }
     @keyframes lineReveal {
       from { opacity:0; transform: translateY(100%); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+    @keyframes chatSlideUp {
+      from { opacity:0; transform: translateY(12px); }
       to   { opacity:1; transform: translateY(0); }
     }
     .card-fall          { opacity:0; will-change: transform, opacity; }
@@ -57,6 +61,7 @@ const AnimationStyles = () => (
     .hero-lines.in .line-word:nth-child(1) i { transform:translateY(0); transition-delay:0ms; }
     .hero-lines.in .line-word:nth-child(2) i { transform:translateY(0); transition-delay:60ms; }
     .hero-lines.in .line-word:nth-child(3) i { transform:translateY(0); transition-delay:120ms; }
+    .chat-popup { animation: chatSlideUp 0.25s cubic-bezier(0.16,1,0.3,1) forwards; }
   `}</style>
 );
 
@@ -72,10 +77,10 @@ const caseStudies = [
     challenge: "A 13-year-old manufacturing company with zero online presence — losing RFQs to competitors, no way to showcase 500+ brand clients, no trust signals for new prospects.",
     solution: "Conversion-optimised B2B site built around the buyer journey — capabilities, certifications, client portfolio, and a streamlined RFQ flow that routes enquiries automatically.",
     results: [
-      { metric: "+40%", label: "RFQ conversion",    desc: "Within 3 months of launch", icon: TrendingUp },
-      { metric: "2.5×", label: "Organic traffic",    desc: "Targeted SEO strategy",   icon: Globe },
-      { metric: "500+", label: "Clients featured",   desc: "Now searchable online",    icon: Users },
-      { metric: "24/7", label: "Lead capture",        desc: "Automated RFQ routing",   icon: Zap },
+      { metric: "+40%", label: "RFQ conversion",  desc: "Within 3 months of launch", icon: TrendingUp },
+      { metric: "2.5×", label: "Organic traffic",  desc: "Targeted SEO strategy",   icon: Globe },
+      { metric: "500+", label: "Clients featured", desc: "Now searchable online",    icon: Users },
+      { metric: "24/7", label: "Lead capture",      desc: "Automated RFQ routing",   icon: Zap },
     ],
     achievements: [
       "Positioned as Bengaluru's most trusted B2B packaging partner",
@@ -177,23 +182,21 @@ const services = [
 
 // ─── PRINCIPLES ───
 const principles = [
-  { icon: Target,       title: "Fewer projects. Better work.",    body: "I take on a small number of projects each quarter. Quality demands attention." },
-  { icon: MessageSquare,title: "Honest before comfortable.",      body: "If your strategy has a flaw, I'll say so. You're paying for judgment, not just execution." },
-  { icon: Lightbulb,    title: "Strategy first. Always.",         body: "Most studios jump to design. I start with the business problem. That question drives every decision." },
-  { icon: Zap,          title: "Speed without shortcuts.",        body: "I move fast because I think clearly — not because I cut corners." },
+  { icon: Target,        title: "Fewer projects. Better work.",  body: "I take on a small number of projects each quarter. Quality demands attention." },
+  { icon: MessageSquare, title: "Honest before comfortable.",    body: "If your strategy has a flaw, I'll say so. You're paying for judgment, not just execution." },
+  { icon: Lightbulb,    title: "Strategy first. Always.",        body: "Most studios jump to design. I start with the business problem. That question drives every decision." },
+  { icon: Zap,          title: "Speed without shortcuts.",       body: "I move fast because I think clearly — not because I cut corners." },
 ];
 
 // ─── APPROACH ───
 const approachPillars = [
-  { number: "01", title: "I start with your business, not your brief.",      body: "Before I open a design tool, I need to understand your customers, your competitors, and what actually moves the needle for you." },
-  { number: "02", title: "I challenge the assumptions in the room.",          body: "The best work happens when both sides push back. I'm here to help you figure out what's worth building." },
-  { number: "03", title: "I communicate like a person, not an agency.",       body: "No status decks. No ticket systems. You'll hear from me directly, with clear thinking and honest timelines." },
-  { number: "04", title: "I measure what ships, not what's presented.",       body: "What matters is what the site does after it's live. I build with conversion in mind from day one." },
+  { number: "01", title: "I start with your business, not your brief.",    body: "Before I open a design tool, I need to understand your customers, your competitors, and what actually moves the needle for you." },
+  { number: "02", title: "I challenge the assumptions in the room.",        body: "The best work happens when both sides push back. I'm here to help you figure out what's worth building." },
+  { number: "03", title: "I communicate like a person, not an agency.",     body: "No status decks. No ticket systems. You'll hear from me directly, with clear thinking and honest timelines." },
+  { number: "04", title: "I measure what ships, not what's presented.",     body: "What matters is what the site does after it's live. I build with conversion in mind from day one." },
 ];
 
 // ─── TESTIMONIALS ───
-// IMPORTANT: These are drafted testimonials based on real project outcomes.
-// Send each to the respective client for review and approval before deploying.
 const testimonials = [
   {
     id: 1,
@@ -226,17 +229,16 @@ const testimonials = [
 
 // ─── TRUST MARKERS ───
 const trustMarkers = [
-  { label: "Direct access",    value: "1:1",     description: "You work with me, the founder — never a handoff or account manager." },
-  { label: "Built bespoke",    value: "0%",      description: "Template usage. Every site is designed and coded from scratch." },
-  { label: "Fixed scope",      value: "₹0",      description: "Surprise invoices. Price agreed before anything starts." },
-  { label: "Typical timeline", value: "6–12 wks",description: "From kickoff to live, depending on scope. Held to honest dates." },
+  { label: "Direct access",    value: "1:1",      description: "You work with me, the founder — never a handoff or account manager." },
+  { label: "Built bespoke",    value: "0%",       description: "Template usage. Every site is designed and coded from scratch." },
+  { label: "Fixed scope",      value: "₹0",       description: "Surprise invoices. Price agreed before anything starts." },
+  { label: "Typical timeline", value: "6–12 wks", description: "From kickoff to live, depending on scope. Held to honest dates." },
 ];
 
 // ─── PRICING ───
 const pricing = [
   {
     name: "Launch",
-    price: "Custom Quote",
     period: "Project-based",
     duration: "6–8 weeks",
     description: "New brand. Fast execution. Built right from the start.",
@@ -251,12 +253,10 @@ const pricing = [
     ],
     includes: "Direct communication. Zero delays. Your ideas, executed cleanly.",
     bestFor: "Early-stage D2C, Startups, New launches",
-    cta: "Get a Quote",
     featured: false,
   },
   {
     name: "Scaling",
-    price: "Custom Quote",
     period: "Project-based",
     duration: "10–12 weeks",
     description: "Growing business. Complex needs. Built for performance.",
@@ -271,12 +271,10 @@ const pricing = [
     ],
     includes: "Strategy-first approach. What gets built is what gets measured.",
     bestFor: "Scaling SMBs, E-Commerce, Service Businesses",
-    cta: "Get a Quote",
     featured: true,
   },
   {
     name: "Enterprise",
-    price: "Custom Quote",
     period: "Project-based",
     duration: "12+ weeks",
     description: "Enterprise scale. Custom systems. No compromises.",
@@ -291,21 +289,15 @@ const pricing = [
     ],
     includes: "Partner-level engagement. Results matter more than hours billed.",
     bestFor: "Enterprise, D2C Leaders, Market Disruptors",
-    cta: "Get a Quote",
     featured: false,
   },
 ];
 
 const integrations = ["Shopify","Tally","Razorpay","Shiprocket","WhatsApp","Slack","Stripe","Supabase"];
-const stats = [
-  { value: "30+",  label: "Brands shaped" },
-  { value: "8 yrs",label: "Crafting digital" },
-  { value: "100%", label: "In-house build" },
-];
 
-const EMAIL   = "sachin@theingredientlist.co";
+const EMAIL    = "sachin@theingredientlist.co";
 const WHATSAPP = "+91 74839 92418";
-const CAL     = "https://cal.com/threxa/design-audit";
+const CAL      = "https://cal.com/threxa/design-audit";
 const LINKEDIN = "https://linkedin.com/in/sachinjk11";
 
 // ─── FAQ ───
@@ -321,23 +313,45 @@ const faqs = [
 ];
 
 const auditBenefits = [
-  { icon: SearchCheck, title: "Find conversion bottlenecks",   body: "Pinpoint exactly where visitors are dropping off." },
-  { icon: Workflow,    title: "Discover automation gaps",       body: "Identify 3–5 workflows you could automate to save hours every week." },
-  { icon: Lightbulb,  title: "UX improvements, prioritised",   body: "A ranked list of experience improvements with estimated impact." },
-  { icon: BarChart3,  title: "Actionable recommendations",     body: "Every item is tied to a business outcome, not a generic checklist." },
+  { icon: SearchCheck, title: "Find conversion bottlenecks",  body: "Pinpoint exactly where visitors are dropping off." },
+  { icon: Workflow,    title: "Discover automation gaps",      body: "Identify 3–5 workflows you could automate to save hours every week." },
+  { icon: Lightbulb,  title: "UX improvements, prioritised",  body: "A ranked list of experience improvements with estimated impact." },
+  { icon: BarChart3,  title: "Actionable recommendations",    body: "Every item is tied to a business outcome, not a generic checklist." },
 ];
 
 // ─── COMPONENT ───
 const Index = () => {
-  const revealRefs   = useRef<(HTMLElement | null)[]>([]);
-  const cardRefs     = useRef<(HTMLElement | null)[]>([]);
+  const revealRefs    = useRef<(HTMLElement | null)[]>([]);
+  const cardRefs      = useRef<(HTMLElement | null)[]>([]);
+  const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const [expandedCaseStudy, setExpandedCaseStudy] = useState<number | null>(null);
   const [expandedFaq, setExpandedFaq]             = useState<number | null>(null);
   const [showScrollTop, setShowScrollTop]         = useState(false);
   const [showChat, setShowChat]                   = useState(false);
+  const [chatOpen, setChatOpen]                   = useState(false);
+  const [chatPinned, setChatPinned]               = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen]       = useState(false);
   const [auditForm, setAuditForm]                 = useState({ name:"", email:"", website:"", businessType:"" });
   const [auditSubmitted, setAuditSubmitted]       = useState(false);
+
+  // ─── Chat handlers ───
+  const handleChatMouseEnter = () => {
+    if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
+    hoverTimerRef.current = setTimeout(() => setChatOpen(true), 250);
+  };
+  const handleChatMouseLeave = () => {
+    if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
+    if (!chatPinned) setChatOpen(false);
+  };
+  const handleChatToggle = () => {
+    setChatPinned(prev => !prev);
+    setChatOpen(true);
+  };
+  const handleChatClose = () => {
+    setChatPinned(false);
+    setChatOpen(false);
+  };
 
   // scroll state
   useEffect(() => {
@@ -347,6 +361,11 @@ const Index = () => {
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // cleanup hover timer
+  useEffect(() => {
+    return () => { if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current); };
   }, []);
 
   // generic reveal observer
@@ -397,7 +416,6 @@ const Index = () => {
         {/* NAV */}
         <header className="relative z-50 mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10 lg:py-7">
           <a href="#top" aria-label="The Ingredient List — home" className="group -my-2 flex items-center">
-            {/* LOGO: reduced from h-28 → h-10/12/14 */}
             <img
               src={tilLogo}
               alt="The Ingredient List"
@@ -464,7 +482,7 @@ const Index = () => {
             <span className="line-word"><i className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">built to move the needle.</i></span>
           </h1>
           <p className="slide-up d1 mx-auto mt-8 max-w-2xl text-base sm:text-lg leading-8 text-muted-foreground">
-            I help Indian businesses launch high-performing websites and automate the busywork that slows them down — built in-house, start to finish, by one person who's accountable for the result.
+            I help businesses launch high-performing websites and automate the busywork that slows them down — built in-house, start to finish, by one person who's accountable for the result.
           </p>
           <div className="slide-up d2 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button asChild variant="brand" size="lg" className="rounded-full px-7">
@@ -473,14 +491,6 @@ const Index = () => {
             <Button asChild variant="glass" size="lg" className="rounded-full px-7">
               <a href="#work"><Play className="h-4 w-4" /> View Our Work</a>
             </Button>
-          </div>
-          <div className="slide-up d3 mx-auto mt-20 grid max-w-2xl grid-cols-3 gap-6">
-            {stats.map(s => (
-              <div key={s.label} className="text-center">
-                <p className="font-brand text-3xl font-extrabold bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">{s.value}</p>
-                <p className="mt-2 text-xs uppercase tracking-[0.14em] text-muted-foreground">{s.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -505,10 +515,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── CASE STUDIES — FALLING CARDS ──────────────── */}
+      {/* ── CASE STUDIES ──────────────────────────────── */}
       <section id="work" className="relative bg-gradient-warm px-6 py-16 sm:py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
-
           <div className="mb-20">
             <p ref={addRef as any} className="slide-up text-xs font-semibold uppercase tracking-[0.2em] text-primary">Selected work</p>
             <h2 ref={addRef as any} className="slide-up d1 mt-4 max-w-3xl font-brand text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
@@ -519,7 +528,6 @@ const Index = () => {
             </p>
           </div>
 
-          {/* FALLING CARD STACK */}
           <div className="space-y-8">
             {caseStudies.map((study, index) => {
               const isExpanded = expandedCaseStudy === study.id;
@@ -528,13 +536,10 @@ const Index = () => {
                 <article
                   key={study.id}
                   ref={addCardRef as any}
-                  className={`card-fall ${delayClass} group relative overflow-hidden rounded-2xl border border-border/40 bg-white/60 cursor-pointer
-                    hover:border-primary/40 hover:bg-white/70 hover:shadow-xl
-                    transition-[border-color,background,box-shadow] duration-300`}
+                  className={`card-fall ${delayClass} group relative overflow-hidden rounded-2xl border border-border/40 bg-white/60 cursor-pointer hover:border-primary/40 hover:bg-white/70 hover:shadow-xl transition-[border-color,background,box-shadow] duration-300`}
                   style={{ "--tilt": study.tilt } as React.CSSProperties}
                   onClick={() => setExpandedCaseStudy(isExpanded ? null : study.id)}
                 >
-                  {/* CARD HEADER — always visible */}
                   <div className="p-6 lg:p-8">
                     <div className="flex items-start justify-between gap-6">
                       <div className="flex-1">
@@ -552,8 +557,6 @@ const Index = () => {
                         </div>
                         <p className="mt-4 text-sm text-muted-foreground line-clamp-2 max-w-2xl">{study.solution}</p>
                       </div>
-
-                      {/* Metrics preview strip */}
                       <div className="hidden lg:flex flex-col items-end gap-3">
                         <div className={`flex items-center gap-2 text-xs font-medium ${isExpanded ? "text-primary" : "text-muted-foreground"} transition-colors`}>
                           {isExpanded ? "Hide details" : "View details"}
@@ -568,16 +571,13 @@ const Index = () => {
                           ))}
                         </div>
                       </div>
-
                       <ChevronDown className={`lg:hidden h-5 w-5 text-muted-foreground transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} />
                     </div>
                   </div>
 
-                  {/* EXPANDED CONTENT — blooms open */}
                   {isExpanded && (
                     <div className="border-t border-border/20 bg-card/40 bloom-in in">
                       <div className="p-6 lg:p-8 space-y-8">
-
                         <div className="grid gap-6 lg:grid-cols-2">
                           <div className="rounded-2xl border border-border/30 bg-card/40 p-5">
                             <div className="flex gap-3">
@@ -598,7 +598,6 @@ const Index = () => {
                             </div>
                           </div>
                         </div>
-
                         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
                           {study.results.map(r => {
                             const Icon = r.icon;
@@ -612,7 +611,6 @@ const Index = () => {
                             );
                           })}
                         </div>
-
                         <div className="rounded-2xl border border-border/30 bg-gradient-to-br from-primary/5 to-orange-500/5 p-5">
                           <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Key outcomes</p>
                           <ul className="space-y-2">
@@ -623,7 +621,6 @@ const Index = () => {
                             ))}
                           </ul>
                         </div>
-
                         <div className="flex flex-wrap gap-1.5 items-center justify-between">
                           <div className="flex flex-wrap gap-1.5">
                             {study.tech.map(t => (
@@ -705,7 +702,6 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Integrations */}
           <div ref={addRef as any} className="slide-up mt-20 rounded-3xl border border-border bg-gradient-card p-8 shadow-card lg:p-12">
             <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
               <div className="max-w-md">
@@ -771,7 +767,6 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Commitments */}
           <div ref={addRef as any} className="slide-up mt-20 rounded-2xl border border-border/40 bg-card/50 p-8 shadow-card lg:p-12">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               {trustMarkers.map((m, i) => (
@@ -808,17 +803,16 @@ const Index = () => {
               </Button>
             </div>
 
-            {/* Credentials card — BLOOMS in */}
             <div ref={addRef as any} className="bloom-in">
               <div className="rounded-3xl border border-border/40 bg-card/60 p-8 backdrop-blur-sm shadow-soft lg:p-10 space-y-8">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-5">What you can expect</p>
                   <ul className="space-y-4">
                     {[
-                      { icon: MessageSquare, title: "Direct Communication",  body: "You work with me, not a team. Every conversation is with the person building your project." },
-                      { icon: Target,         title: "Strategy First",        body: "I begin by understanding your business, your market, and what success actually looks like." },
-                      { icon: Zap,            title: "Built Fast, Built Right",body: "Clean code, shipped on time, zero technical debt." },
-                      { icon: BookOpen,       title: "Honest Feedback",       body: "If something won't work or isn't worth building, you'll hear it from me directly." },
+                      { icon: MessageSquare, title: "Direct Communication",   body: "You work with me, not a team. Every conversation is with the person building your project." },
+                      { icon: Target,        title: "Strategy First",          body: "I begin by understanding your business, your market, and what success actually looks like." },
+                      { icon: Zap,           title: "Built Fast, Built Right", body: "Clean code, shipped on time, zero technical debt." },
+                      { icon: BookOpen,      title: "Honest Feedback",         body: "If something won't work or isn't worth building, you'll hear it from me directly." },
                     ].map(({ icon: Icon, title, body }) => (
                       <li key={title} className="flex gap-4">
                         <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
@@ -876,14 +870,8 @@ const Index = () => {
                 )}
                 <div className={tier.featured ? "pt-4" : ""}>
                   <h3 className="font-brand text-2xl sm:text-3xl font-extrabold text-foreground mb-2">{tier.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-6">{tier.description}</p>
-                  <div className="mb-6">
-                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2 mb-1">
-                      <span className="font-brand text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">{tier.price}</span>
-                      <span className="text-xs text-muted-foreground">{tier.period}</span>
-                    </div>
-                    <p className="text-xs text-muted-foreground">Timeline: {tier.duration}</p>
-                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">{tier.description}</p>
+                  <p className="text-xs text-muted-foreground mb-6">Timeline: {tier.duration}</p>
                   <div className="mb-6 rounded-lg border border-border/30 bg-muted/30 p-4">
                     <p className="text-xs font-semibold text-foreground mb-1">You'll get:</p>
                     <p className="text-sm text-muted-foreground font-medium">{tier.outcome}</p>
@@ -903,11 +891,10 @@ const Index = () => {
                   <div className="mb-6 text-xs text-muted-foreground">
                     <span className="font-semibold">Best for:</span> {tier.bestFor}
                   </div>
-                  {/* FIXED: flex + items-center + justify-center + h-11 + whitespace-nowrap */}
                   <Button asChild variant={tier.featured ? "brand" : "outline"}
                     className="w-full rounded-lg flex items-center justify-center h-11 text-sm font-semibold whitespace-nowrap">
                     <a href={`https://wa.me/917483992418?text=${encodeURIComponent(`Hi Sachin, I'm interested in the ${tier.name} package. Can we discuss?`)}`} target="_blank" rel="noreferrer">
-                      {tier.cta} <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" />
+                      Get a Quote <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" />
                     </a>
                   </Button>
                 </div>
@@ -1001,9 +988,9 @@ const Index = () => {
                   <p className="text-sm text-muted-foreground mb-8">Takes 60 seconds. Delivered within 48 hours.</p>
                   <div className="space-y-5">
                     {[
-                      { label:"Your Name",       type:"text",  key:"name",         placeholder:"Your name" },
-                      { label:"Email Address",   type:"email", key:"email",        placeholder:"you@company.com" },
-                      { label:"Website URL",     type:"url",   key:"website",      placeholder:"https://yourwebsite.com" },
+                      { label:"Your Name",     type:"text",  key:"name",     placeholder:"Your name" },
+                      { label:"Email Address", type:"email", key:"email",    placeholder:"you@company.com" },
+                      { label:"Website URL",   type:"url",   key:"website",  placeholder:"https://yourwebsite.com" },
                     ].map(f => (
                       <div key={f.key}>
                         <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-foreground mb-2">{f.label}</label>
@@ -1015,12 +1002,6 @@ const Index = () => {
                     ))}
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-foreground mb-2">Business Type</label>
-                      <select value={auditForm.businessType} onChange={e => setAuditForm(prev => ({ ...prev, businessType: e.target.value }))}
-                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all">
-                        <option value="" disabled>Select your business type</option>
-                        <option value="ecommerce">E-Commerce / D2C Brand</option>
-                        <option value="saas">SaaS / Software</option>
-                        <option value="service">Service Business</option>
                         <option value="manufacturing">Manufacturing / B2B</option>
                         <option value="hospitality">Hospitality / Tourism</option>
                         <option value="other">Other</option>
@@ -1044,7 +1025,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── CONTACT ───────────────────────────────────── */}
+      {/* -- CONTACT ---------------------------------------- */}
       <section id="contact" className="relative bg-background px-6 py-20 sm:py-28 lg:px-10 lg:py-32">
         <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary to-orange-500 opacity-10 blur-3xl" aria-hidden />
         <div className="relative mx-auto max-w-4xl text-center">
@@ -1056,9 +1037,9 @@ const Index = () => {
           </p>
           <div ref={addRef as any} className="slide-up d2 mt-12 grid gap-4 sm:grid-cols-3">
             {[
-              { href: `mailto:${EMAIL}`, icon: Mail,     label: "Email",     value: EMAIL },
-              { href: "https://wa.me/917483992418", icon: Phone, label: "WhatsApp", value: WHATSAPP },
-              { href: CAL, icon: Calendar, label: "Calendar",  value: "cal.com/threxa" },
+              { href: `mailto:${EMAIL}`,            icon: Mail,     label: "Email",    value: EMAIL },
+              { href: "https://wa.me/917483992418", icon: Phone,    label: "WhatsApp", value: WHATSAPP },
+              { href: CAL,                           icon: Calendar, label: "Calendar", value: "cal.com/threxa" },
             ].map(c => (
               <a key={c.label} href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
                 className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
@@ -1071,7 +1052,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── FOOTER ────────────────────────────────────── */}
+      {/* -- FOOTER ----------------------------------------- */}
       <footer className="border-t border-border bg-foreground text-background px-6 pt-20 pb-10 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-20 flex flex-col items-start justify-between gap-8 border-b border-white/10 pb-16 lg:flex-row lg:items-end">
@@ -1091,12 +1072,12 @@ const Index = () => {
               <div className="h-10 mb-5 flex items-center">
                 <img src={tilLogo} alt="The Ingredient List" loading="lazy" className="h-full w-auto object-contain opacity-90" />
               </div>
-              <p className="text-sm text-white/70 leading-7 mb-6">Digital design, engineering &amp; strategy for Indian businesses.</p>
+              <p className="text-sm text-white/70 leading-7 mb-6">Digital design, engineering &amp; strategy for businesses worldwide.</p>
               <div className="flex items-center gap-3">
                 {[
-                  { href: `mailto:${EMAIL}`,          icon: Mail,          label: "Email" },
-                  { href: LINKEDIN,                    icon: Linkedin,      label: "LinkedIn" },
-                  { href: "https://wa.me/917483992418",icon: MessageCircle, label: "WhatsApp" },
+                  { href: `mailto:${EMAIL}`,           icon: Mail,          label: "Email" },
+                  { href: LINKEDIN,                     icon: Linkedin,      label: "LinkedIn" },
+                  { href: "https://wa.me/917483992418", icon: MessageCircle, label: "WhatsApp" },
                 ].map(s => (
                   <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}
                     className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/70 transition-all hover:border-white/40 hover:text-white">
@@ -1138,19 +1119,81 @@ const Index = () => {
               <a href="/terms"   className="hover:text-white/70 transition-colors">Terms &amp; Conditions</a>
               <a href="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</a>
             </div>
-            <p>Built for Indian commerce</p>
           </div>
         </div>
       </footer>
 
-      {/* ── FLOATING ──────────────────────────────────── */}
+      {/* -- FLOATING CHAT WIDGET --------------------------- */}
       {showChat && (
-        <button onClick={() => window.open("https://wa.me/917483992418?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20The%20Ingredient%20List.", "_blank")}
-          className="fixed bottom-8 right-8 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-orange-500 text-white shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 slide-up in"
-          title="Chat on WhatsApp" aria-label="Open WhatsApp chat">
-          <MessageCircle className="h-6 w-6" />
-        </button>
+        <div
+          className="fixed bottom-8 right-8 z-40 flex flex-col items-end gap-3"
+          onMouseEnter={handleChatMouseEnter}
+          onMouseLeave={handleChatMouseLeave}
+        >
+          {chatOpen && (
+            <div className="chat-popup mb-1 w-72 overflow-hidden rounded-2xl border border-border bg-card shadow-xl">
+              <div className="flex items-center justify-between bg-foreground px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <div className="relative flex h-8 w-8 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-primary to-orange-500 text-xs font-bold text-white">
+                    <span>S</span>
+                    <img src="/founder.jpg" alt="Sachin" className="absolute inset-0 h-full w-full object-cover" onError={e => { e.currentTarget.style.display = "none"; }} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-white">The Ingredient List</p>
+                    <div className="flex items-center gap-1">
+                      <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
+                      <p className="text-[10px] text-white/60">Sachin · Usually replies within an hour</p>
+                    </div>
+                  </div>
+                </div>
+                <button onClick={handleChatClose} className="text-white/60 transition-colors hover:text-white" aria-label="Close chat">
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+              <div className="bg-card p-4">
+                <div className="mb-3 rounded-xl bg-muted px-4 py-3 text-sm leading-relaxed text-foreground">
+                  Hey, I'm Sachin 👋<br />
+                  Tell me about your brand — what you're building, what's slowing you down — and I'll tell you exactly what I'd fix first.
+                </div>
+                <p className="mb-3 text-xs text-muted-foreground">Tap below to continue on WhatsApp. I reply personally, not a bot.</p>
+                <a
+                  href="https://wa.me/917483992418?text=Hi%20Sachin%2C%20I%20found%20The%20Ingredient%20List%20and%20wanted%20to%20discuss%20my%20brand."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                >
+                  <MessageCircle className="h-4 w-4" /> Continue on WhatsApp
+                </a>
+                <a
+                  href={CAL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 flex w-full items-center justify-center gap-2 rounded-full border border-border py-2.5 text-xs font-medium text-foreground transition-colors hover:border-primary/40"
+                >
+                  <Calendar className="h-3.5 w-3.5" /> Book a call instead
+                </a>
+              </div>
+              <div className="border-t border-border px-4 py-2 text-center text-[10px] text-muted-foreground">
+                The Ingredient List · Bengaluru
+              </div>
+            </div>
+          )}
+          <button
+            onClick={handleChatToggle}
+            className="group flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-orange-500 text-white shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+            title="Chat with Sachin"
+            aria-label="Open chat"
+          >
+            {chatOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <MessageCircle className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
+            )}
+          </button>
+        </div>
       )}
+
+      {/* -- SCROLL TO TOP ---------------------------------- */}
       {showScrollTop && (
         <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="fixed bottom-28 right-8 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card transition-all duration-300 hover:bg-foreground hover:text-background active:scale-95 slide-up in"
