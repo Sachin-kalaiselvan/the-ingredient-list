@@ -235,7 +235,7 @@ const trustMarkers = [
 // ─── PRICING ───
 const pricing = [
   {
-    name: "Launch", price: "₹3–4L", period: "Project-based", duration: "6–8 weeks",
+    name: "Launch", price: "Custom Quote", period: "Project-based", duration: "6–8 weeks",
     description: "New brand. Fast execution. Built right from the start.",
     outcome: "Conversion-optimized website + automation foundation",
     details: [
@@ -248,11 +248,11 @@ const pricing = [
     ],
     includes: "Direct communication. Zero delays. Your ideas, executed cleanly.",
     bestFor: "Early-stage D2C, Startups, New launches",
-    cta: "Start Your Launch",
+    cta: "Get a Quote",
     featured: false,
   },
   {
-    name: "Scaling", price: "₹6–10L", period: "Project-based", duration: "10–12 weeks",
+    name: "Scaling", price: "Custom Quote", period: "Project-based", duration: "10–12 weeks",
     description: "Growing business. Complex needs. Built for performance.",
     outcome: "Full-stack web presence + advanced automation",
     details: [
@@ -265,11 +265,11 @@ const pricing = [
     ],
     includes: "Strategy-first approach. What gets built is what gets measured.",
     bestFor: "Scaling SMBs, E-Commerce, Service Businesses",
-    cta: "Build Your Growth Engine",
+    cta: "Get a Quote",
     featured: true,
   },
   {
-    name: "Enterprise", price: "₹20–40L", period: "Project-based", duration: "12+ weeks",
+    name: "Enterprise", price: "Custom Quote", period: "Project-based", duration: "12+ weeks",
     description: "Enterprise scale. Custom systems. No compromises.",
     outcome: "Full ecosystem redesign + competitive advantage",
     details: [
@@ -282,7 +282,7 @@ const pricing = [
     ],
     includes: "Partner-level engagement. Results matter more than hours billed.",
     bestFor: "Enterprise, D2C Leaders, Market Disruptors",
-    cta: "Design Enterprise Solution",
+    cta: "Get a Quote",
     featured: false,
   },
 ];
@@ -294,14 +294,14 @@ const stats = [
   { value: "100%", label: "In-house build" },
 ];
 
-const EMAIL   = "theingredientlist.co@gmail.com";
+const EMAIL   = "sachin@theingredientlist.co";
 const WHATSAPP = "+91 74839 92418";
 const CAL     = "https://cal.com/threxa/design-audit";
 const LINKEDIN = "https://linkedin.com/in/sachinjk11";
 
 // ─── FAQ ───
 const faqs = [
-  { q: "How much does a project cost?", a: "Pricing depends on scope and complexity. Starter projects begin at ₹3L, growth websites at ₹6L, and complex builds at ₹20L+. Every engagement starts with a free strategy call where I'll give you a clear estimate before anything is agreed." },
+  { q: "How much does a project cost?", a: "Every project is scoped and priced based on your specific requirements. Every engagement starts with a free strategy call — you'll get a clear estimate before anything is agreed, with no surprise invoices." },
   { q: "How long does a website take?", a: "Most websites are delivered in 6–12 weeks. A landing page takes 6–8 weeks. A multi-page growth site takes 10–12 weeks. Complex builds with custom backend or automation workflows take 12+ weeks. You'll get a precise timeline in writing before we begin." },
   { q: "Do you offer ongoing support?", a: "Yes. Every project includes post-launch support for 30 days. Beyond that, ongoing maintenance and content updates are available as a monthly retainer. Most clients stay on after launch." },
   { q: "Can you redesign existing websites?", a: "Absolutely. Redesigns are often where the most value is unlocked — an existing site has real user data that informs what to change. I'll audit your current site and build something that performs better from day one." },
@@ -857,7 +857,7 @@ const Index = () => {
               <article key={tier.name} ref={addCardRef as any}
                 className={`card-fall d${i+1} relative overflow-hidden rounded-2xl border transition-[border-color,box-shadow] duration-300
                   ${tier.featured
-                    ? "border-primary/50 bg-card shadow-lg ring-1 ring-primary/30 lg:-translate-y-4 p-6 sm:p-8"
+                    ? "border-primary/50 bg-card shadow-lg ring-1 ring-primary/30 p-6 sm:p-8"
                     : "border-border/50 bg-card/50 shadow-card hover:border-primary/20 p-6 sm:p-8"
                   }`}>
                 {tier.featured && (
