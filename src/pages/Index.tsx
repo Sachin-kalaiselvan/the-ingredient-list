@@ -1015,11 +1015,24 @@ const Index = () => {
                     </div>
                     <Button variant="brand" size="lg" className="w-full rounded-xl mt-2"
                       disabled={!auditForm.name || !auditForm.email}
-                      onClick={() => {
-                        if (auditForm.name && auditForm.email) {
-                          window.open(`mailto:${EMAIL}?subject=Free Audit Request from ${encodeURIComponent(auditForm.name)}&body=Name: ${encodeURIComponent(auditForm.name)}%0AEmail: ${encodeURIComponent(auditForm.email)}%0AWebsite: ${encodeURIComponent(auditForm.website)}%0ABusiness Type: ${encodeURIComponent(auditForm.businessType)}`, "_blank");
-                          setAuditSubmitted(true);
-                        }
+                      onClick={async () => {
+                        if (!auditForm.name || !auditForm.email) return;
+                        try {
+                          await fetch("https://api.web3forms.com/submit", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                              access_key: "257216c8-72b2-4bf5-bedb-71ea5209108f",
+                              subject: `Free Audit Request — ${auditForm.name}`,
+                              from_name: auditForm.name,
+                              email: auditForm.email,
+                              website: auditForm.website || "Not provided",
+                              business_type: auditForm.businessType || "Not specified",
+                              to: "sachin@theingredientlist.co",
+                            }),
+                          });
+                        } catch (_) {}
+                        setAuditSubmitted(true);
                       }}>
                       Request My Free Audit <Send className="ml-2 h-4 w-4" />
                     </Button>
@@ -1133,8 +1146,8 @@ const Index = () => {
       {showChat && (
         <div
           className="fixed bottom-8 right-8 z-40 flex flex-col items-end gap-3"
-          onMouseEnter={handleChatMouseEnter}
-          onMouseLeave={handleChatMouseLeave}
+          onMouseEnter={() => { if (!('ontouchstart' in window)) handleChatMouseEnter(); }}
+          onMouseLeave={() => { if (!('ontouchstart' in window)) handleChatMouseLeave(); }}
         >
           {chatOpen && (
             <div className="chat-popup mb-1 w-72 overflow-hidden rounded-2xl border border-border bg-card shadow-xl">
@@ -1185,7 +1198,13 @@ const Index = () => {
             </div>
           )}
           <button
-            onClick={handleChatToggle}
+            onClick={() => {
+              if (chatOpen && chatPinned) {
+                handleChatClose();
+              } else {
+                handleChatToggle();
+              }
+            }}
             className="group flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-orange-500 text-white shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
             title="Chat with Sachin"
             aria-label="Open chat"
