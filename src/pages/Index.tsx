@@ -1002,6 +1002,12 @@ const Index = () => {
                     ))}
                     <div>
                       <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-foreground mb-2">Business Type</label>
+                      <select value={auditForm.businessType} onChange={e => setAuditForm(prev => ({ ...prev, businessType: e.target.value }))}
+                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all">
+                        <option value="" disabled>Select your business type</option>
+                        <option value="ecommerce">E-Commerce / D2C Brand</option>
+                        <option value="saas">SaaS / Software</option>
+                        <option value="service">Service Business</option>
                         <option value="manufacturing">Manufacturing / B2B</option>
                         <option value="hospitality">Hospitality / Tourism</option>
                         <option value="other">Other</option>
