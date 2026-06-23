@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
+import FreeAudit from "./pages/FreeAudit";
+import CaseStudySmartPackaging from "./pages/CaseStudySmartPackaging";
 
 const queryClient = new QueryClient();
 
@@ -17,10 +19,12 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/"        element={<Index />} />
-          <Route path="/terms"   element={<TermsAndConditions />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="*"        element={<NotFound />} />
+          <Route path="/"                          element={<Index />} />
+          <Route path="/terms"                     element={<TermsAndConditions />} />
+          <Route path="/privacy"                   element={<PrivacyPolicy />} />
+          <Route path="/free-audit"                element={<FreeAudit />} />
+          <Route path="/work/smart-packaging"      element={<CaseStudySmartPackaging />} />
+          <Route path="*"                          element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
