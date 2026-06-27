@@ -8,14 +8,12 @@ import {
 } from "lucide-react";
 
 import tilLogo from "@/assets/til-logo.png";
-import projectJkp from "@/assets/project-jkpadmalaya.png";
 import projectSierra from "@/assets/project-sierra.png";
 import projectThrexa from "@/assets/project-threxa.png";
 import projectSmartPackaging from "@/assets/project-smartpackaging.png";
 import thexaLogo from "@/assets/threxa-logo.png";
 import sierraLogo from "@/assets/sierra-logo.jpeg";
 import smartPackagingLogo from "@/assets/smart_packaging_solutions_logo.jpeg";
-import jkpLogo from "@/assets/jkp-padmalaya-logo.png";
 
 import { Button } from "@/components/ui/button";
 
@@ -95,32 +93,6 @@ const caseStudies = [
   },
   {
     id: 2,
-    name: "JKP Padmalaya",
-    logo: jkpLogo,
-    industry: "Luxury Hospitality & Tourism",
-    year: "2025", duration: "10 weeks",
-    href: "https://jkpadmalaya.com",
-    challenge: "A premium farmstay in Kerala's spice country with a genuinely special experience — but no digital presence to match. Bookings came only through word of mouth.",
-    solution: "Editorial-grade website built around immersive storytelling — cinematic imagery, heritage narrative, and a two-step booking flow that removes all friction between discovery and reservation.",
-    results: [
-      { metric: "+212%", label: "Booking conversions", desc: "Year-over-year",          icon: TrendingUp },
-      { metric: "4.9/5", label: "Guest rating",         desc: "Consistently maintained",icon: Star },
-      { metric: "4+ min", label: "Time on site",        desc: "Up from under 1 minute", icon: Clock },
-      { metric: "45%",   label: "Direct bookings",      desc: "Through site vs OTAs",   icon: BarChart3 },
-    ],
-    achievements: [
-      "Positioned as Kerala's most premium heritage farmstay experience",
-      "Email nurture sequence increased repeat bookings by 28%",
-      "Reduced OTA dependency — saving commission costs significantly",
-      "Brand now referenced in travel editorial and review platforms",
-    ],
-    image: projectJkp,
-    tech: ["React","Next.js","Framer Motion","Stripe","Mailchimp","Vercel"],
-    cta: "Visit Live Site",
-    tilt: "1.5deg",
-  },
-  {
-    id: 3,
     name: "Sierra Aerospace",
     logo: sierraLogo,
     industry: "Enterprise B2B & Aerospace",
@@ -146,7 +118,7 @@ const caseStudies = [
     tilt: "-1deg",
   },
   {
-    id: 4,
+    id: 3,
     name: "Threxa",
     logo: thexaLogo,
     industry: "SaaS & Commerce Automation",
@@ -209,15 +181,6 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Ajay Krishnan",
-    company: "JKP Padmalaya",
-    role: "Founder",
-    rating: 5,
-    project: "Luxury Hospitality Website",
-    testimonial: "We were completely dependent on OTAs and word of mouth. The new site changed that. Direct bookings went up significantly and guests now arrive already knowing our story — they come emotionally invested before they even reach us. The quality of the experience online elevated what guests expected offline.",
-  },
-  {
-    id: 3,
     name: "Vikram Reddy",
     company: "Sierra Aerospace",
     role: "Head of Business Development",
@@ -504,7 +467,6 @@ const Index = () => {
               { src: thexaLogo,          alt: "Threxa" },
               { src: sierraLogo,         alt: "Sierra Aerospace" },
               { src: smartPackagingLogo, alt: "Smart Packaging Solutions" },
-              { src: jkpLogo,            alt: "JKP Padmalaya" },
             ].map(({ src, alt }) => (
               <div key={alt} ref={addRef as any}
                 className="group flex h-14 w-40 items-center justify-center slide-up transition-all duration-500 hover:scale-110">
@@ -750,7 +712,7 @@ const Index = () => {
               What clients <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">actually say.</span>
             </h2>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2">
             {testimonials.map((t, i) => (
               <article key={t.id} ref={addCardRef as any}
                 className={`card-fall d${i+1} flex flex-col rounded-2xl border border-border/50 bg-gradient-to-br from-card/80 to-card/40 p-8 shadow-card backdrop-blur-sm hover:border-primary/40 hover:-translate-y-1 hover:shadow-lg transition-[border-color,transform,box-shadow] duration-300`}>
