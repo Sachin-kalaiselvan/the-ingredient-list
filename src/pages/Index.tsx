@@ -43,10 +43,6 @@ const AnimationStyles = () => (
       from { opacity:0; transform: translateY(12px); }
       to   { opacity:1; transform: translateY(0); }
     }
-    @keyframes shimmer {
-      0% { background-position: -1000px 0; }
-      100% { background-position: 1000px 0; }
-    }
     .card-fall          { opacity:0; will-change: transform, opacity; }
     .card-fall.in       { animation: cardFall 0.9s cubic-bezier(0.34,1.32,0.64,1) forwards; }
     .card-fall.in.d1    { animation-delay: 0ms; }
@@ -66,7 +62,6 @@ const AnimationStyles = () => (
     .hero-lines.in .line-word:nth-child(2) i { transform:translateY(0); transition-delay:60ms; }
     .hero-lines.in .line-word:nth-child(3) i { transform:translateY(0); transition-delay:120ms; }
     .chat-popup { animation: chatSlideUp 0.25s cubic-bezier(0.16,1,0.3,1) forwards; }
-    .trust-badge { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); background-size: 1000px 100%; animation: shimmer 3s infinite; }
   `}</style>
 );
 
@@ -103,766 +98,1136 @@ const caseStudies = [
     name: "JKP Padmalaya",
     logo: jkpLogo,
     industry: "Luxury Hospitality & Tourism",
-    year: "2025", duration: "6 weeks",
-    href: "https://jkpadmalaya.lovable.app/",
-    challenge: "A 200-year-old heritage estate competing with modern luxury resorts online. Zero digital presence — losing high-value bookings to competitors with better web presence.",
-    solution: "Luxury brand site built for affluent travellers. Photo gallery, curated experiences, verified testimonials, seamless booking flow, and heritage storytelling that justifies premium pricing.",
+    year: "2025", duration: "10 weeks",
+    href: "https://jkpadmalaya.com",
+    challenge: "A premium farmstay in Kerala's spice country with a genuinely special experience — but no digital presence to match. Bookings came only through word of mouth.",
+    solution: "Editorial-grade website built around immersive storytelling — cinematic imagery, heritage narrative, and a two-step booking flow that removes all friction between discovery and reservation.",
     results: [
-      { metric: "+65%", label: "Booking inquiries", desc: "First month post-launch", icon: TrendingUp },
-      { metric: "4.9★", label: "Average rating",    desc: "From 50+ online reviews",  icon: Star },
-      { metric: "3.2×", label: "Avg booking value", desc: "Higher than before",      icon: BarChart3 },
-      { metric: "18%", label: "Repeat bookings",    desc: "Direct from site traffic", icon: Users },
+      { metric: "+212%", label: "Booking conversions", desc: "Year-over-year",          icon: TrendingUp },
+      { metric: "4.9/5", label: "Guest rating",         desc: "Consistently maintained",icon: Star },
+      { metric: "4+ min", label: "Time on site",        desc: "Up from under 1 minute", icon: Clock },
+      { metric: "45%",   label: "Direct bookings",      desc: "Through site vs OTAs",   icon: BarChart3 },
     ],
     achievements: [
-      "Luxury positioning increased average booking value by ₹45,000",
-      "Built trust through verified guest testimonials and heritage media features",
-      "SEO strategy now ranks #1 for 'luxury heritage stay Bangalore'",
-      "Direct bookings (no commission) increased from 2% to 48% of total",
+      "Positioned as Kerala's most premium heritage farmstay experience",
+      "Email nurture sequence increased repeat bookings by 28%",
+      "Reduced OTA dependency — saving commission costs significantly",
+      "Brand now referenced in travel editorial and review platforms",
     ],
     image: projectJkp,
-    tech: ["React","TypeScript","Framer Motion","Tailwind CSS","Vercel"],
+    tech: ["React","Next.js","Framer Motion","Stripe","Mailchimp","Vercel"],
     cta: "Visit Live Site",
-    tilt: "2deg",
+    tilt: "1.5deg",
   },
   {
     id: 3,
     name: "Sierra Aerospace",
     logo: sierraLogo,
-    industry: "Aerospace & RTK GPS Systems",
-    year: "2025", duration: "10 weeks",
+    industry: "Enterprise B2B & Aerospace",
+    year: "2025", duration: "12 weeks",
     href: "https://sierraaerospace.in/",
-    challenge: "Deep-tech aerospace company (RTK GPS systems for precision agriculture) with complex technical offerings and a global B2B audience. Old website didn't convey cutting-edge engineering.",
-    solution: "Technical authority site with interactive product demos, ROI calculators for farmers, detailed technical specs, and case studies from successful deployments across India.",
+    challenge: "An Indian UAV systems manufacturer with serious technical capability — but no digital presence that reflected it. Procurement teams in global markets couldn't find or evaluate them.",
+    solution: "Export-ready enterprise site built to communicate technical credibility — compliance certifications, government project case studies, precise product documentation, and a qualification system that pre-filters enquiries.",
     results: [
-      { metric: "+180%", label: "Lead volume",      desc: "Qualified B2B inquiries",  icon: TrendingUp },
-      { metric: "8 min", label: "Avg time on site", desc: "Deep engagement",         icon: Clock },
-      { metric: "12+", label: "Case studies",       desc: "From live deployments",   icon: Globe },
-      { metric: "99.7%", label: "Site uptime",      desc: "Enterprise-grade infra",  icon: Shield },
+      { metric: "11",    label: "Countries reached",  desc: "New international markets", icon: Globe },
+      { metric: "3.4×", label: "Qualified RFQs",      desc: "From intl. prospects",      icon: TrendingUp },
+      { metric: "$2.3M", label: "Pipeline generated", desc: "First 6 months",            icon: BarChart3 },
+      { metric: "−85%", label: "RFP response time",   desc: "3 weeks → 2 days",          icon: Zap },
     ],
     achievements: [
-      "Positioned as India's #1 RTK GPS provider through content authority",
-      "ROI calculator converted 23% of visitors into sales conversations",
-      "Technical documentation now trusted by agricultural cooperatives nationwide",
-      "International inbound leads increased 15% month-on-month",
+      "Established credibility as a serious aerospace systems vendor globally",
+      "Secured contracts in 4 new international markets",
+      "Technical content strategy built domain authority in niche keywords",
+      "Automated pre-qualification saves 20+ hours of sales time monthly",
     ],
     image: projectSierra,
-    tech: ["Next.js","TypeScript","Tailwind CSS","Cloudflare Workers","PostGIS"],
+    tech: ["Next.js","TypeScript","Tailwind","Salesforce","SendGrid","Vercel"],
     cta: "Visit Live Site",
-    tilt: "-2deg",
+    tilt: "-1deg",
   },
   {
     id: 4,
     name: "Threxa",
     logo: thexaLogo,
-    industry: "D2C Automation Platform",
-    year: "2026", duration: "Ongoing",
+    industry: "SaaS & Commerce Automation",
+    year: "2025", duration: "16 weeks",
     href: "https://threxa.theingredientlist.co/",
-    challenge: "Indian D2C merchants spend 8+ hours weekly reconciling orders to Tally, verifying COD manually, managing returns chaos, and fighting inventory sync mismatches. No unified solution existed.",
-    solution: "One Shopify app automates all four: GST-ready Tally vouchers, WhatsApp COD verification (official Cloud API, never device-linking), returns portal with Shiprocket/Delhivery pickups, real-time inventory sync with safety-stock buffer.",
+    challenge: "Indian D2C brands run on 6+ disconnected tools that don't talk to each other. The result: data silos, manual reconciliation, 15+ hours of administrative overhead every week.",
+    solution: "Threxa is our in-house automation platform — the integration layer for Indian commerce. Native connections to every tool in the D2C stack, a no-code workflow builder, and a unified dashboard.",
     results: [
-      { metric: "8 hrs", label: "Saved per week", desc: "Full automation", icon: Clock },
-      { metric: "0", label: "Reconciliation errors", desc: "Tally matches perfectly", icon: Check },
-      { metric: "₹8-45k", label: "Monthly pricing", desc: "INR, flat, no surprises", icon: TrendingUp },
-      { metric: "Real-time", label: "Inventory sync", desc: "Webhook-driven", icon: Zap },
+      { metric: "15+ hrs", label: "Saved per week",    desc: "Per customer on admin",   icon: Clock },
+      { metric: "2×",     label: "Faster processing",  desc: "Automated vs manual",     icon: Zap },
+      { metric: "$1.4M",  label: "Pipeline value",     desc: "D2C brand interest",      icon: BarChart3 },
+      { metric: "35%",    label: "Cost reduction",     desc: "In operational overhead", icon: TrendingUp },
     ],
     achievements: [
-      "Official WhatsApp Cloud API integration — never device-linking (keeps numbers safe from Meta bans)",
-      "Idempotent returns restock logic — no duplicate inventory additions ever",
-      "Complete audit log for every action — full transparency and compliance",
-      "Founder-led support — same-business-day WhatsApp/email replies (IST)",
+      "Only integrated automation platform built specifically for Indian D2C",
+      "Enables brands to scale operations without proportional headcount growth",
+      "WhatsApp automation reduces customer service response time by 60%",
+      "Positioned as essential infrastructure — not optional tooling",
     ],
     image: projectThrexa,
-    tech: ["React Router 7", "TypeScript", "Prisma", "Shopify CLI", "WhatsApp Cloud API", "Meta BSP"],
-    cta: "Install from Shopify App Store",
+    tech: ["Node.js","React","PostgreSQL","Redis","n8n","AWS","Twilio"],
+    cta: "Explore Threxa",
     tilt: "2deg",
   },
 ];
 
-// ─── HERO SECTION ───
-function Hero() {
-  const containerRef = useRef(null);
-  const [heroLinesReady, setHeroLinesReady] = useState(false);
+// ─── SERVICES ───
+const services = [
+  { icon: Palette, title: "Brand & Identity",  copy: "Logos, type systems, and visual languages that hold their own at every scale." },
+  { icon: Layers,  title: "Product Design",    copy: "Web and product surfaces that feel inevitable — quiet, considered, alive." },
+  { icon: Code2,   title: "Engineering",       copy: "Fast, accessible, conversion-tuned builds. Shipped without drama." },
+];
 
+// ─── PRINCIPLES ───
+const principles = [
+  { icon: Target,        title: "Fewer projects. Better work.",  body: "I take on a small number of projects each quarter. Quality demands attention." },
+  { icon: MessageSquare, title: "Honest before comfortable.",    body: "If your strategy has a flaw, I'll say so. You're paying for judgment, not just execution." },
+  { icon: Lightbulb,    title: "Strategy first. Always.",        body: "Most studios jump to design. I start with the business problem. That question drives every decision." },
+  { icon: Zap,          title: "Speed without shortcuts.",       body: "I move fast because I think clearly — not because I cut corners." },
+];
+
+// ─── APPROACH ───
+const approachPillars = [
+  { number: "01", title: "I start with your business, not your brief.",    body: "Before I open a design tool, I need to understand your customers, your competitors, and what actually moves the needle for you." },
+  { number: "02", title: "I challenge the assumptions in the room.",        body: "The best work happens when both sides push back. I'm here to help you figure out what's worth building." },
+  { number: "03", title: "I communicate like a person, not an agency.",     body: "No status decks. No ticket systems. You'll hear from me directly, with clear thinking and honest timelines." },
+  { number: "04", title: "I measure what ships, not what's presented.",     body: "What matters is what the site does after it's live. I build with conversion in mind from day one." },
+];
+
+// ─── TESTIMONIALS ───
+const testimonials = [
+  {
+    id: 1,
+    name: "Arun Nair",
+    company: "Smart Packaging Solutions",
+    role: "Director of Sales",
+    rating: 5,
+    project: "B2B Website + RFQ Automation",
+    testimonial: "We'd run this business for 13 years entirely on referrals — no real online presence. Within three months of launching the new site, we started receiving qualified inquiries from companies we'd never heard of, in cities we'd never reached. Sachin understood the B2B buyer better than most sales consultants I've hired.",
+  },
+  {
+    id: 2,
+    name: "Ajay Krishnan",
+    company: "JKP Padmalaya",
+    role: "Founder",
+    rating: 5,
+    project: "Luxury Hospitality Website",
+    testimonial: "We were completely dependent on OTAs and word of mouth. The new site changed that. Direct bookings went up significantly and guests now arrive already knowing our story — they come emotionally invested before they even reach us. The quality of the experience online elevated what guests expected offline.",
+  },
+  {
+    id: 3,
+    name: "Vikram Reddy",
+    company: "Sierra Aerospace",
+    role: "Head of Business Development",
+    rating: 5,
+    project: "Enterprise Website + RFQ System",
+    testimonial: "Our previous digital presence looked like a government document. We needed international procurement teams to take us seriously. What Sachin built positioned us as a credible vendor from the first impression — we started receiving inbound RFQs from markets we had never been able to reach through cold outreach alone.",
+  },
+];
+
+// ─── TRUST MARKERS ───
+const trustMarkers = [
+  { label: "Direct access",    value: "1:1",      description: "You work with me, the founder — never a handoff or account manager." },
+  { label: "Built bespoke",    value: "0%",       description: "Template usage. Every site is designed and coded from scratch." },
+  { label: "Fixed scope",      value: "₹0",       description: "Surprise invoices. Price agreed before anything starts." },
+  { label: "Typical timeline", value: "6–12 wks", description: "From kickoff to live, depending on scope. Held to honest dates." },
+];
+
+// ─── PRICING ───
+const pricing = [
+  {
+    name: "Launch",
+    period: "Project-based",
+    duration: "6–8 weeks",
+    description: "New brand. Fast execution. Built right from the start.",
+    outcome: "Conversion-optimized website + automation foundation",
+    details: [
+      "Brand positioning & visual identity",
+      "5–8 page website (responsive, fast)",
+      "Conversion strategy & lead capture setup",
+      "Basic workflow automation (WhatsApp, email)",
+      "SEO fundamentals + analytics tracking",
+      "30 days post-launch refinement",
+    ],
+    includes: "Direct communication. Zero delays. Your ideas, executed cleanly.",
+    bestFor: "Early-stage D2C, Startups, New launches",
+    featured: false,
+  },
+  {
+    name: "Scaling",
+    period: "Project-based",
+    duration: "10–12 weeks",
+    description: "Growing business. Complex needs. Built for performance.",
+    outcome: "Full-stack web presence + advanced automation",
+    details: [
+      "Complete brand system (guidelines included)",
+      "10+ page website with CMS/content management",
+      "Conversion optimization audit & rebuild",
+      "Advanced integrations (Shopify, Tally, Razorpay)",
+      "Workflow automation (multi-channel, complex rules)",
+      "Performance baseline & 30-day optimization",
+    ],
+    includes: "Strategy-first approach. What gets built is what gets measured.",
+    bestFor: "Scaling SMBs, E-Commerce, Service Businesses",
+    featured: true,
+  },
+  {
+    name: "Enterprise",
+    period: "Project-based",
+    duration: "12+ weeks",
+    description: "Enterprise scale. Custom systems. No compromises.",
+    outcome: "Full ecosystem redesign + competitive advantage",
+    details: [
+      "Full product strategy & market positioning",
+      "Bespoke web platform (unlimited complexity)",
+      "Custom backend systems & databases",
+      "Enterprise automation (API-first, scalable)",
+      "Multi-channel integrations & orchestration",
+      "Conversion intelligence & ongoing optimization",
+    ],
+    includes: "Partner-level engagement. Results matter more than hours billed.",
+    bestFor: "Enterprise, D2C Leaders, Market Disruptors",
+    featured: false,
+  },
+];
+
+const integrations = ["Shopify","Tally","Razorpay","Shiprocket","WhatsApp","Slack","Stripe","Supabase"];
+
+const EMAIL    = "sachin@theingredientlist.co";
+const WHATSAPP = "+91 74839 92418";
+const CAL      = "https://cal.com/threxa/design-audit";
+const LINKEDIN = "https://linkedin.com/in/sachinjk11";
+
+// ─── FAQ ───
+const faqs = [
+  { q: "How much does a project cost?", a: "Every project is scoped and priced based on your specific requirements. Every engagement starts with a free strategy call — you'll get a clear estimate before anything is agreed, with no surprise invoices." },
+  { q: "How long does a website take?", a: "Most websites are delivered in 6–12 weeks. A landing page takes 6–8 weeks. A multi-page growth site takes 10–12 weeks. Complex builds with custom backend or automation workflows take 12+ weeks. You'll get a precise timeline in writing before we begin." },
+  { q: "Do you offer ongoing support?", a: "Yes. Every project includes post-launch support for 30 days. Beyond that, ongoing maintenance and content updates are available as a monthly retainer. Most clients stay on after launch." },
+  { q: "Can you redesign existing websites?", a: "Absolutely. Redesigns are often where the most value is unlocked — an existing site has real user data that informs what to change. I'll audit your current site and build something that performs better from day one." },
+  { q: "Do you build automation systems?", a: "Yes — through Threxa, my automation platform built specifically for Indian businesses. I connect Shopify, Tally, WhatsApp, Razorpay, Shiprocket and more. All without code on your end." },
+  { q: "Do you provide hosting?", a: "Sites are deployed to Vercel by default. I handle setup and configuration. You own the hosting account — no lock-in." },
+  { q: "Do you work internationally?", a: "Yes. While based in Bengaluru, I work with clients internationally. Payment is accepted via international bank transfer, Wise, or Stripe." },
+  { q: "What happens after launch?", a: "Launch is where most agencies disappear. I don't. Post-launch includes 30 days of support, performance monitoring, SEO indexing confirmation, and a 2-week check-in call." },
+];
+
+const auditBenefits = [
+  { icon: SearchCheck, title: "Find conversion bottlenecks",  body: "Pinpoint exactly where visitors are dropping off." },
+  { icon: Workflow,    title: "Discover automation gaps",      body: "Identify 3–5 workflows you could automate to save hours every week." },
+  { icon: Lightbulb,  title: "UX improvements, prioritised",  body: "A ranked list of experience improvements with estimated impact." },
+  { icon: BarChart3,  title: "Actionable recommendations",    body: "Every item is tied to a business outcome, not a generic checklist." },
+];
+
+// ─── COMPONENT ───
+const Index = () => {
+  const revealRefs    = useRef<(HTMLElement | null)[]>([]);
+  const cardRefs      = useRef<(HTMLElement | null)[]>([]);
+  const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const [expandedCaseStudy, setExpandedCaseStudy] = useState<number | null>(null);
+  const [expandedFaq, setExpandedFaq]             = useState<number | null>(null);
+  const [showScrollTop, setShowScrollTop]         = useState(false);
+  const [showChat, setShowChat]                   = useState(false);
+  const [chatOpen, setChatOpen]                   = useState(false);
+  const [chatPinned, setChatPinned]               = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen]       = useState(false);
+  const [auditForm, setAuditForm]                 = useState({ name:"", email:"", website:"", businessType:"" });
+  const [auditSubmitted, setAuditSubmitted]       = useState(false);
+
+  // ─── Chat handlers ───
+  const handleChatMouseEnter = () => {
+    if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
+    hoverTimerRef.current = setTimeout(() => setChatOpen(true), 250);
+  };
+  const handleChatMouseLeave = () => {
+    if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
+    if (!chatPinned) setChatOpen(false);
+  };
+  const handleChatToggle = () => {
+    setChatPinned(prev => !prev);
+    setChatOpen(true);
+  };
+  const handleChatClose = () => {
+    setChatPinned(false);
+    setChatOpen(false);
+  };
+
+  // scroll state
   useEffect(() => {
-    setHeroLinesReady(true);
+    const onScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+      setShowChat(window.scrollY > 500);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // cleanup hover timer
+  useEffect(() => {
+    return () => { if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current); };
+  }, []);
+
+  // generic reveal observer
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      }),
+      { threshold: 0.12 }
+    );
+    revealRefs.current.forEach(el => el && io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
+  // card fall-in observer
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      }),
+      { threshold: 0.08, rootMargin: "0px 0px -60px 0px" }
+    );
+    cardRefs.current.forEach(el => el && io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
+  // hero fires immediately
+  useEffect(() => {
+    const heroLines = document.getElementById("heroLines");
+    setTimeout(() => {
+      heroLines?.classList.add("in");
+      document.querySelectorAll(".hero .slide-up").forEach(el => el.classList.add("in"));
+    }, 200);
+  }, []);
+
+  const addRef     = (el: HTMLElement | null) => { if (el && !revealRefs.current.includes(el)) revealRefs.current.push(el); };
+  const addCardRef = (el: HTMLElement | null) => { if (el && !cardRefs.current.includes(el))   cardRefs.current.push(el); };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-24">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-      </div>
+    <main className="min-h-screen overflow-hidden bg-background text-foreground">
+      <AnimationStyles />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <div className="mb-8">
-          <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/30 rounded-full mb-6">
-            <span className="text-sm font-medium text-blue-300 flex items-center gap-2">
-              <Sparkles size={16} /> Trusted by 50+ Indian D2C brands
-            </span>
-          </div>
-        </div>
+      {/* ── HERO ──────────────────────────────────────── */}
+      <section className="relative bg-gradient-hero">
+        <div className="absolute inset-0 til-grid opacity-70" aria-hidden />
+        <div className="absolute left-1/2 top-[-14rem] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-gradient-brand opacity-15 blur-[140px]" aria-hidden />
 
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-          <div className={`hero-lines ${heroLinesReady ? "in" : ""}`}>
-            <span className="line-word"><i>Web Design</i></span> <span className="line-word"><i>&</i></span> <span className="line-word"><i>D2C</i></span>
-          </div>
-          <div className={`hero-lines ${heroLinesReady ? "in" : ""}`} style={{transitionDelay: "200ms"}}>
-            <span className="line-word"><i>Automation</i></span> <span className="line-word"><i>For</i></span> <span className="line-word"><i>Indian</i></span>
-          </div>
-          <div className={`hero-lines ${heroLinesReady ? "in" : ""}`} style={{transitionDelay: "400ms"}}>
-            <span className="line-word"><i>Brands</i></span>
-          </div>
-        </h1>
-
-        <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-3xl mx-auto slide-up in" style={{animationDelay: "600ms"}}>
-          Custom websites that convert visitors into customers. Shopify automation that saves your team 8+ hours per week. Built for D2C brands that want to scale without chaos.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 slide-up in" style={{animationDelay: "700ms"}}>
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8">
-            Schedule Free Audit <ArrowRight size={18} className="ml-2" />
+        {/* NAV */}
+        <header className="relative z-50 mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10 lg:py-7">
+          <a href="#top" aria-label="The Ingredient List — home" className="group -my-2 flex items-center">
+            <img
+              src={tilLogo}
+              alt="The Ingredient List"
+              className="h-10 w-auto object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.02] sm:h-11 md:h-12"
+            />
+          </a>
+          <nav className="hidden items-center gap-10 text-sm font-medium text-muted-foreground md:flex">
+            {[["#work","Work"],["#services","Services"],["#about","Studio"],["#pricing","Pricing"],["#contact","Contact"]].map(([href,label]) => (
+              <a key={href} href={href} className="transition-colors hover:text-foreground">{label}</a>
+            ))}
+          </nav>
+          <Button asChild variant="glass" size="sm" className="hidden rounded-full md:inline-flex">
+            <a href={CAL} target="_blank" rel="noreferrer">Book a call</a>
           </Button>
-          <Button size="lg" variant="outline" className="border-slate-600 text-slate-300 hover:bg-slate-800">
-            See Our Work <ExternalLink size={18} className="ml-2" />
-          </Button>
-        </div>
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open menu"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card/70 text-foreground shadow-card backdrop-blur-xl transition-colors hover:border-primary/40 md:hidden"
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+        </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-16 slide-up in" style={{animationDelay: "800ms"}}>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-2">50+</div>
-            <div className="text-sm text-slate-400">Brands Trusted Us</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-2">₹45L+</div>
-            <div className="text-sm text-slate-400">Revenue Generated</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-2">95%</div>
-            <div className="text-sm text-slate-400">Client Retention</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-2">2+</div>
-            <div className="text-sm text-slate-400">Years Track Record</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── TRUST BADGES SECTION ───
-function TrustBadges() {
-  return (
-    <section className="py-12 bg-slate-800/50 border-t border-b border-slate-700">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold text-white mb-2">Trusted By Leading Brands</h2>
-          <p className="text-slate-400">Join 50+ D2C brands scaling with our web design & automation</p>
-        </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-          <div className="text-center">
-            <img src={smartPackagingLogo} alt="Smart Packaging" className="h-12 mx-auto mb-2 opacity-70 hover:opacity-100 transition" />
-            <p className="text-xs text-slate-400">Smart Packaging</p>
-          </div>
-          <div className="text-center">
-            <img src={sierraLogo} alt="Sierra" className="h-12 mx-auto mb-2 opacity-70 hover:opacity-100 transition" />
-            <p className="text-xs text-slate-400">Sierra Aerospace</p>
-          </div>
-          <div className="text-center">
-            <img src={jkpLogo} alt="JKP" className="h-12 mx-auto mb-2 opacity-70 hover:opacity-100 transition" />
-            <p className="text-xs text-slate-400">JKP Padmalaya</p>
-          </div>
-          <div className="text-center">
-            <div className="h-12 mb-2 flex items-center justify-center">
-              <span className="text-sm font-semibold text-slate-300">Snitch.co</span>
-            </div>
-            <p className="text-xs text-slate-400">D2C Fashion</p>
-          </div>
-          <div className="text-center">
-            <div className="h-12 mb-2 flex items-center justify-center">
-              <Shield size={28} className="text-green-400" />
-            </div>
-            <p className="text-xs text-slate-400">GST Registered</p>
-          </div>
-        </div>
-
-        <div className="mt-12 pt-12 border-t border-slate-700">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-2xl font-bold text-green-400 mb-2">✓ GST Registered</div>
-              <p className="text-sm text-slate-400">ARN: AA290526023261F</p>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-blue-400 mb-2">✓ Verified Reviews</div>
-              <p className="text-sm text-slate-400">50+ client testimonials</p>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-purple-400 mb-2">✓ Same-Day Support</div>
-              <p className="text-sm text-slate-400">Response within 24 hours (IST)</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── ROI CALCULATOR SECTION ───
-function ROICalculator() {
-  const [investment, setInvestment] = useState(150000);
-  const [monthlyRevenue, setMonthlyRevenue] = useState(500000);
-  
-  const conservativeROI = (monthlyRevenue * 0.15 * 12) / investment;
-  const moderateROI = (monthlyRevenue * 0.25 * 12) / investment;
-  const aggressiveROI = (monthlyRevenue * 0.40 * 12) / investment;
-
-  return (
-    <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">ROI Calculator</h2>
-          <p className="text-lg text-slate-400">See how a custom website & automation pays for itself</p>
-        </div>
-
-        <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-8 mb-8">
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div>
-              <label className="block text-sm font-medium text-slate-300 mb-4">
-                Website Investment: ₹{investment.toLocaleString()}
-              </label>
-              <input
-                type="range"
-                min="50000"
-                max="500000"
-                step="10000"
-                value={investment}
-                onChange={(e) => setInvestment(Number(e.target.value))}
-                className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer"
-              />
-              <div className="flex justify-between text-xs text-slate-500 mt-2">
-                <span>₹50k</span>
-                <span>₹500k</span>
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="fixed inset-0 z-[60] md:hidden">
+            <div className="absolute inset-0 bg-foreground/40 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} aria-hidden />
+            <div className="absolute right-0 top-0 flex h-full w-[82%] max-w-sm flex-col bg-background shadow-2xl slide-up in">
+              <div className="flex items-center justify-between border-b border-border px-6 py-6">
+                <img src={tilLogo} alt="The Ingredient List" className="h-10 w-auto object-contain mix-blend-multiply" loading="lazy" />
+                <button onClick={() => setMobileMenuOpen(false)} aria-label="Close menu" className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground">
+                  <X className="h-5 w-5" />
+                </button>
               </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-slate-300 mb-4">
-                Current Monthly Revenue: ₹{monthlyRevenue.toLocaleString()}
-              </label>
-              <input
-                type="range"
-                min="100000"
-                max="5000000"
-                step="100000"
-                value={monthlyRevenue}
-                onChange={(e) => setMonthlyRevenue(Number(e.target.value))}
-                className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer"
-              />
-              <div className="flex justify-between text-xs text-slate-500 mt-2">
-                <span>₹1L</span>
-                <span>₹50L</span>
+              <nav className="flex flex-col gap-1 px-4 py-6">
+                {[["#work","Work"],["#services","Services"],["#about","Studio"],["#pricing","Pricing"],["#faq","FAQ"],["#contact","Contact"]].map(([href,label]) => (
+                  <a key={href} href={href} onClick={() => setMobileMenuOpen(false)}
+                    className="rounded-xl px-4 py-3.5 font-brand text-lg font-bold text-foreground transition-colors hover:bg-muted">{label}</a>
+                ))}
+              </nav>
+              <div className="mt-auto border-t border-border px-6 py-6">
+                <Button asChild variant="brand" size="lg" className="w-full rounded-full">
+                  <a href={CAL} target="_blank" rel="noreferrer" onClick={() => setMobileMenuOpen(false)}>
+                    Book a Free Strategy Call <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+                <a href={`https://wa.me/917483992418`} target="_blank" rel="noreferrer"
+                  className="mt-3 flex items-center justify-center gap-2 rounded-full border border-border py-3 text-sm font-medium text-foreground transition-colors hover:border-primary/40">
+                  <MessageCircle className="h-4 w-4 text-primary" /> WhatsApp
+                </a>
               </div>
             </div>
           </div>
+        )}
 
-          <div className="grid md:grid-cols-3 gap-4">
-            <div className="bg-gradient-to-br from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-lg p-6">
-              <div className="text-sm text-slate-400 mb-2">Conservative (+15%)</div>
-              <div className="text-3xl font-bold text-yellow-400 mb-2">{conservativeROI.toFixed(1)}x</div>
-              <div className="text-sm text-slate-300">₹{(monthlyRevenue * 0.15 * 12).toLocaleString()} annual gain</div>
-              <div className="text-xs text-slate-400 mt-2">Payback: {(investment / (monthlyRevenue * 0.15 * 12 / 12)).toFixed(1)} months</div>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-500/10 to-green-600/10 border border-green-500/30 rounded-lg p-6">
-              <div className="text-sm text-slate-400 mb-2">Moderate (+25%)</div>
-              <div className="text-3xl font-bold text-green-400 mb-2">{moderateROI.toFixed(1)}x</div>
-              <div className="text-sm text-slate-300">₹{(monthlyRevenue * 0.25 * 12).toLocaleString()} annual gain</div>
-              <div className="text-xs text-slate-400 mt-2">Payback: {(investment / (monthlyRevenue * 0.25 * 12 / 12)).toFixed(1)} months</div>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/10 border border-blue-500/30 rounded-lg p-6">
-              <div className="text-sm text-slate-400 mb-2">Aggressive (+40%)</div>
-              <div className="text-3xl font-bold text-blue-400 mb-2">{aggressiveROI.toFixed(1)}x</div>
-              <div className="text-sm text-slate-300">₹{(monthlyRevenue * 0.40 * 12).toLocaleString()} annual gain</div>
-              <div className="text-xs text-slate-400 mt-2">Payback: {(investment / (monthlyRevenue * 0.40 * 12 / 12)).toFixed(1)} months</div>
-            </div>
+        {/* HERO CONTENT */}
+        <div id="top" className="relative z-10 mx-auto max-w-7xl px-6 pb-28 pt-14 text-center lg:px-10 lg:pt-20">
+          <div className="slide-up mx-auto mb-8 flex w-fit items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2 text-xs font-medium tracking-wide text-muted-foreground shadow-card backdrop-blur-xl">
+            <Sparkles className="h-3.5 w-3.5 text-primary" />
+            Websites · AI Systems · Automation
           </div>
-        </div>
-
-        <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-6 text-center">
-          <p className="text-sm text-slate-300 mb-4">
-            📊 Most clients see their investment back within <span className="font-bold text-blue-300">4-8 months</span> through increased conversions, higher average order value, and reduced marketing spend.
+          <h1 id="heroLines" className="hero-lines mx-auto max-w-5xl font-brand text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
+            <span className="line-word"><i>Websites and AI systems</i></span>{" "}
+            <span className="line-word"><i className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">built to move the needle.</i></span>
+          </h1>
+          <p className="slide-up d1 mx-auto mt-8 max-w-2xl text-base sm:text-lg leading-8 text-muted-foreground">
+            I help businesses launch high-performing websites and automate the busywork that slows them down — built in-house, start to finish, by one person who's accountable for the result.
           </p>
-          <Button className="bg-blue-600 hover:bg-blue-700">
-            Calculate Your ROI <ArrowRight size={18} className="ml-2" />
-          </Button>
+          <div className="slide-up d2 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button asChild variant="brand" size="lg" className="rounded-full px-7">
+              <a href={CAL} target="_blank" rel="noreferrer">Book a Free Strategy Call <ArrowRight className="h-4 w-4" /></a>
+            </Button>
+            <Button asChild variant="glass" size="lg" className="rounded-full px-7">
+              <a href="#work"><Play className="h-4 w-4" /> View Our Work</a>
+            </Button>
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
 
-// ─── CASE STUDIES SECTION ───
-function CaseStudies() {
-  const [selectedStudy, setSelectedStudy] = useState(0);
-  const [cardsReady, setCardsReady] = useState(false);
-
-  useEffect(() => {
-    setCardsReady(true);
-  }, []);
-
-  const study = caseStudies[selectedStudy];
-
-  return (
-    <section className="py-20 bg-slate-900">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Case Studies</h2>
-          <p className="text-lg text-slate-400">Real results from brands we've helped grow</p>
+      {/* ── SOCIAL PROOF ──────────────────────────────── */}
+      <section className="relative border-t border-border bg-background px-6 py-16 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-12 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Trusted By</p>
+          <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-16">
+            {[
+              { src: thexaLogo,          alt: "Threxa" },
+              { src: sierraLogo,         alt: "Sierra Aerospace" },
+              { src: smartPackagingLogo, alt: "Smart Packaging Solutions" },
+              { src: jkpLogo,            alt: "JKP Padmalaya" },
+            ].map(({ src, alt }) => (
+              <div key={alt} ref={addRef as any}
+                className="group flex h-14 w-40 items-center justify-center slide-up transition-all duration-500 hover:scale-110">
+                <img src={src} alt={alt} loading="lazy" className="h-full w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100" />
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <div className={`card-fall ${cardsReady ? "in" : ""}`}>
-              <img src={study.image} alt={study.name} className="rounded-lg shadow-2xl" />
+      {/* ── CASE STUDIES ──────────────────────────────── */}
+      <section id="work" className="relative bg-gradient-warm px-6 py-16 sm:py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-20">
+            <p ref={addRef as any} className="slide-up text-xs font-semibold uppercase tracking-[0.2em] text-primary">Selected work</p>
+            <h2 ref={addRef as any} className="slide-up d1 mt-4 max-w-3xl font-brand text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+              Work that moved the <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">needle.</span>
+            </h2>
+            <p ref={addRef as any} className="slide-up d2 mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground">
+              Every engagement starts with a business challenge. Here's how they ended.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {caseStudies.map((study, index) => {
+              const isExpanded = expandedCaseStudy === study.id;
+              const delayClass = `d${index + 1}`;
+              return (
+                <article
+                  key={study.id}
+                  ref={addCardRef as any}
+                  className={`card-fall ${delayClass} group relative overflow-hidden rounded-2xl border border-border/40 bg-white/60 cursor-pointer hover:border-primary/40 hover:bg-white/70 hover:shadow-xl transition-[border-color,background,box-shadow] duration-300`}
+                  style={{ "--tilt": study.tilt } as React.CSSProperties}
+                  onClick={() => setExpandedCaseStudy(isExpanded ? null : study.id)}
+                >
+                  <div className="p-6 lg:p-8">
+                    <div className="flex items-start justify-between gap-6">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-4 mb-5">
+                          <img src={study.logo} alt={study.name} loading="lazy"
+                            className="h-10 w-auto transition-all duration-500 grayscale group-hover:grayscale-0" />
+                          <div className="h-px flex-1 bg-border/60" />
+                          <span className="text-xs font-mono text-muted-foreground/60">{study.year}</span>
+                        </div>
+                        <h3 className="font-brand text-2xl lg:text-3xl font-extrabold text-foreground">{study.name}</h3>
+                        <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                          <span className="font-semibold text-primary">{study.industry}</span>
+                          <span>·</span>
+                          <span>{study.duration}</span>
+                        </div>
+                        <p className="mt-4 text-sm text-muted-foreground line-clamp-2 max-w-2xl">{study.solution}</p>
+                      </div>
+                      <div className="hidden lg:flex flex-col items-end gap-3">
+                        <div className={`flex items-center gap-2 text-xs font-medium ${isExpanded ? "text-primary" : "text-muted-foreground"} transition-colors`}>
+                          {isExpanded ? "Hide details" : "View details"}
+                          <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} />
+                        </div>
+                        <div className="flex gap-4 mt-2">
+                          {study.results.slice(0,2).map(r => (
+                            <div key={r.label} className="text-right">
+                              <div className="font-brand text-lg font-extrabold bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">{r.metric}</div>
+                              <div className="text-xs text-muted-foreground">{r.label}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <ChevronDown className={`lg:hidden h-5 w-5 text-muted-foreground transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} />
+                    </div>
+                  </div>
+
+                  {isExpanded && (
+                    <div className="border-t border-border/20 bg-card/40 bloom-in in">
+                      <div className="p-6 lg:p-8 space-y-8">
+                        <div className="grid gap-6 lg:grid-cols-2">
+                          <div className="rounded-2xl border border-border/30 bg-card/40 p-5">
+                            <div className="flex gap-3">
+                              <Target className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                              <div>
+                                <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">The Challenge</p>
+                                <p className="text-sm leading-6 text-muted-foreground">{study.challenge}</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="rounded-2xl border border-border/30 bg-card/40 p-5">
+                            <div className="flex gap-3">
+                              <Lightbulb className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                              <div>
+                                <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">What I Built</p>
+                                <p className="text-sm leading-6 text-muted-foreground">{study.solution}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+                          {study.results.map(r => {
+                            const Icon = r.icon;
+                            return (
+                              <div key={r.label} className="rounded-xl border border-border/40 bg-card/50 p-3 transition-all hover:border-primary/40">
+                                <div className="mb-2 inline-flex rounded-lg bg-primary/10 p-1.5"><Icon className="h-3.5 w-3.5 text-primary" /></div>
+                                <p className="font-brand text-base font-extrabold bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">{r.metric}</p>
+                                <p className="mt-0.5 text-xs font-semibold text-foreground">{r.label}</p>
+                                <p className="mt-0.5 text-xs text-muted-foreground">{r.desc}</p>
+                              </div>
+                            );
+                          })}
+                        </div>
+                        <div className="rounded-2xl border border-border/30 bg-gradient-to-br from-primary/5 to-orange-500/5 p-5">
+                          <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Key outcomes</p>
+                          <ul className="space-y-2">
+                            {study.achievements.map((a, i) => (
+                              <li key={i} className="flex gap-2.5 text-sm text-muted-foreground">
+                                <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />{a}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5 items-center justify-between">
+                          <div className="flex flex-wrap gap-1.5">
+                            {study.tech.map(t => (
+                              <span key={t} className="rounded-full border border-border/50 bg-card px-3 py-1 text-xs font-medium text-foreground">{t}</span>
+                            ))}
+                          </div>
+                          <Button asChild variant="brand" size="sm" className="rounded-full px-6" onClick={e => e.stopPropagation()}>
+                            <a href={study.href} target="_blank" rel="noreferrer">{study.cta} <ArrowUpRight className="ml-2 h-4 w-4" /></a>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+
+          <div ref={addRef as any} className="slide-up mt-20 rounded-3xl border border-border/40 bg-gradient-to-r from-primary/5 via-transparent to-orange-500/5 p-12 text-center">
+            <h3 className="font-brand text-2xl font-extrabold">Ready to build something <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">that matters?</span></h3>
+            <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Every brand has a story worth telling. Let's tell yours with work that actually moves the needle.</p>
+            <Button asChild variant="brand" size="lg" className="mt-8 rounded-full px-8">
+              <a href={CAL} target="_blank" rel="noreferrer">Start a Conversation <ArrowRight className="ml-2 h-5 w-5" /></a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PHILOSOPHY ────────────────────────────────── */}
+      <section className="relative border-t border-border bg-background px-6 py-16 sm:py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 lg:items-start">
+            <div ref={addRef as any} className="slide-up">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">My Philosophy</p>
+              <h2 className="mt-4 font-brand text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+                Fewer things, <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">done better.</span>
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-muted-foreground">I take on a small number of projects each quarter — not because of capacity, but because quality demands attention. Every project gets my direct involvement, my sharpest thinking, and my honest judgment.</p>
+              <p className="mt-5 text-lg leading-8 text-muted-foreground">I care about what happens after launch — the leads, the conversions, the business outcomes that actually matter to you.</p>
+              <div className="mt-8 h-px w-16 bg-gradient-to-r from-primary to-orange-500" />
+              <p className="mt-6 font-brand text-xl font-extrabold text-foreground">— Sachin</p>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {principles.map((p, i) => (
+                <div key={p.title} ref={addRef as any}
+                  className={`slide-up d${i+1} group rounded-2xl border border-border/20 p-6 transition-all duration-700 hover:border-primary/40 hover:bg-white/30 hover:-translate-y-1`}>
+                  <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-2.5"><p.icon className="h-5 w-5 text-primary" /></div>
+                  <h3 className="font-brand text-base font-extrabold text-foreground">{p.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{p.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVICES ──────────────────────────────────── */}
+      <section id="services" className="relative border-t border-border bg-gradient-warm px-6 py-16 sm:py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div ref={addRef as any} className="slide-up">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">What we do</p>
+              <h2 className="mt-4 font-brand text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+                One studio. The full <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">recipe.</span>
+              </h2>
+              <p className="mt-6 max-w-md text-muted-foreground">From positioning to pixels to production — no handoffs, no compromise.</p>
+            </div>
+            <div className="grid gap-5 md:grid-cols-3">
+              {services.map((s, i) => (
+                <article key={s.title} ref={addCardRef as any}
+                  className={`card-fall d${i+1} group rounded-2xl border border-border/20 p-6 hover:-translate-y-1 hover:border-primary/40 hover:bg-white/30 transition-[border-color,background,transform] duration-300`}>
+                  <div className="mb-6 inline-flex rounded-2xl bg-gradient-to-br from-primary to-orange-500 p-3 text-primary-foreground shadow-sm">
+                    <s.icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-brand text-lg font-extrabold">{s.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">{s.copy}</p>
+                </article>
+              ))}
             </div>
           </div>
 
-          <div>
-            <div className="mb-6">
-              <div className="flex items-center gap-4 mb-4">
-                <img src={study.logo} alt={study.name} className="h-12 w-12 object-contain" />
+          <div ref={addRef as any} className="slide-up mt-20 rounded-3xl border border-border bg-gradient-card p-8 shadow-card lg:p-12">
+            <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+              <div className="max-w-md">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Integrations</p>
+                <h3 className="mt-3 font-brand text-2xl font-extrabold lg:text-3xl">Built for the stack you already run.</h3>
+                <p className="mt-3 text-sm text-muted-foreground">Native integrations across the tools Indian commerce actually runs on.</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {integrations.map(tool => (
+                  <span key={tool} className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-card">{tool}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── HOW I WORK ────────────────────────────────── */}
+      <section className="relative border-t border-border bg-gradient-warm px-6 py-16 sm:py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16">
+            <p ref={addRef as any} className="slide-up text-xs font-semibold uppercase tracking-[0.2em] text-primary">The approach</p>
+            <h2 ref={addRef as any} className="slide-up d1 mt-4 max-w-2xl font-brand text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+              How I actually <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">work with clients.</span>
+            </h2>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            {approachPillars.map((pillar, i) => (
+              <div key={pillar.number} ref={addCardRef as any}
+                className={`card-fall d${i+1} group relative overflow-hidden rounded-2xl border border-border/20 p-8 hover:border-primary/30 hover:bg-white/30 hover:-translate-y-1 transition-[border-color,background,transform] duration-300`}>
+                <span className="pointer-events-none absolute right-5 top-5 z-0 font-brand text-5xl font-extrabold text-primary/[0.06] select-none">{pillar.number}</span>
+                <h3 className="relative z-10 max-w-[85%] font-brand text-xl font-extrabold text-foreground leading-snug">{pillar.title}</h3>
+                <p className="relative z-10 mt-4 text-sm leading-7 text-muted-foreground">{pillar.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS ──────────────────────────────── */}
+      <section id="testimonials" className="relative border-t border-border bg-background px-6 py-16 sm:py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 text-center">
+            <p ref={addRef as any} className="slide-up text-xs font-semibold uppercase tracking-[0.2em] text-primary">Client voices</p>
+            <h2 ref={addRef as any} className="slide-up d1 mt-4 font-brand text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+              What clients <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">actually say.</span>
+            </h2>
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            {testimonials.map((t, i) => (
+              <article key={t.id} ref={addCardRef as any}
+                className={`card-fall d${i+1} flex flex-col rounded-2xl border border-border/50 bg-gradient-to-br from-card/80 to-card/40 p-8 shadow-card backdrop-blur-sm hover:border-primary/40 hover:-translate-y-1 hover:shadow-lg transition-[border-color,transform,box-shadow] duration-300`}>
+                <div className="mb-5 flex gap-0.5">
+                  {[...Array(t.rating)].map((_, j) => <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />)}
+                </div>
+                <p className="mb-8 flex-1 text-sm leading-7 text-muted-foreground italic">"{t.testimonial}"</p>
+                <div className="border-t border-border/40 pt-5 space-y-1">
+                  <h3 className="font-brand text-sm font-extrabold text-foreground">{t.name}</h3>
+                  <p className="text-xs text-muted-foreground">{t.role} · <span className="font-semibold text-primary/80">{t.company}</span></p>
+                  <p className="text-xs text-muted-foreground/60">Project: {t.project}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div ref={addRef as any} className="slide-up mt-20 rounded-2xl border border-border/40 bg-card/50 p-8 shadow-card lg:p-12">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {trustMarkers.map((m, i) => (
+                <div key={i} className="relative">
+                  <div className="absolute -top-1 left-0 h-px w-8 bg-gradient-to-r from-primary to-orange-500" />
+                  <div className="pt-4">
+                    <div className="mb-2 bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-2xl font-extrabold text-transparent">{m.value}</div>
+                    <h4 className="font-brand text-sm font-extrabold text-foreground mb-1">{m.label}</h4>
+                    <p className="text-xs leading-relaxed text-muted-foreground">{m.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── STORY / ABOUT ─────────────────────────────── */}
+      <section id="about" className="relative border-t border-border bg-gradient-warm px-6 py-16 sm:py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 items-center">
+            <div ref={addRef as any} className="slide-up space-y-6">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">The studio</p>
+                <h2 className="mt-4 font-brand text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+                  Why I started <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">The Ingredient List.</span>
+                </h2>
+              </div>
+              <p className="text-lg leading-8 text-muted-foreground">I started this because of a pattern I kept seeing: genuinely good businesses — skilled, experienced, building real things — were invisible online. Not because their work was bad. Because their digital presence didn't reflect the quality of what they actually did.</p>
+              <p className="text-base leading-8 text-muted-foreground">They were losing clients to competitors with better-looking websites. The gap wasn't capability — it was presentation. That felt wrong, and fixable.</p>
+              <p className="text-base leading-8 text-muted-foreground">Eight years and 30+ brands later, the same thing still drives me: getting the work right, not just getting it done.</p>
+              <Button asChild variant="brand" size="lg" className="rounded-full px-8">
+                <a href={CAL} target="_blank" rel="noreferrer">Start Your Project <ArrowRight className="ml-2 h-5 w-5" /></a>
+              </Button>
+            </div>
+
+            <div ref={addRef as any} className="bloom-in">
+              <div className="rounded-3xl border border-border/40 bg-card/60 p-8 backdrop-blur-sm shadow-soft lg:p-10 space-y-8">
                 <div>
-                  <h3 className="text-2xl font-bold text-white">{study.name}</h3>
-                  <p className="text-sm text-slate-400">{study.industry}</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-5">What you can expect</p>
+                  <ul className="space-y-4">
+                    {[
+                      { icon: MessageSquare, title: "Direct Communication",   body: "You work with me, not a team. Every conversation is with the person building your project." },
+                      { icon: Target,        title: "Strategy First",          body: "I begin by understanding your business, your market, and what success actually looks like." },
+                      { icon: Zap,           title: "Built Fast, Built Right", body: "Clean code, shipped on time, zero technical debt." },
+                      { icon: BookOpen,      title: "Honest Feedback",         body: "If something won't work or isn't worth building, you'll hear it from me directly." },
+                    ].map(({ icon: Icon, title, body }) => (
+                      <li key={title} className="flex gap-4">
+                        <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                          <Icon className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-foreground text-sm">{title}</p>
+                          <p className="mt-0.5 text-sm text-muted-foreground">{body}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="border-t border-border/30 pt-6 flex items-center gap-4">
+                  <div className="relative flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-primary to-orange-500 text-primary-foreground font-brand text-lg font-extrabold shadow-sm">
+                    <span>SK</span>
+                    <img src="/founder.jpg" alt="Sachin — founder" className="absolute inset-0 h-full w-full object-cover" onError={e => { e.currentTarget.style.display = "none"; }} loading="lazy" />
+                  </div>
+                  <div>
+                    <p className="font-brand font-extrabold text-foreground">Sachin</p>
+                    <p className="text-xs text-muted-foreground">Founder · The Ingredient List · Bengaluru</p>
+                  </div>
                 </div>
               </div>
-              <div className="flex gap-4 text-sm text-slate-400 mb-6">
-                <span>📅 {study.year}</span>
-                <span>⏱️ {study.duration}</span>
-              </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="mb-8">
-              <h4 className="text-lg font-semibold text-slate-300 mb-3">Challenge</h4>
-              <p className="text-slate-300 mb-6">{study.challenge}</p>
+      {/* ── PRICING ───────────────────────────────────── */}
+      <section id="pricing" className="relative border-t border-border bg-background px-6 py-16 sm:py-24 lg:px-10 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 sm:mb-16 text-center">
+            <p ref={addRef as any} className="slide-up text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-3">Investment</p>
+            <h2 ref={addRef as any} className="slide-up d1 font-brand text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
+              No surprises. <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">Just results.</span>
+            </h2>
+            <p ref={addRef as any} className="slide-up d2 mx-auto max-w-2xl text-base sm:text-lg text-muted-foreground">
+              Clear pricing based on scope. Every project starts with a strategy call.
+            </p>
+          </div>
 
-              <h4 className="text-lg font-semibold text-slate-300 mb-3">Solution</h4>
-              <p className="text-slate-300 mb-6">{study.solution}</p>
-            </div>
-
-            <div className="mb-8">
-              <h4 className="text-lg font-semibold text-slate-300 mb-4">Key Results</h4>
-              <div className="grid grid-cols-2 gap-4">
-                {study.results.map((r, i) => {
-                  const Icon = r.icon;
-                  return (
-                    <div key={i} className="bg-slate-800/50 border border-slate-700 rounded-lg p-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Icon size={18} className="text-blue-400" />
-                        <span className="text-xl font-bold text-white">{r.metric}</span>
+          <div className="grid gap-6 sm:gap-8 lg:grid-cols-3 mb-12">
+            {pricing.map((tier, i) => (
+              <article key={tier.name} ref={addCardRef as any}
+                className={`card-fall d${i+1} relative overflow-hidden rounded-2xl border transition-[border-color,box-shadow] duration-300
+                  ${tier.featured
+                    ? "border-primary/50 bg-card shadow-lg ring-1 ring-primary/30 p-6 sm:p-8"
+                    : "border-border/50 bg-card/50 shadow-card hover:border-primary/20 p-6 sm:p-8"
+                  }`}>
+                {tier.featured && (
+                  <div className="absolute -top-0.5 left-1/2 -translate-x-1/2 z-10">
+                    <span className="inline-block rounded-b-lg bg-gradient-to-r from-primary to-orange-500 px-4 py-1 text-xs font-extrabold text-white uppercase tracking-wider">Recommended</span>
+                  </div>
+                )}
+                <div className={tier.featured ? "pt-4" : ""}>
+                  <h3 className="font-brand text-2xl sm:text-3xl font-extrabold text-foreground mb-2">{tier.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{tier.description}</p>
+                  <p className="text-xs text-muted-foreground mb-6">Timeline: {tier.duration}</p>
+                  <div className="mb-6 rounded-lg border border-border/30 bg-muted/30 p-4">
+                    <p className="text-xs font-semibold text-foreground mb-1">You'll get:</p>
+                    <p className="text-sm text-muted-foreground font-medium">{tier.outcome}</p>
+                  </div>
+                  <div className="mb-6 space-y-3 border-t border-border/30 pt-6">
+                    <p className="text-xs font-semibold text-foreground uppercase tracking-[0.1em] text-muted-foreground">Includes:</p>
+                    {tier.details.map((detail, idx) => (
+                      <div key={idx} className="flex gap-3">
+                        <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                        <p className="text-sm text-foreground">{detail}</p>
                       </div>
-                      <div className="text-sm font-medium text-slate-300">{r.label}</div>
-                      <div className="text-xs text-slate-400">{r.desc}</div>
+                    ))}
+                  </div>
+                  <div className="mb-4 border-t border-border/30 pt-4">
+                    <p className="text-xs text-muted-foreground italic">"{tier.includes}"</p>
+                  </div>
+                  <div className="mb-6 text-xs text-muted-foreground">
+                    <span className="font-semibold">Best for:</span> {tier.bestFor}
+                  </div>
+                  <Button asChild variant={tier.featured ? "brand" : "outline"}
+                    className="w-full rounded-lg flex items-center justify-center h-11 text-sm font-semibold whitespace-nowrap">
+                    <a href={`https://wa.me/917483992418?text=${encodeURIComponent(`Hi Sachin, I'm interested in the ${tier.name} package. Can we discuss?`)}`} target="_blank" rel="noreferrer">
+                      Get a Quote <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" />
+                    </a>
+                  </Button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ───────────────────────────────────────── */}
+      <section id="faq" className="relative border-t border-border bg-background px-6 py-16 sm:py-24 lg:px-10">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-16 text-center">
+            <p ref={addRef as any} className="slide-up text-xs font-semibold uppercase tracking-[0.2em] text-primary">Common questions</p>
+            <h2 ref={addRef as any} className="slide-up d1 mt-4 font-brand text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+              Frequently Asked <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">Questions</span>
+            </h2>
+          </div>
+          <div className="divide-y divide-border/50">
+            {faqs.map((faq, i) => {
+              const isOpen = expandedFaq === i;
+              return (
+                <div key={i} className="group">
+                  <button
+                    onClick={() => setExpandedFaq(isOpen ? null : i)}
+                    className="flex w-full items-center justify-between gap-6 py-6 text-left transition-colors hover:text-primary">
+                    <span className="font-brand text-base font-extrabold text-foreground group-hover:text-primary transition-colors lg:text-lg">{faq.q}</span>
+                    <span className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full border border-border transition-all group-hover:border-primary/40 group-hover:bg-primary/5">
+                      {isOpen ? <Minus className="h-4 w-4 text-primary" /> : <Plus className="h-4 w-4 text-muted-foreground group-hover:text-primary" />}
+                    </span>
+                  </button>
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 pb-6" : "max-h-0"}`}>
+                    <p className="text-base leading-8 text-muted-foreground pr-14">{faq.a}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div ref={addRef as any} className="slide-up mt-14 rounded-2xl border border-border/30 bg-gradient-warm p-8 text-center">
+            <p className="font-brand text-lg font-extrabold text-foreground">Still have questions?</p>
+            <p className="mt-2 text-sm text-muted-foreground">A 15-minute call is the fastest way to get answers specific to your project.</p>
+            <Button asChild variant="brand" size="sm" className="mt-6 rounded-full px-6">
+              <a href={CAL} target="_blank" rel="noreferrer">Book a free call <ArrowRight className="ml-2 h-4 w-4" /></a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ── AUDIT ─────────────────────────────────────── */}
+      <section id="audit" className="relative border-t border-border bg-gradient-warm px-6 py-16 sm:py-24 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 lg:items-start">
+            <div className="text-left">
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-semibold text-primary mb-6">
+                <Sparkles className="h-3.5 w-3.5" /> Free · No obligation
+              </div>
+              <h2 ref={addRef as any} className="slide-up font-brand text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+                Get a Free Website <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">&amp; Automation Audit</span>
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-muted-foreground">I'll personally review your website and digital workflows and send back a specific, prioritised breakdown of what to fix — free, with no strings attached.</p>
+              <div className="mt-10 space-y-5">
+                {auditBenefits.map(({ icon: Icon, title, body }) => (
+                  <div key={title} className="flex gap-4 text-left">
+                    <div className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl border border-border/20 bg-primary/10">
+                      <Icon className="h-4 w-4 text-primary" />
                     </div>
-                  );
-                })}
+                    <div>
+                      <p className="font-semibold text-foreground text-sm">{title}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">{body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-10 flex items-center gap-3 text-sm text-muted-foreground">
+                <Shield className="h-4 w-4 text-primary flex-shrink-0" />
+                <span>Your information is kept confidential. No spam, ever.</span>
               </div>
             </div>
+            <div ref={addRef as any} className="bloom-in rounded-3xl border border-border/40 bg-white p-8 shadow-soft lg:p-10">
+              {auditSubmitted ? (
+                <div className="flex flex-col items-center justify-center gap-5 py-16 text-center">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-orange-500 shadow-sm">
+                    <Check className="h-7 w-7 text-white" />
+                  </div>
+                  <h3 className="font-brand text-2xl font-extrabold text-foreground">Audit request received.</h3>
+                  <p className="text-muted-foreground max-w-xs">I'll personally review your site and send the audit within 48 hours.</p>
+                </div>
+              ) : (
+                <>
+                  <h3 className="font-brand text-xl font-extrabold text-foreground mb-1">Request your free audit</h3>
+                  <p className="text-sm text-muted-foreground mb-8">Takes 60 seconds. Delivered within 48 hours.</p>
+                  <div className="space-y-5">
+                    {[
+                      { label:"Your Name",     type:"text",  key:"name",     placeholder:"Your name" },
+                      { label:"Email Address", type:"email", key:"email",    placeholder:"you@company.com" },
+                      { label:"Website URL",   type:"url",   key:"website",  placeholder:"https://yourwebsite.com" },
+                    ].map(f => (
+                      <div key={f.key}>
+                        <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-foreground mb-2">{f.label}</label>
+                        <input type={f.type} placeholder={f.placeholder}
+                          value={auditForm[f.key as keyof typeof auditForm]}
+                          onChange={e => setAuditForm(prev => ({ ...prev, [f.key]: e.target.value }))}
+                          className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all" />
+                      </div>
+                    ))}
+                    <div>
+                      <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-foreground mb-2">Business Type</label>
+                      <select value={auditForm.businessType} onChange={e => setAuditForm(prev => ({ ...prev, businessType: e.target.value }))}
+                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all">
+                        <option value="" disabled>Select your business type</option>
+                        <option value="ecommerce">E-Commerce / D2C Brand</option>
+                        <option value="saas">SaaS / Software</option>
+                        <option value="service">Service Business</option>
+                        <option value="manufacturing">Manufacturing / B2B</option>
+                        <option value="hospitality">Hospitality / Tourism</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <Button variant="brand" size="lg" className="w-full rounded-xl mt-2"
+                      disabled={!auditForm.name || !auditForm.email}
+                      onClick={async () => {
+                        if (!auditForm.name || !auditForm.email) return;
+                        try {
+                          await fetch("https://api.web3forms.com/submit", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                              access_key: "257216c8-72b2-4bf5-bedb-71ea5209108f",
+                              subject: `Free Audit Request — ${auditForm.name}`,
+                              from_name: auditForm.name,
+                              email: auditForm.email,
+                              website: auditForm.website || "Not provided",
+                              business_type: auditForm.businessType || "Not specified",
+                              to: "sachin@theingredientlist.co",
+                            }),
+                          });
+                        } catch (_) {}
+                        setAuditSubmitted(true);
+                      }}>
+                      Request My Free Audit <Send className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="mb-8">
-              <h4 className="text-lg font-semibold text-slate-300 mb-4">Achievements</h4>
-              <ul className="space-y-2">
-                {study.achievements.map((a, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-300">
-                    <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                    <span>{a}</span>
-                  </li>
+      {/* -- CONTACT ---------------------------------------- */}
+      <section id="contact" className="relative bg-background px-6 py-20 sm:py-28 lg:px-10 lg:py-32">
+        <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary to-orange-500 opacity-10 blur-3xl" aria-hidden />
+        <div className="relative mx-auto max-w-4xl text-center">
+          <h2 ref={addRef as any} className="slide-up font-brand text-3xl sm:text-4xl lg:text-6xl font-extrabold leading-tight">
+            Have something <span className="bg-gradient-to-r from-primary to-orange-500 bg-clip-text text-transparent">worth building?</span>
+          </h2>
+          <p ref={addRef as any} className="slide-up d1 mx-auto mt-6 max-w-xl text-base sm:text-lg text-muted-foreground">
+            I take on a small number of projects each quarter. A 15-minute call costs nothing and usually answers everything.
+          </p>
+          <div ref={addRef as any} className="slide-up d2 mt-12 grid gap-4 sm:grid-cols-3">
+            {[
+              { href: `mailto:${EMAIL}`,            icon: Mail,     label: "Email",    value: EMAIL },
+              { href: "https://wa.me/917483992418", icon: Phone,    label: "WhatsApp", value: WHATSAPP },
+              { href: CAL,                           icon: Calendar, label: "Calendar", value: "cal.com/threxa" },
+            ].map(c => (
+              <a key={c.label} href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
+                className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+                <c.icon className="h-5 w-5 text-primary" />
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{c.label}</span>
+                <span className="break-all text-xs font-medium text-center">{c.value}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* -- FOOTER ----------------------------------------- */}
+      <footer className="border-t border-border bg-foreground text-background px-6 pt-20 pb-10 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-20 flex flex-col items-start justify-between gap-8 border-b border-white/10 pb-16 lg:flex-row lg:items-end">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60 mb-4">Let's work together</p>
+              <h2 className="font-brand text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
+                Ready to build something<br />
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">exceptional?</span>
+              </h2>
+            </div>
+            <Button asChild size="lg" className="rounded-full bg-white text-foreground hover:bg-white/90 hover:text-foreground px-8 flex-shrink-0">
+              <a href={CAL} target="_blank" rel="noreferrer">Book a Strategy Call <ArrowRight className="ml-2 h-4 w-4" /></a>
+            </Button>
+          </div>
+          <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-4 mb-20">
+            <div className="text-left">
+              <div className="h-10 mb-5 flex items-center">
+                <img src={tilLogo} alt="The Ingredient List" loading="lazy" className="h-full w-auto object-contain opacity-90" />
+              </div>
+              <p className="text-sm text-white/70 leading-7 mb-6">Digital design, engineering &amp; strategy for businesses worldwide.</p>
+              <div className="flex items-center gap-3">
+                {[
+                  { href: `mailto:${EMAIL}`,           icon: Mail,          label: "Email" },
+                  { href: LINKEDIN,                     icon: Linkedin,      label: "LinkedIn" },
+                  { href: "https://wa.me/917483992418", icon: MessageCircle, label: "WhatsApp" },
+                ].map(s => (
+                  <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/70 transition-all hover:border-white/40 hover:text-white">
+                    <s.icon className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="text-left">
+              <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/60 mb-5">Services</h4>
+              <ul className="space-y-3 text-sm text-white/75">
+                {["Brand & Identity","Product Design","Engineering","Workflow Automation"].map(s => (
+                  <li key={s}><a href="#services" className="hover:text-white transition-colors">{s}</a></li>
+                ))}
+                <li><a href="https://threxa.theingredientlist.co/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-1">Threxa Platform <ExternalLink className="h-3 w-3" /></a></li>
+              </ul>
+            </div>
+            <div className="text-left">
+              <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/60 mb-5">Company</h4>
+              <ul className="space-y-3 text-sm text-white/75">
+                {[["#work","Work"],["#about","Studio"],["#pricing","Pricing"],["#faq","FAQ"],["#audit","Free Audit"]].map(([href,label]) => (
+                  <li key={label}><a href={href} className="hover:text-white transition-colors">{label}</a></li>
                 ))}
               </ul>
             </div>
-
-            <div className="flex gap-4 flex-wrap">
-              <Button className="bg-blue-600 hover:bg-blue-700">
-                {study.cta} <ExternalLink size={18} className="ml-2" />
-              </Button>
-              <Button variant="outline" className="border-slate-600 hover:bg-slate-800">
-                <Link href={`/work/${study.name.toLowerCase().replace(/ /g, '-')}`}>
-                  Full Case Study
-                </Link>
-              </Button>
+            <div className="text-left">
+              <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/60 mb-5">Contact</h4>
+              <ul className="space-y-3 text-sm text-white/75">
+                <li className="flex items-start gap-2"><Mail className="h-4 w-4 mt-0.5 flex-shrink-0" /><a href={`mailto:${EMAIL}`} className="hover:text-white transition-colors break-all">{EMAIL}</a></li>
+                <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 flex-shrink-0" /><a href="https://wa.me/917483992418" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">{WHATSAPP}</a></li>
+                <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" /><span>Bengaluru, India</span></li>
+                <li className="flex items-start gap-2"><Calendar className="h-4 w-4 mt-0.5 flex-shrink-0" /><a href={CAL} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Book a strategy call</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-8 flex flex-col items-center justify-between gap-4 text-xs text-white/60 sm:flex-row">
+            <p>© {new Date().getFullYear()} The Ingredient List. All rights reserved.</p>
+            <div className="flex items-center gap-6">
+              <a href="/terms"   className="hover:text-white/70 transition-colors">Terms &amp; Conditions</a>
+              <a href="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</a>
             </div>
           </div>
         </div>
+      </footer>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          {caseStudies.map((cs, i) => (
-            <button
-              key={i}
-              onClick={() => setSelectedStudy(i)}
-              className={`p-4 rounded-lg border transition ${
-                selectedStudy === i
-                  ? "bg-blue-600/20 border-blue-500 shadow-lg shadow-blue-500/20"
-                  : "bg-slate-800/50 border-slate-700 hover:border-slate-600"
-              }`}
-            >
-              <img src={cs.logo} alt={cs.name} className="h-8 mx-auto mb-2 object-contain" />
-              <p className="text-sm font-medium text-white text-center">{cs.name}</p>
-            </button>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── PRICING SECTION ───
-function Pricing() {
-  return (
-    <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Pricing</h2>
-          <p className="text-lg text-slate-400">Transparent, value-based pricing for every stage of growth</p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {/* Starter Plan */}
-          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-8 hover:border-slate-600 transition">
-            <h3 className="text-2xl font-bold text-white mb-2">Starter</h3>
-            <p className="text-slate-400 mb-6">For MVPs & portfolios</p>
-            <div className="mb-8">
-              <span className="text-4xl font-bold text-white">₹1,20,000</span>
-              <p className="text-sm text-slate-400 mt-2">One-time investment</p>
-            </div>
-
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Single landing page</p>
-                  <p className="text-sm text-slate-400">Hero, features, CTA</p>
+      {/* -- FLOATING CHAT WIDGET --------------------------- */}
+      {showChat && (
+        <div
+          className="fixed bottom-8 right-8 z-40 flex flex-col items-end gap-3"
+          onMouseEnter={() => { if (!('ontouchstart' in window)) handleChatMouseEnter(); }}
+          onMouseLeave={() => { if (!('ontouchstart' in window)) handleChatMouseLeave(); }}
+        >
+          {chatOpen && (
+            <div className="chat-popup mb-1 w-72 overflow-hidden rounded-2xl border border-border bg-card shadow-xl">
+              <div className="flex items-center justify-between bg-foreground px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <div className="relative flex h-8 w-8 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-primary to-orange-500 text-xs font-bold text-white">
+                    <span>S</span>
+                    <img src="/founder.jpg" alt="Sachin" className="absolute inset-0 h-full w-full object-cover" onError={e => { e.currentTarget.style.display = "none"; }} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-white">The Ingredient List</p>
+                    <div className="flex items-center gap-1">
+                      <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
+                      <p className="text-[10px] text-white/60">Sachin · Usually replies within an hour</p>
+                    </div>
+                  </div>
                 </div>
+                <button onClick={handleChatClose} className="text-white/60 transition-colors hover:text-white" aria-label="Close chat">
+                  <X className="h-4 w-4" />
+                </button>
               </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Mobile responsive</p>
-                  <p className="text-sm text-slate-400">Works perfectly on all devices</p>
+              <div className="bg-card p-4">
+                <div className="mb-3 rounded-xl bg-muted px-4 py-3 text-sm leading-relaxed text-foreground">
+                  Hey, I'm Sachin 👋<br />
+                  Tell me about your brand — what you're building, what's slowing you down — and I'll tell you exactly what I'd fix first.
                 </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Basic SEO setup</p>
-                  <p className="text-sm text-slate-400">Meta tags, sitemaps, indexing</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Contact form</p>
-                  <p className="text-sm text-slate-400">Email notifications</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Performance optimization</p>
-                  <p className="text-sm text-slate-400">Fast load times guaranteed</p>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-slate-700">
-                <p className="text-sm text-slate-400 font-medium">Not included:</p>
-                <ul className="text-sm text-slate-500 space-y-1 mt-2">
-                  <li>• Custom integrations</li>
-                  <li>• Automation workflows</li>
-                  <li>• Analytics dashboard</li>
-                </ul>
-              </div>
-            </div>
-
-            <Button className="w-full bg-slate-700 hover:bg-slate-600 text-white">
-              Get Started <ArrowRight size={18} className="ml-2" />
-            </Button>
-          </div>
-
-          {/* Growth Plan (Featured) */}
-          <div className="bg-gradient-to-br from-blue-600/20 to-blue-700/10 border border-blue-500 rounded-lg p-8 relative md:-translate-y-4 shadow-xl shadow-blue-500/10">
-            <div className="absolute -top-4 left-8 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-              MOST POPULAR
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Growth</h3>
-            <p className="text-blue-300 mb-6">For SaaS & D2C brands</p>
-            <div className="mb-8">
-              <span className="text-4xl font-bold text-white">₹1,80,000</span>
-              <p className="text-sm text-slate-300 mt-2">One-time investment</p>
-            </div>
-
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">5+ page website</p>
-                  <p className="text-sm text-slate-400">Home, About, Services, Pricing, Contact</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Conversion optimization</p>
-                  <p className="text-sm text-slate-400">Strategic CTA placement, lead capture</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Advanced SEO</p>
-                  <p className="text-sm text-slate-400">Keyword strategy, content optimization, schema</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Analytics integration</p>
-                  <p className="text-sm text-slate-400">Google Analytics 4 + conversion tracking</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">API integration</p>
-                  <p className="text-sm text-slate-400">Connect to your existing tools</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Direct founder involvement</p>
-                  <p className="text-sm text-slate-400">Strategy + delivery by Sachin</p>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-slate-700">
-                <p className="text-sm text-slate-300 font-medium">Not included:</p>
-                <ul className="text-sm text-slate-400 space-y-1 mt-2">
-                  <li>• Custom backend systems</li>
-                  <li>• Automation workflows</li>
-                  <li>• Advanced integrations</li>
-                </ul>
-              </div>
-            </div>
-
-            <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold">
-              Start Growing <ArrowRight size={18} className="ml-2" />
-            </Button>
-          </div>
-
-          {/* Professional Plan */}
-          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-8 hover:border-slate-600 transition">
-            <h3 className="text-2xl font-bold text-white mb-2">Professional</h3>
-            <p className="text-slate-400 mb-6">For enterprise & complex systems</p>
-            <div className="mb-8">
-              <span className="text-4xl font-bold text-white">₹2,40,000+</span>
-              <p className="text-sm text-slate-400 mt-2">One-time investment</p>
-            </div>
-
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Custom feature development</p>
-                  <p className="text-sm text-slate-400">Dashboard, user accounts, CMS</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Database + backend</p>
-                  <p className="text-sm text-slate-400">Scalable infrastructure, API endpoints</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Advanced automation</p>
-                  <p className="text-sm text-slate-400">Shopify + Tally + WhatsApp + custom workflows</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Multiple integrations</p>
-                  <p className="text-sm text-slate-400">CRM, payment, shipping, accounting sync</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Performance audit</p>
-                  <p className="text-sm text-slate-400">Load testing, optimization, security review</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check size={20} className="text-green-400 flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-medium text-white">Extended support</p>
-                  <p className="text-sm text-slate-400">1 month post-launch assistance</p>
-                </div>
-              </div>
-            </div>
-
-            <Button className="w-full bg-slate-700 hover:bg-slate-600 text-white">
-              Let's Talk <ArrowRight size={18} className="ml-2" />
-            </Button>
-          </div>
-        </div>
-
-        <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-8 text-center">
-          <h3 className="text-xl font-bold text-white mb-4">Optional Add-Ons</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div>
-              <p className="font-medium text-white mb-2">Monthly Maintenance</p>
-              <p className="text-2xl font-bold text-blue-400">₹6,000</p>
-              <p className="text-sm text-slate-400 mt-2">Updates, security, 2-hour support</p>
-            </div>
-            <div>
-              <p className="font-medium text-white mb-2">Client Portal</p>
-              <p className="text-2xl font-bold text-blue-400">₹40,000</p>
-              <p className="text-sm text-slate-400 mt-2">Inventory + orders + invoices</p>
-            </div>
-            <div>
-              <p className="font-medium text-white mb-2">WhatsApp + Tally Automation</p>
-              <p className="text-2xl font-bold text-blue-400">₹30,000</p>
-              <p className="text-sm text-slate-400 mt-2">Setup + first month included</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── CTA SECTION ───
-function CTA() {
-  return (
-    <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-white mb-6">Ready to Scale Your D2C Brand?</h2>
-        <p className="text-lg text-blue-100 mb-8">Get a free audit of your current website. We'll show you exactly where you're losing money.</p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-white hover:bg-slate-100 text-blue-600 font-semibold px-8">
-            Schedule Free Audit <ArrowRight size={18} className="ml-2" />
-          </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-blue-700 px-8">
-            View Pricing
-          </Button>
-        </div>
-        <p className="text-sm text-blue-100 mt-6">No credit card required. 30-min call with Sachin.</p>
-      </div>
-    </section>
-  );
-}
-
-// ─── FOOTER ───
-function Footer() {
-  return (
-    <footer className="bg-slate-900 border-t border-slate-800 py-16">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          <div>
-            <img src={tilLogo} alt="The Ingredient List" className="h-8 mb-4" />
-            <p className="text-slate-400 text-sm">Web design & D2C automation for Indian brands.</p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-white mb-4">Services</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li><a href="#" className="hover:text-white transition">Web Design</a></li>
-              <li><a href="#" className="hover:text-white transition">Shopify Automation</a></li>
-              <li><a href="#" className="hover:text-white transition">Tally Integration</a></li>
-              <li><a href="#" className="hover:text-white transition">Custom Development</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-white mb-4">Company</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li><a href="#" className="hover:text-white transition">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition">Case Studies</a></li>
-              <li><a href="/privacy" className="hover:text-white transition">Privacy Policy</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-white mb-4">Contact</h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-2 text-slate-400">
-                <Mail size={16} />
-                <a href="mailto:sachin@theingredientlist.co" className="hover:text-white transition">
-                  sachin@theingredientlist.co
+                <p className="mb-3 text-xs text-muted-foreground">Tap below to continue on WhatsApp. I reply personally, not a bot.</p>
+                <a
+                  href="https://wa.me/917483992418?text=Hi%20Sachin%2C%20I%20found%20The%20Ingredient%20List%20and%20wanted%20to%20discuss%20my%20brand."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                >
+                  <MessageCircle className="h-4 w-4" /> Continue on WhatsApp
                 </a>
-              </li>
-              <li className="flex items-center gap-2 text-slate-400">
-                <Phone size={16} />
-                <a href="tel:+917483992418" className="hover:text-white transition">
-                  +91 7483 992 418
+                <a
+                  href={CAL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 flex w-full items-center justify-center gap-2 rounded-full border border-border py-2.5 text-xs font-medium text-foreground transition-colors hover:border-primary/40"
+                >
+                  <Calendar className="h-3.5 w-3.5" /> Book a call instead
                 </a>
-              </li>
-              <li className="flex items-center gap-2 text-slate-400">
-                <MapPin size={16} />
-                <span>Bengaluru, India</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <a href="https://linkedin.com/company/threxa" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition">
-                  <Linkedin size={18} />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-slate-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-slate-400">
-              © 2026 The Ingredient List. All rights reserved.
+              </div>
+              <div className="border-t border-border px-4 py-2 text-center text-[10px] text-muted-foreground">
+                The Ingredient List · Bengaluru
+              </div>
             </div>
-            <div className="flex items-center gap-6 text-sm text-slate-400">
-              <a href="#" className="hover:text-white transition">Terms</a>
-              <a href="#" className="hover:text-white transition">Privacy</a>
-              <a href="#" className="hover:text-white transition">Contact</a>
-            </div>
-          </div>
+          )}
+          <button
+            onClick={() => {
+              if (chatOpen && chatPinned) {
+                handleChatClose();
+              } else {
+                handleChatToggle();
+              }
+            }}
+            className="group flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary to-orange-500 text-white shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+            title="Chat with Sachin"
+            aria-label="Open chat"
+          >
+            {chatOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <MessageCircle className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
+            )}
+          </button>
         </div>
+      )}
 
-        <div className="mt-8 pt-8 border-t border-slate-800">
-          <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 text-center">
-            <p className="text-sm text-green-300">
-              ✓ GST Registered (ARN: AA290526023261F) | ✓ 50+ Brands Trusted | ✓ Same-Day Support
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
+      {/* -- SCROLL TO TOP ---------------------------------- */}
+      {showScrollTop && (
+        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-28 right-8 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card transition-all duration-300 hover:bg-foreground hover:text-background active:scale-95 slide-up in"
+          title="Scroll to top" aria-label="Scroll to top">
+          <ArrowUp className="h-5 w-5" />
+        </button>
+      )}
+    </main>
   );
-}
+};
 
-// ─── MAIN COMPONENT ───
-export default function Index() {
-  return (
-    <div className="bg-slate-900 min-h-screen">
-      <AnimationStyles />
-      <Hero />
-      <TrustBadges />
-      <ROICalculator />
-      <CaseStudies />
-      <Pricing />
-      <CTA />
-      <Footer />
-    </div>
-  );
-}
+export default Index;
