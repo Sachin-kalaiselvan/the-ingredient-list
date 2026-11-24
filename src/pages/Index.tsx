@@ -17,7 +17,7 @@ import smartPackagingLogo from "@/assets/smart_packaging_solutions_logo.jpeg";
 
 import { Button } from "@/components/ui/button";
 
-// ─── Animation keyframes ───
+// animation keyframes
 const AnimationStyles = () => (
   <style>{`
     @keyframes cardFall {
@@ -63,7 +63,7 @@ const AnimationStyles = () => (
   `}</style>
 );
 
-// ─── CASE STUDIES ───
+// case studies
 const caseStudies = [
   {
     id: 1,
@@ -145,14 +145,14 @@ const caseStudies = [
   },
 ];
 
-// ─── SERVICES ───
+// services
 const services = [
   { icon: Palette, title: "Brand & Identity",  copy: "Logos, type systems, and visual languages that hold their own at every scale." },
   { icon: Layers,  title: "Product Design",    copy: "Web and product surfaces that feel inevitable — quiet, considered, alive." },
   { icon: Code2,   title: "Engineering",       copy: "Fast, accessible, conversion-tuned builds. Shipped without drama." },
 ];
 
-// ─── PRINCIPLES ───
+// principles
 const principles = [
   { icon: Target,        title: "Fewer projects. Better work.",  body: "I take on a small number of projects each quarter. Quality demands attention." },
   { icon: MessageSquare, title: "Honest before comfortable.",    body: "If your strategy has a flaw, I'll say so. You're paying for judgment, not just execution." },
@@ -160,7 +160,7 @@ const principles = [
   { icon: Zap,          title: "Speed without shortcuts.",       body: "I move fast because I think clearly — not because I cut corners." },
 ];
 
-// ─── APPROACH ───
+// approach
 const approachPillars = [
   { number: "01", title: "I start with your business, not your brief.",    body: "Before I open a design tool, I need to understand your customers, your competitors, and what actually moves the needle for you." },
   { number: "02", title: "I challenge the assumptions in the room.",        body: "The best work happens when both sides push back. I'm here to help you figure out what's worth building." },
@@ -168,7 +168,7 @@ const approachPillars = [
   { number: "04", title: "I measure what ships, not what's presented.",     body: "What matters is what the site does after it's live. I build with conversion in mind from day one." },
 ];
 
-// ─── TESTIMONIALS ───
+// testimonials
 const testimonials = [
   {
     id: 1,
@@ -190,7 +190,7 @@ const testimonials = [
   },
 ];
 
-// ─── TRUST MARKERS ───
+// trust markers
 const trustMarkers = [
   { label: "Direct access",    value: "1:1",      description: "You work with me, the founder — never a handoff or account manager." },
   { label: "Built bespoke",    value: "0%",       description: "Template usage. Every site is designed and coded from scratch." },
@@ -198,7 +198,7 @@ const trustMarkers = [
   { label: "Typical timeline", value: "6–12 wks", description: "From kickoff to live, depending on scope. Held to honest dates." },
 ];
 
-// ─── PRICING ───
+// pricing
 const pricing = [
   {
     name: "Launch",
@@ -263,7 +263,7 @@ const WHATSAPP = "+91 74839 92418";
 const CAL      = "https://cal.com/threxa/design-audit";
 const LINKEDIN = "https://linkedin.com/in/sachinjk11";
 
-// ─── FAQ ───
+// faq
 const faqs = [
   { q: "How much does a project cost?", a: "Every project is scoped and priced based on your specific requirements. Every engagement starts with a free strategy call — you'll get a clear estimate before anything is agreed, with no surprise invoices." },
   { q: "How long does a website take?", a: "Most websites are delivered in 6–12 weeks. A landing page takes 6–8 weeks. A multi-page growth site takes 10–12 weeks. Complex builds with custom backend or automation workflows take 12+ weeks. You'll get a precise timeline in writing before we begin." },
@@ -282,7 +282,7 @@ const auditBenefits = [
   { icon: BarChart3,  title: "Actionable recommendations",    body: "Every item is tied to a business outcome, not a generic checklist." },
 ];
 
-// ─── COMPONENT ───
+// component
 const Index = () => {
   const revealRefs    = useRef<(HTMLElement | null)[]>([]);
   const cardRefs      = useRef<(HTMLElement | null)[]>([]);
@@ -298,7 +298,7 @@ const Index = () => {
   const [auditForm, setAuditForm]                 = useState({ name:"", email:"", website:"", businessType:"" });
   const [auditSubmitted, setAuditSubmitted]       = useState(false);
 
-  // ─── Chat handlers ───
+  // chat handlers
   const handleChatMouseEnter = () => {
     if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
     hoverTimerRef.current = setTimeout(() => setChatOpen(true), 250);
@@ -371,7 +371,7 @@ const Index = () => {
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
       <AnimationStyles />
 
-      {/* ── HERO ──────────────────────────────────────── */}
+      {/* hero */}
       <section className="relative bg-gradient-hero">
         <div className="absolute inset-0 til-grid opacity-70" aria-hidden />
         <div className="absolute left-1/2 top-[-14rem] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-gradient-brand opacity-15 blur-[140px]" aria-hidden />
@@ -458,7 +458,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── SOCIAL PROOF ──────────────────────────────── */}
+      {/* social proof */}
       <section className="relative border-t border-border bg-background px-6 py-16 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <p className="mb-12 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Trusted By</p>
@@ -477,7 +477,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── CASE STUDIES ──────────────────────────────── */}
+      {/* case studies */}
       <section id="work" className="relative bg-gradient-warm px-6 py-16 sm:py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-20">
@@ -611,7 +611,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── PHILOSOPHY ────────────────────────────────── */}
+      {/* philosophy */}
       <section className="relative border-t border-border bg-background px-6 py-16 sm:py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 lg:items-start">
@@ -639,7 +639,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── SERVICES ──────────────────────────────────── */}
+      {/* services */}
       <section id="services" className="relative border-t border-border bg-gradient-warm px-6 py-16 sm:py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
@@ -681,7 +681,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── HOW I WORK ────────────────────────────────── */}
+      {/* how i work */}
       <section className="relative border-t border-border bg-gradient-warm px-6 py-16 sm:py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16">
@@ -703,7 +703,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ──────────────────────────────── */}
+      {/* testimonials */}
       <section id="testimonials" className="relative border-t border-border bg-background px-6 py-16 sm:py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 text-center">
@@ -746,7 +746,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── STORY / ABOUT ─────────────────────────────── */}
+      {/* story / about */}
       <section id="about" className="relative border-t border-border bg-gradient-warm px-6 py-16 sm:py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 items-center">
@@ -804,7 +804,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── PRICING ───────────────────────────────────── */}
+      {/* pricing */}
       <section id="pricing" className="relative border-t border-border bg-background px-6 py-16 sm:py-24 lg:px-10 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 sm:mb-16 text-center">
@@ -866,7 +866,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── FAQ ───────────────────────────────────────── */}
+      {/* faq */}
       <section id="faq" className="relative border-t border-border bg-background px-6 py-16 sm:py-24 lg:px-10">
         <div className="mx-auto max-w-4xl">
           <div className="mb-16 text-center">
@@ -905,7 +905,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── AUDIT ─────────────────────────────────────── */}
+      {/* audit */}
       <section id="audit" className="relative border-t border-border bg-gradient-warm px-6 py-16 sm:py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 lg:items-start">
@@ -1006,7 +1006,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* -- CONTACT ---------------------------------------- */}
+      {/* contact */}
       <section id="contact" className="relative bg-background px-6 py-20 sm:py-28 lg:px-10 lg:py-32">
         <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-primary to-orange-500 opacity-10 blur-3xl" aria-hidden />
         <div className="relative mx-auto max-w-4xl text-center">
@@ -1033,7 +1033,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* -- FOOTER ----------------------------------------- */}
+      {/* footer */}
       <footer className="border-t border-border bg-foreground text-background px-6 pt-20 pb-10 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="mb-20 flex flex-col items-start justify-between gap-8 border-b border-white/10 pb-16 lg:flex-row lg:items-end">
@@ -1104,7 +1104,7 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* -- FLOATING CHAT WIDGET --------------------------- */}
+      {/* floating chat widget */}
       {showChat && (
         <div
           className="fixed bottom-8 right-8 z-40 flex flex-col items-end gap-3"
@@ -1180,7 +1180,7 @@ const Index = () => {
         </div>
       )}
 
-      {/* -- SCROLL TO TOP ---------------------------------- */}
+      {/* scroll to top */}
       {showScrollTop && (
         <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="fixed bottom-28 right-8 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card transition-all duration-300 hover:bg-foreground hover:text-background active:scale-95 slide-up in"
